@@ -60,6 +60,17 @@ async function run() {
       res.send(result)
     })
 
+    // Update user profile
+    app.patch("/users/profile/:email", async (req, res) => {
+      const email = req.params.email;
+      const updatedData = req.body;
+      const result = await usersCollection.updateOne(
+        { email },
+        { $set: updatedData }
+      );
+      res.send({ modifiedCount: result.modifiedCount });
+    });
+
 
 
     app.get("/jobs", async (req, res) => {

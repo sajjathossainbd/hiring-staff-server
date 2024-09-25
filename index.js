@@ -7,7 +7,6 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-
 // Middleware configuration
 app.use(express.json());
 app.use(cors());
@@ -26,6 +25,7 @@ async function run() {
   try {
     await client.connect();
 
+    const usersCollection = client.db("hiringStaffDB").collection("users");
     const jobsCollection = client.db("hiringStaffDB").collection("jobs");
     const candidatesCollection = client
       .db("hiringStaffDB")
@@ -35,6 +35,10 @@ async function run() {
       .collection("recruiters");
 
     // API GET
+    app.get("/users", async (req, res) => {
+      const result = await usersCollection.find().toArray();
+      res.send(result);
+    });
     app.get("/jobs", async (req, res) => {
       const result = await jobsCollection.find().toArray();
       res.send(result);
@@ -47,7 +51,6 @@ async function run() {
       const result = await recruitersCollection.find().toArray();
       res.send(result);
     });
-
 
     // Others
     await client.db("admin").command({ ping: 1 });

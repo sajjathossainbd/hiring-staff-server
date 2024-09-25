@@ -34,11 +34,28 @@ async function run() {
       .db("hiringStaffDB")
       .collection("recruiters");
 
-    // API GET
+    // Api for users
+    // add user
+    app.post('/users', async (req, res) => {
+      const user = req.body;
+      const query = { email: user.email };
+      const existingUser = await usersCollection.findOne(query);
+      if (existingUser) {
+        return res.send({ message: "User Already Exists", insertId: null })
+      }
+      const result = await usersCollection.insertOne(user);
+      res.send(result);
+    })
+
+    // get user
     app.get("/users", async (req, res) => {
       const result = await usersCollection.find().toArray();
       res.send(result);
     });
+
+
+
+
     app.get("/jobs", async (req, res) => {
       const result = await jobsCollection.find().toArray();
       res.send(result);

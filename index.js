@@ -36,16 +36,16 @@ async function run() {
 
     // Api for users
     // add user
-    app.post('/users', async (req, res) => {
+    app.post("/users", async (req, res) => {
       const user = req.body;
       const query = { email: user.email };
       const existingUser = await usersCollection.findOne(query);
       if (existingUser) {
-        return res.send({ message: "User Already Exists", insertId: null })
+        return res.send({ message: "User Already Exists", insertId: null });
       }
       const result = await usersCollection.insertOne(user);
       res.send(result);
-    })
+    });
 
     // get user
     app.get("/users", async (req, res) => {
@@ -57,8 +57,8 @@ async function run() {
     app.get("/users/current/:email", async (req, res) => {
       const email = req.params.email;
       const result = await usersCollection.findOne({ email: email });
-      res.send(result)
-    })
+      res.send(result);
+    });
 
     // Update user profil
     app.patch("/users/profile/:email", async (req, res) => {
@@ -71,7 +71,22 @@ async function run() {
       res.send({ modifiedCount: result.modifiedCount });
     });
 
-
+    // post
+    app.post("/jobs", async (req, res) => {
+      const jobData = req.body;
+      const query = { jobTitle: jobData.jobTitle };
+      const existingJob = await jobsCollection.findOne(query);
+    
+      if (existingJob) {
+        return res.status(409).send({
+          message: "Job Already Exists",
+          insertId: null,
+        });
+      } else {
+        const result = await jobsCollection.insertOne(jobData);
+        res.send(result);
+      }
+    });
 
     app.get("/jobs", async (req, res) => {
       const result = await jobsCollection.find().toArray();

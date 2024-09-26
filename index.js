@@ -71,12 +71,20 @@ async function run() {
       res.send({ modifiedCount: result.modifiedCount });
     });
 
+    // Delete user
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await usersCollection.deleteOne(query);
+      res.send(result);
+    });
+
     // post
     app.post("/jobs", async (req, res) => {
       const jobData = req.body;
       const query = { jobTitle: jobData.jobTitle };
       const existingJob = await jobsCollection.findOne(query);
-    
+
       if (existingJob) {
         return res.status(409).send({
           message: "Job Already Exists",

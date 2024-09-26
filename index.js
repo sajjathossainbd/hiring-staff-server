@@ -60,7 +60,7 @@ async function run() {
       res.send(result)
     })
 
-    // Update user profile
+    // Update user profil
     app.patch("/users/profile/:email", async (req, res) => {
       const email = req.params.email;
       const updatedData = req.body;

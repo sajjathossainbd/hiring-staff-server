@@ -1,4 +1,4 @@
-import { getAllBlogs } from "../controllers/blogsController";
+const { getAllBlogs } = require("../controllers/blogsController");
 
 const express = require("express");
 const router = express.Router();
@@ -7,4 +7,3 @@ const router = express.Router();
 router.get("/", getAllBlogs);
 
 module.exports = router;
-

@@ -24,3 +24,13 @@ exports.getAllJobs = async (req, res) => {
   // console.log(result);
   res.send(result);
 };
+
+// GET jobs by recruiter email
+exports.getJobsByEmail = async (req, res) => {
+  const email = req.params.email;
+  const query = {
+    email: email,
+  };
+  const result = await jobsCollection.find(query).toArray();
+  res.send(result);
+};

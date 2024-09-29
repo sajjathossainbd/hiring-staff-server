@@ -8,6 +8,7 @@ const recruitersCollection = client
 // GET all recruiters
 exports.getAllRecruiters = async (req, res) => {
   const result = await recruitersCollection.find().toArray();
+  // console.log(result);
   res.send(result);
 };
 

@@ -1,7 +1,8 @@
+// controllers/jobsController.js
+
 const { client } = require("../config/db");
 const jobsCollection = client.db("hiringStaffDB").collection("jobs");
 
-// post job from dashboard
 exports.postJob = async (req, res) => {
   const jobData = req.body;
   const query = { jobTitle: jobData.jobTitle };
@@ -18,23 +19,18 @@ exports.postJob = async (req, res) => {
   }
 };
 
-// get all jobs from database
 exports.getAllJobs = async (req, res) => {
   const result = await jobsCollection.find().toArray();
+  // console.log(result);
   res.send(result);
 };
 
-// GET jobs by either recruiter email or company name
-exports.getJobsByRecruiterOrCompany = async (req, res) => {
-  const { email, companyName } = req.params;
-
+// GET jobs by recruiter email
+exports.getJobsByEmail = async (req, res) => {
+  const email = req.params.email;
   const query = {
-    $or: [
-      { recruiterEmail: email },
-      { companyName: { $regex: companyName, $options: "i" } },
-    ],
+    email: email,
   };
-
   const result = await jobsCollection.find(query).toArray();
   res.send(result);
 };

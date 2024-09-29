@@ -1,7 +1,11 @@
 // routes/jobsRoutes.js
 
 const express = require("express");
-const { postJob, getAllJobs, getJobsByRecruiterOrCompany } = require("../controllers/jobsController");
+const {
+  postJob,
+  getAllJobs,
+  getJobsByEmail,
+} = require("../controllers/jobsController");
 
 const router = express.Router();
 
@@ -11,7 +15,7 @@ router.post("/", postJob);
 // get all jobs
 router.get("/", getAllJobs);
 
-// get jobs by email or company name 
-router.get('/recruiter', getJobsByRecruiterOrCompany)
+// get jobs by email
+router.get("/:email", getJobsByEmail);
 
 module.exports = router;

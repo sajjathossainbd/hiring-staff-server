@@ -55,3 +55,13 @@ exports.getJob = async (req, res) => {
     res.status(500).send({ message: "Server error" });
   }
 };
+
+// GET jobs by recruiter email
+exports.getJobsByEmail = async (req, res) => {
+  const email = req.params.email;
+  const query = {
+    email: email,
+  };
+  const result = await jobsCollection.find(query).toArray();
+  res.send(result);
+};

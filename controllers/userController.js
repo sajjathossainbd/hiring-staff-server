@@ -1,6 +1,6 @@
 // controllers/userController.js
 
-const { client } = require("../config/db");
+const { client, ObjectId } = require("../config/db");
 const usersCollection = client.db("hiringStaffDB").collection("users");
 
 exports.addUser = async (req, res) => {

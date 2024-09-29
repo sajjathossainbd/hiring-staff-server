@@ -9,6 +9,7 @@ const jobsRoutes = require("./routes/jobs");
 const jobRoutes = require("./routes/jobs");
 const candidateRoutes = require("./routes/candidates");
 const recruiterRoutes = require("./routes/recruiters");
+const blogsRoutes = require("./routes/blogs");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -26,6 +27,7 @@ app.use("/jobs", jobsRoutes);
 app.use("/jobs/:id", jobsRoutes);
 app.use("/candidates", candidateRoutes);
 app.use("/recruiters", recruiterRoutes);
+app.use("/blogs", blogsRoutes);
 
 // Default route for server status
 app.get("/", (req, res) => {

@@ -4,6 +4,7 @@ const express = require("express");
 const {
   postJob,
   getAllJobs,
+  getJob,
   getJobsByEmail,
 } = require("../controllers/jobsController");
 
@@ -14,6 +15,7 @@ router.post("/", postJob);
 
 // get all jobs
 router.get("/", getAllJobs);
+router.get("/:id", getJob);
 
 // get jobs by email
 router.get("/:email", getJobsByEmail);

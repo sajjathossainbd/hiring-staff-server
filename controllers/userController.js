@@ -38,3 +38,17 @@ exports.deleteUser = async (req, res) => {
   const result = await usersCollection.deleteOne(query);
   res.send(result);
 };
+
+exports.updateUserRole = async (req, res) => {
+  const id = req.params.id;
+  const { role } = req.body;
+
+  const result = await usersCollection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: { role: role } }
+  );
+
+  console.log(`Modified count: ${result.modifiedCount}`);
+  res.send({ modifiedCount: result.modifiedCount });
+};
+

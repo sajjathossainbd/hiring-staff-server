@@ -15,8 +15,33 @@ exports.addUser = async (req, res) => {
 };
 
 exports.getAllUsers = async (req, res) => {
-  const result = await usersCollection.find().toArray();
-  res.send(result);
+  try {
+    const page = parseInt(req.query.page) || 1; // Default to page 1
+    const limit = parseInt(req.query.limit) || 5; // Default to 5 items per page
+    const skip = (page - 1) * limit;
+
+    // Fetch users with pagination
+    const users = await usersCollection
+      .find()
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+
+    // Total document count
+    const totalDocuments = await usersCollection.countDocuments(); // Use usersCollection here
+    const totalPages = Math.ceil(totalDocuments / limit);
+
+    // Return the response with the correct variables
+    res.status(200).json({
+      users,
+      currentPage: page,
+      totalPages,
+      totalDocuments,
+    });
+  } catch (error) {
+    console.error(error); // Log the error for debugging
+    res.status(500).send({ error: "Failed to retrieve user list" });
+  }
 };
 
 exports.getCurrentUser = async (req, res) => {

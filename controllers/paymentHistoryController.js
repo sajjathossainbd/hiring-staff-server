@@ -65,19 +65,31 @@ const getPaymentHistory = async (req, res) => {
   }
 };
 
+
+// GET: Retrieve payment history by email
+const getPaymentByEmail = async (req, res) => {
+  const email = req.params.email;
+  const query = {
+    email: email,
+  };
+  const result = await paymentCollection.find(query).toArray();
+  res.send(result);
+};
+
+
 // 
 const updatePaymentStatus = async (req, res) => {
-    const id = req.params.id;
-    const { status } = req.body;
+  const id = req.params.id;
+  const { status } = req.body;
 
-    const result = await paymentCollection.updateOne(
-        { _id: new ObjectId(id) },
-        { $set: { status: status } }
-    );
+  const result = await paymentCollection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: { status: status } }
+  );
 
-    console.log(`Modified count: ${result.modifiedCount}`);
-    res.send({ modifiedCount: result.modifiedCount });
+  console.log(`Modified count: ${result.modifiedCount}`);
+  res.send({ modifiedCount: result.modifiedCount });
 };
 
 // Export the functions
-module.exports = { paymentHistory, getPaymentHistory, updatePaymentStatus };
+module.exports = { paymentHistory, getPaymentHistory, updatePaymentStatus, getPaymentByEmail };

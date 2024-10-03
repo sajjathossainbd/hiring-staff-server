@@ -1,6 +1,7 @@
 [
   {
     "company": {
+      "recId": 1,
       "name": "Tech Innovators",
       "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-14.svg",
       "industry": "Technology",

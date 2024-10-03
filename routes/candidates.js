@@ -1,5 +1,3 @@
-// routes/candidateRoutes.js
-
 const express = require("express");
 const {
   getAllCandidates,

@@ -3,64 +3,69 @@ const recruitersCollection = client
   .db("hiringStaffDB")
   .collection("recruiters");
 
-// GET all recruiters
-// search by jobTitle and category
+// function for sending responses
+const sendResponse = (res, data, statusCode = 200) => {
+  res.status(statusCode).json(data);
+};
+
+// Get all recruiters - Search by jobTitle and category
 exports.getAllRecruiters = async (req, res) => {
   const { jobTitle, category } = req.query;
 
   const query = {};
 
   if (jobTitle || category) {
-    const jobPostingsQuery = { $or: [] };
+    const jobPostingsQuery = [];
 
     if (jobTitle) {
-      jobPostingsQuery.$or.push({
-        "jobPostings.jobTitle": {
-          $regex: jobTitle,
-          $options: "i",
-        },
+      jobPostingsQuery.push({
+        "jobPostings.jobTitle": { $regex: jobTitle, $options: "i" },
       });
     }
 
     if (category) {
-      jobPostingsQuery.$or.push({
-        "jobPostings.category": {
-          $regex: category,
-          $options: "i",
-        },
+      jobPostingsQuery.push({
+        "jobPostings.category": { $regex: category, $options: "i" },
       });
     }
 
-    query.$or = [jobPostingsQuery];
+    query.jobPostings = { $or: jobPostingsQuery };
   }
 
   try {
     const result = await recruitersCollection.find(query).toArray();
-
-    res.send(result);
+    sendResponse(res, result);
   } catch (error) {
     console.error("Error fetching recruiters: ", error);
-    res
-      .status(500)
-      .send({ message: "An error occurred while fetching recruiters.", error });
+    sendResponse(
+      res,
+      { message: "An error occurred while fetching recruiters.", error },
+      500
+    );
   }
 };
 
-// GET a specific recruiter by ID
+// Get a specific recruiter by ID
 exports.getRecruiterById = async (req, res) => {
   const recruiterId = req.params.id;
+
+  // Validate the ObjectId
+  if (!ObjectId.isValid(recruiterId)) {
+    return sendResponse(res, { message: "Invalid Recruiter ID." }, 400);
+  }
+
   try {
     const result = await recruitersCollection.findOne({
       _id: new ObjectId(recruiterId),
     });
 
     if (!result) {
-      return res.status(404).send({ message: "Recruiter not found." });
+      return sendResponse(res, { message: "Recruiter not found." }, 404);
     }
 
-    res.send(result);
+    sendResponse(res, result);
   } catch (error) {
     console.error("Error fetching recruiter by ID: ", error);
-    res.status(500).send({ message: "An error occurred.", error });
+    sendResponse(res, { message: "An error occurred." }, 500);
   }
 };

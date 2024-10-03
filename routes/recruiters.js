@@ -1,5 +1,3 @@
-// routes/recruiterRoutes.js
-
 const express = require("express");
 const { getAllRecruiters, getRecruiterById } = require("../controllers/recruitersController");
 

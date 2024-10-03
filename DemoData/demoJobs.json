@@ -1,0 +1,629 @@
+[
+  {
+    "job_title": "AI Research Scientist",
+    "description": "Conduct advanced research in artificial intelligence and machine learning to develop innovative solutions.",
+    "job_category": "Artificial Intelligence",
+    "requirements": {
+      "education": "Ph.D. in Computer Science, Artificial Intelligence, or related field",
+      "experience": [
+        "3+ years of research experience in AI/ML",
+        "Strong publication record in reputable conferences/journals",
+        "Proficiency in Python and machine learning frameworks"
+      ]
+    },
+    "salary_range": "$130,000 - $170,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-12-15",
+    "date_posted": "2024-04-01",
+    "company_email": "info@aiinnovators.com"
+  },
+  {
+    "job_title": "Machine Learning Engineer",
+    "description": "Develop and deploy machine learning models to solve real-world problems and enhance product capabilities.",
+    "job_category": "Machine Learning",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "4+ years of experience in machine learning",
+        "Experience with TensorFlow, PyTorch, or similar frameworks",
+        "Strong programming skills in Python or Java"
+      ]
+    },
+    "salary_range": "$110,000 - $150,000",
+    "job_type": "Full-Time",
+    "location": "San Francisco, CA",
+    "application_deadline": "2024-11-30",
+    "date_posted": "2024-04-02",
+    "company_email": "info@aiinnovators.com"
+  },
+  {
+    "job_title": "Data Scientist",
+    "description": "Analyze large datasets to derive actionable insights and support data-driven decision-making.",
+    "job_category": "Data Science",
+    "requirements": {
+      "education": "Master's Degree in Data Science, Statistics, or related field",
+      "experience": [
+        "2+ years of experience in data analysis",
+        "Proficiency in SQL and data visualization tools",
+        "Strong statistical and analytical skills"
+      ]
+    },
+    "salary_range": "$90,000 - $120,000",
+    "job_type": "Full-Time",
+    "location": "London, UK",
+    "application_deadline": "2024-10-31",
+    "date_posted": "2024-04-03",
+    "company_email": "contact@deepmind.com"
+  },
+  {
+    "job_title": "AI Ethics Specialist",
+    "description": "Ensure that AI models and applications adhere to ethical guidelines and standards.",
+    "job_category": "Ethics & Compliance",
+    "requirements": {
+      "education": "Bachelor's Degree in Ethics, Philosophy, Computer Science, or related field",
+      "experience": [
+        "3+ years of experience in ethics or compliance roles",
+        "Understanding of AI technologies and their societal impact",
+        "Strong communication and analytical skills"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-11-15",
+    "date_posted": "2024-04-04",
+    "company_email": "contact@deepmind.com"
+  },
+  {
+    "job_title": "Blockchain Developer",
+    "description": "Design, implement, and maintain blockchain-based applications and systems.",
+    "job_category": "Blockchain",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in blockchain development",
+        "Proficiency in Solidity, JavaScript, or similar languages",
+        "Experience with smart contracts and decentralized applications"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "New York, NY",
+    "application_deadline": "2024-12-01",
+    "date_posted": "2024-04-05",
+    "company_email": "info@blocktech.com"
+  },
+  {
+    "job_title": "Smart Contract Engineer",
+    "description": "Develop and audit smart contracts to ensure security and functionality in blockchain applications.",
+    "job_category": "Blockchain Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "2+ years of experience in smart contract development",
+        "Proficiency in Solidity and Ethereum",
+        "Experience with blockchain platforms like Hyperledger or EOS"
+      ]
+    },
+    "salary_range": "$110,000 - $150,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-11-20",
+    "date_posted": "2024-04-06",
+    "company_email": "info@blocktech.com"
+  },
+  {
+    "job_title": "Cloud Solutions Architect",
+    "description": "Design and implement cloud-based solutions to meet business requirements and ensure scalability.",
+    "job_category": "Cloud Computing",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "5+ years of experience in cloud architecture",
+        "Proficiency in AWS, Azure, or Google Cloud Platform",
+        "Strong understanding of networking and security in the cloud"
+      ]
+    },
+    "salary_range": "$130,000 - $170,000",
+    "job_type": "Full-Time",
+    "location": "Austin, TX",
+    "application_deadline": "2024-12-15",
+    "date_posted": "2024-04-07",
+    "company_email": "info@cloudfirst.com"
+  },
+  {
+    "job_title": "Cloud Engineer",
+    "description": "Build and maintain cloud infrastructure, ensuring reliability and performance of cloud services.",
+    "job_category": "Cloud Engineering",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in cloud engineering",
+        "Experience with containerization tools like Docker and Kubernetes",
+        "Proficiency in scripting languages such as Python or Bash"
+      ]
+    },
+    "salary_range": "$110,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Seattle, WA",
+    "application_deadline": "2024-11-25",
+    "date_posted": "2024-04-08",
+    "company_email": "info@cloudfirst.com"
+  },
+  {
+    "job_title": "Cybersecurity Analyst",
+    "description": "Monitor and protect the company's IT infrastructure from cyber threats and vulnerabilities.",
+    "job_category": "Cybersecurity",
+    "requirements": {
+      "education": "Bachelor's Degree in Information Security, Computer Science, or related field",
+      "experience": [
+        "2+ years of experience in cybersecurity",
+        "Knowledge of security frameworks and protocols",
+        "Experience with security tools like SIEM, firewalls, and intrusion detection systems"
+      ]
+    },
+    "salary_range": "$90,000 - $120,000",
+    "job_type": "Full-Time",
+    "location": "Boston, MA",
+    "application_deadline": "2024-11-10",
+    "date_posted": "2024-04-09",
+    "company_email": "contact@cybersecuresolutions.com"
+  },
+  {
+    "job_title": "Penetration Tester",
+    "description": "Conduct security assessments and penetration tests to identify and mitigate vulnerabilities.",
+    "job_category": "Cybersecurity",
+    "requirements": {
+      "education": "Bachelor's Degree in Cybersecurity, Information Technology, or related field",
+      "experience": [
+        "3+ years of experience in penetration testing",
+        "Proficiency in using penetration testing tools like Metasploit, Burp Suite",
+        "Strong understanding of network and application security"
+      ]
+    },
+    "salary_range": "$100,000 - $130,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-12-01",
+    "date_posted": "2024-04-10",
+    "company_email": "contact@cybersecuresolutions.com"
+  },
+  {
+    "job_title": "Cloud Architect",
+    "description": "Design and oversee cloud computing strategies, ensuring alignment with business goals.",
+    "job_category": "Cloud Computing",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "5+ years of experience in cloud architecture",
+        "Expertise in AWS, Azure, or Google Cloud Platform",
+        "Strong understanding of cloud security and compliance"
+      ]
+    },
+    "salary_range": "$140,000 - $180,000",
+    "job_type": "Full-Time",
+    "location": "Denver, CO",
+    "application_deadline": "2024-12-20",
+    "date_posted": "2024-04-11",
+    "company_email": "info@cloudxsolutions.com"
+  },
+  {
+    "job_title": "Cloud Operations Manager",
+    "description": "Manage cloud operations, ensuring optimal performance and reliability of cloud services.",
+    "job_category": "Cloud Operations",
+    "requirements": {
+      "education": "Bachelor's Degree in Information Technology or related field",
+      "experience": [
+        "4+ years of experience in cloud operations",
+        "Experience with cloud monitoring and management tools",
+        "Strong leadership and project management skills"
+      ]
+    },
+    "salary_range": "$120,000 - $160,000",
+    "job_type": "Full-Time",
+    "location": "Chicago, IL",
+    "application_deadline": "2024-11-30",
+    "date_posted": "2024-04-12",
+    "company_email": "info@cloudxsolutions.com"
+  },
+  {
+    "job_title": "SaaS Product Manager",
+    "description": "Lead the development and management of SaaS products, ensuring they meet market needs and drive business growth.",
+    "job_category": "Product Management",
+    "requirements": {
+      "education": "Bachelor's Degree in Business, Marketing, Computer Science, or related field",
+      "experience": [
+        "5+ years of experience in product management, preferably in SaaS",
+        "Strong understanding of SaaS business models",
+        "Excellent communication and leadership skills"
+      ]
+    },
+    "salary_range": "$110,000 - $150,000",
+    "job_type": "Full-Time",
+    "location": "Austin, TX",
+    "application_deadline": "2024-12-10",
+    "date_posted": "2024-04-13",
+    "company_email": "contact@saasify.com"
+  },
+  {
+    "job_title": "SaaS Sales Executive",
+    "description": "Drive sales growth for SaaS products by identifying and securing new business opportunities.",
+    "job_category": "Sales",
+    "requirements": {
+      "education": "Bachelor's Degree in Business, Marketing, or related field",
+      "experience": [
+        "3+ years of experience in SaaS sales",
+        "Proven track record of meeting or exceeding sales targets",
+        "Strong negotiation and communication skills"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-11-25",
+    "date_posted": "2024-04-14",
+    "company_email": "contact@saasify.com"
+  },
+  {
+    "job_title": "Web Developer",
+    "description": "Develop and maintain responsive and user-friendly websites, ensuring optimal performance and user experience.",
+    "job_category": "Web Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in web development",
+        "Proficiency in HTML, CSS, JavaScript, and modern frameworks like React or Angular",
+        "Experience with backend technologies such as Node.js or PHP"
+      ]
+    },
+    "salary_range": "$85,000 - $110,000",
+    "job_type": "Full-Time",
+    "location": "San Francisco, CA",
+    "application_deadline": "2024-11-10",
+    "date_posted": "2024-04-15",
+    "company_email": "contact@webinnovate.com"
+  },
+  {
+    "job_title": "Full Stack Web Developer",
+    "description": "Handle both frontend and backend development tasks to build comprehensive web applications.",
+    "job_category": "Full Stack Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "4+ years of experience in full stack development",
+        "Proficiency in JavaScript, React, Node.js, and database management",
+        "Strong problem-solving and debugging skills"
+      ]
+    },
+    "salary_range": "$100,000 - $130,000",
+    "job_type": "Full-Time",
+    "location": "New York, NY",
+    "application_deadline": "2024-12-05",
+    "date_posted": "2024-04-16",
+    "company_email": "contact@webinnovate.com"
+  },
+  {
+    "job_title": "Autonomous Systems Engineer",
+    "description": "Design and develop autonomous systems for vehicles, ensuring safety and reliability.",
+    "job_category": "Autonomous Vehicles",
+    "requirements": {
+      "education": "Master's Degree in Robotics, Computer Engineering, or related field",
+      "experience": [
+        "3+ years of experience in autonomous systems development",
+        "Proficiency in C++, ROS, and sensor integration",
+        "Strong understanding of control systems and AI"
+      ]
+    },
+    "salary_range": "$120,000 - $160,000",
+    "job_type": "Full-Time",
+    "location": "Palo Alto, CA",
+    "application_deadline": "2024-12-20",
+    "date_posted": "2024-04-17",
+    "company_email": "info@selfdriveinnovations.com"
+  },
+  {
+    "job_title": "Autonomous Vehicle Software Engineer",
+    "description": "Develop software for autonomous vehicles, focusing on perception, planning, and control algorithms.",
+    "job_category": "Software Engineering",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science, Electrical Engineering, or related field",
+      "experience": [
+        "4+ years of experience in software engineering",
+        "Experience with computer vision and machine learning",
+        "Proficiency in Python and C++"
+      ]
+    },
+    "salary_range": "$115,000 - $155,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-11-30",
+    "date_posted": "2024-04-18",
+    "company_email": "info@selfdriveinnovations.com"
+  },
+  {
+    "job_title": "Smart Home Product Manager",
+    "description": "Lead the development and management of smart home products, ensuring they meet customer needs and market demands.",
+    "job_category": "Product Management",
+    "requirements": {
+      "education": "Bachelor's Degree in Business, Marketing, or related field",
+      "experience": [
+        "5+ years of experience in product management",
+        "Experience with smart home technologies",
+        "Strong leadership and communication skills"
+      ]
+    },
+    "salary_range": "$105,000 - $145,000",
+    "job_type": "Full-Time",
+    "location": "Miami, FL",
+    "application_deadline": "2024-12-10",
+    "date_posted": "2024-04-19",
+    "company_email": "info@homesmarttech.com"
+  },
+  {
+    "job_title": "Smart Home Software Developer",
+    "description": "Develop software solutions for smart home devices, ensuring seamless integration and user experience.",
+    "job_category": "Software Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in software development",
+        "Proficiency in IoT platforms and protocols",
+        "Experience with mobile app development is a plus"
+      ]
+    },
+    "salary_range": "$95,000 - $130,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-11-20",
+    "date_posted": "2024-04-20",
+    "company_email": "info@homesmarttech.com"
+  },
+  {
+    "job_title": "Digital Payments Analyst",
+    "description": "Analyze and optimize digital payment processes to enhance efficiency and security.",
+    "job_category": "Finance & Payments",
+    "requirements": {
+      "education": "Bachelor's Degree in Finance, Economics, or related field",
+      "experience": [
+        "2+ years of experience in digital payments or financial analysis",
+        "Strong analytical and problem-solving skills",
+        "Proficiency in data analysis tools like Excel or SQL"
+      ]
+    },
+    "salary_range": "$85,000 - $110,000",
+    "job_type": "Full-Time",
+    "location": "New York, NY",
+    "application_deadline": "2024-11-15",
+    "date_posted": "2024-04-21",
+    "company_email": "contact@paywavedigital.com"
+  },
+  {
+    "job_title": "Payment Systems Engineer",
+    "description": "Design and implement payment processing systems, ensuring reliability and compliance with financial regulations.",
+    "job_category": "Engineering",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "4+ years of experience in payment systems development",
+        "Knowledge of PCI DSS standards",
+        "Proficiency in Java, C++, or similar programming languages"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-12-05",
+    "date_posted": "2024-04-22",
+    "company_email": "contact@paywavedigital.com"
+  },
+  {
+    "job_title": "Networking Hardware Specialist",
+    "description": "Design and maintain networking hardware solutions to ensure robust and secure network infrastructure.",
+    "job_category": "Networking",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Engineering or related field",
+      "experience": [
+        "3+ years of experience in networking hardware",
+        "Proficiency in configuring routers, switches, and firewalls",
+        "Strong understanding of network security protocols"
+      ]
+    },
+    "salary_range": "$90,000 - $120,000",
+    "job_type": "Full-Time",
+    "location": "Dallas, TX",
+    "application_deadline": "2024-11-25",
+    "date_posted": "2024-04-23",
+    "company_email": "info@connectplusnetworks.com"
+  },
+  {
+    "job_title": "Network Security Engineer",
+    "description": "Implement and manage network security measures to protect against cyber threats and vulnerabilities.",
+    "job_category": "Cybersecurity",
+    "requirements": {
+      "education": "Bachelor's Degree in Information Security, Computer Science, or related field",
+      "experience": [
+        "4+ years of experience in network security",
+        "Experience with VPNs, IDS/IPS, and security monitoring tools",
+        "Certifications like CISSP or CISM are a plus"
+      ]
+    },
+    "salary_range": "$110,000 - $150,000",
+    "job_type": "Full-Time",
+    "location": "Phoenix, AZ",
+    "application_deadline": "2024-12-10",
+    "date_posted": "2024-04-24",
+    "company_email": "info@connectplusnetworks.com"
+  },
+  {
+    "job_title": "Digital Payments Developer",
+    "description": "Develop and maintain digital payment platforms, ensuring seamless transaction processing and user experience.",
+    "job_category": "Software Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in payment platform development",
+        "Proficiency in Java, Python, or Ruby",
+        "Experience with RESTful APIs and payment gateways"
+      ]
+    },
+    "salary_range": "$100,000 - $135,000",
+    "job_type": "Full-Time",
+    "location": "San Francisco, CA",
+    "application_deadline": "2024-11-30",
+    "date_posted": "2024-04-25",
+    "company_email": "contact@paywavedigital.com"
+  },
+  {
+    "job_title": "Frontend Web Developer",
+    "description": "Create responsive and user-friendly web interfaces using modern frontend technologies.",
+    "job_category": "Web Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "2+ years of experience in frontend development",
+        "Proficiency in HTML, CSS, JavaScript, and frameworks like React or Vue.js",
+        "Experience with responsive design and cross-browser compatibility"
+      ]
+    },
+    "salary_range": "$80,000 - $110,000",
+    "job_type": "Full-Time",
+    "location": "Chicago, IL",
+    "application_deadline": "2024-11-20",
+    "date_posted": "2024-04-26",
+    "company_email": "contact@webinnovate.com"
+  },
+  {
+    "job_title": "Backend Web Developer",
+    "description": "Develop and maintain server-side logic, databases, and APIs to support web applications.",
+    "job_category": "Web Development",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science or related field",
+      "experience": [
+        "3+ years of experience in backend development",
+        "Proficiency in Node.js, Python, or PHP",
+        "Experience with database systems like MySQL or MongoDB"
+      ]
+    },
+    "salary_range": "$90,000 - $120,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-12-01",
+    "date_posted": "2024-04-27",
+    "company_email": "contact@webinnovate.com"
+  },
+  {
+    "job_title": "IoT Engineer",
+    "description": "Design and develop Internet of Things (IoT) solutions for smart home applications.",
+    "job_category": "Internet of Things",
+    "requirements": {
+      "education": "Bachelor's Degree in Electrical Engineering, Computer Science, or related field",
+      "experience": [
+        "3+ years of experience in IoT development",
+        "Proficiency in embedded systems and microcontrollers",
+        "Experience with IoT protocols and platforms"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Phoenix, AZ",
+    "application_deadline": "2024-11-25",
+    "date_posted": "2024-04-28",
+    "company_email": "info@selfdriveinnovations.com"
+  },
+  {
+    "job_title": "Smart Home Systems Engineer",
+    "description": "Develop and integrate smart home systems, ensuring seamless connectivity and user experience.",
+    "job_category": "Engineering",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Engineering, Electrical Engineering, or related field",
+      "experience": [
+        "4+ years of experience in smart home technologies",
+        "Proficiency in IoT platforms and automation tools",
+        "Strong problem-solving and project management skills"
+      ]
+    },
+    "salary_range": "$115,000 - $155,000",
+    "job_type": "Full-Time",
+    "location": "Miami, FL",
+    "application_deadline": "2024-12-10",
+    "date_posted": "2024-04-29",
+    "company_email": "info@homesmarttech.com"
+  },
+  {
+    "job_title": "Digital Payments Product Manager",
+    "description": "Oversee the development and enhancement of digital payment products to meet market demands.",
+    "job_category": "Product Management",
+    "requirements": {
+      "education": "Bachelor's Degree in Business, Marketing, or related field",
+      "experience": [
+        "5+ years of experience in product management, preferably in digital payments",
+        "Strong understanding of payment processing systems",
+        "Excellent leadership and communication skills"
+      ]
+    },
+    "salary_range": "$120,000 - $160,000",
+    "job_type": "Full-Time",
+    "location": "New York, NY",
+    "application_deadline": "2024-12-15",
+    "date_posted": "2024-04-30",
+    "company_email": "contact@paywavedigital.com"
+  },
+  {
+    "job_title": "Digital Payments Security Analyst",
+    "description": "Ensure the security and compliance of digital payment systems, conducting regular audits and assessments.",
+    "job_category": "Cybersecurity",
+    "requirements": {
+      "education": "Bachelor's Degree in Information Security, Computer Science, or related field",
+      "experience": [
+        "3+ years of experience in payment system security",
+        "Knowledge of PCI DSS and other relevant standards",
+        "Proficiency in security assessment tools"
+      ]
+    },
+    "salary_range": "$100,000 - $140,000",
+    "job_type": "Full-Time",
+    "location": "Remote",
+    "application_deadline": "2024-12-05",
+    "date_posted": "2024-05-01",
+    "company_email": "contact@paywavedigital.com"
+  },
+  {
+    "job_title": "Networking Hardware Engineer",
+    "description": "Design and develop networking hardware solutions to support robust and scalable network infrastructures.",
+    "job_category": "Networking",
+    "requirements": {
+      "education": "Bachelor's Degree in Electrical Engineering, Computer Engineering, or related field",
+      "experience": [
+        "4+ years of experience in networking hardware development",
+        "Proficiency in circuit design and network protocols",
+        "Experience with hardware testing and validation"
+      ]
+    },
+    "salary_range": "$115,000 - $150,000",
+    "job_type": "Full-Time",
+    "location": "Dallas, TX",
+    "application_deadline": "2024-12-20",
+    "date_posted": "2024-05-02",
+    "company_email": "info@connectplusnetworks.com"
+  },
+  {
+    "job_title": "Network Infrastructure Manager",
+    "description": "Manage and oversee the company's network infrastructure, ensuring optimal performance and security.",
+    "job_category": "Network Management",
+    "requirements": {
+      "education": "Bachelor's Degree in Computer Science, Information Technology, or related field",
+      "experience": [
+        "5+ years of experience in network management",
+        "Proficiency in managing enterprise-level network systems",
+        "Strong leadership and organizational skills"
+      ]
+    },
+    "salary_range": "$130,000 - $170,000",
+    "job_type": "Full-Time",
+    "location": "Phoenix, AZ",
+    "application_deadline": "2024-12-10",
+    "date_posted": "2024-05-03",
+    "company_email": "info@connectplusnetworks.com"
+  }
+]

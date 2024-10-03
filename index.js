@@ -1,69 +1,55 @@
 const express = require("express");
 const cors = require("cors");
-const jwt = require("jsonwebtoken");
+const { connectDB } = require("./config/db");
 require("dotenv").config();
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const app = express();
 
+// Import route files
+const userRoutes = require("./routes/user");
+const jobsRoutes = require("./routes/jobs");
+const candidateRoutes = require("./routes/candidates");
+const recruiterRoutes = require("./routes/recruiters");
+const paymentRoutes = require("./routes/payment");
+const blogsRoutes = require("./routes/blogs");
+const paymentHistory = require("./routes/paymentHistory");
+
+const app = express();
 const port = process.env.PORT || 5000;
 
-
-// Middleware configuration
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.8i4eibr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+// Connect to MongoDB
+connectDB();
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+// Define routes
 
-async function run() {
-  try {
-    await client.connect();
+// User
+app.use("/users", userRoutes);
 
-    const jobsCollection = client.db("hiringStaffDB").collection("jobs");
-    const candidatesCollection = client
-      .db("hiringStaffDB")
-      .collection("candidates");
-    const recruitersCollection = client
-      .db("hiringStaffDB")
-      .collection("recruiters");
+// Jobs
+app.use("/jobs", jobsRoutes);
+app.use("/jobs/:id", jobsRoutes);
 
-    // API GET
-    app.get("/jobs", async (req, res) => {
-      const result = await jobsCollection.find().toArray();
-      res.send(result);
-    });
-    app.get("/candidates", async (req, res) => {
-      const result = await candidatesCollection.find().toArray();
-      res.send(result);
-    });
-    app.get("/recruiters", async (req, res) => {
-      const result = await recruitersCollection.find().toArray();
-      res.send(result);
-    });
+// Candidates
+app.use("/candidates", candidateRoutes);
 
+// recruiters
+app.use("/recruiters", recruiterRoutes);
 
-    // Others
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
-  } finally {
-    // await client.close();
-  }
-}
-run().catch(console.dir);
+// Blogs
+app.use("/blogs", blogsRoutes);
 
+// Payment
+app.use("/create-payment-intent", paymentRoutes);
+app.use("/payment-history", paymentHistory);
+
+// Default route for server status
 app.get("/", (req, res) => {
   res.send("Hiring Staff Server Is Running!");
 });
 
+// Start the server
 app.listen(port, () => {
-  console.log(`Listening on ${port}`);
+  console.log(`Server is running on port is ${port}`);
 });

@@ -1,0 +1,122 @@
+[
+  {
+    "position": "Frontend Developer",
+    "type": "Part Time",
+    "posted": "2 years ago",
+    "description": "Build responsive web applications and implement UI designs.",
+    "company": "Jthemes Team",
+    "skills": ["Figma", "Photoshop", "Illustrator"],
+    "experience": "5+ years",
+    "education": "Bachelor's Degree in Design",
+    "category": "Web Development",
+    "image": "https://t4.ftcdn.net/jpg/05/14/20/47/360_F_514204772_mT0EpTdZkScyiRPn2PInaKaqd88QGrzE.jpg"
+  },
+  {
+    "position": "Backend Developer",
+    "type": "Full Time",
+    "posted": "1 year ago",
+    "description": "Develop and maintain server-side applications.",
+    "company": "Tech Innovators",
+    "skills": ["Node.js", "Express", "MongoDB"],
+    "experience": "3+ years",
+    "education": "Bachelor's in Computer Science",
+    "category": "Web Development",
+    "image": "https://www.shutterstock.com/shutterstock/photos/2159023891/display_1500/stock-photo-happy-businesspeople-laughing-while-collaborating-on-a-new-project-in-an-office-group-of-diverse-2159023891.jpg"
+  },
+  {
+    "position": "UI/UX Designer",
+    "type": "Contract",
+    "posted": "3 months ago",
+    "description": "Design intuitive and visually appealing user interfaces with a focus on user-centered design.",
+    "company": "Creative Solutions",
+    "skills": ["Adobe XD", "Sketch", "Wireframing"],
+    "experience": "2+ years",
+    "education": "Bachelor's Degree in Design",
+    "category": "Design",
+    "image": "https://c8.alamy.com/comp/KEHEHH/portrait-of-diverse-business-people-in-office-KEHEHH.jpg"
+  },
+  {
+    "position": "Full Stack Developer",
+    "type": "Freelance",
+    "posted": "6 months ago",
+    "description": "Work on both frontend and backend of web applications.",
+    "company": "DevX Studio",
+    "skills": ["React", "Node.js", "MongoDB"],
+    "experience": "4+ years",
+    "education": "Bachelor's in Software Engineering",
+    "category": "Web Development",
+    "image": "https://c8.alamy.com/comp/2RME2PB/smiling-business-people-talking-against-wall-in-office-2RME2PB.jpg"
+  },
+  {
+    "position": "Product Manager",
+    "type": "Full Time",
+    "posted": "1 year ago",
+    "description": "Oversee product development and ensure alignment with business goals.",
+    "company": "Digital Ventures",
+    "skills": ["Agile", "Scrum", "Product Roadmap"],
+    "experience": "6+ years",
+    "education": "MBA",
+    "category": "Management",
+    "image": "https://c8.alamy.com/comp/2BR87BW/group-of-business-executives-tired-of-long-meeting-in-office-2BR87BW.jpg"
+  },
+  {
+    "position": "Data Analyst",
+    "type": "Part Time",
+    "posted": "4 months ago",
+    "description": "Analyze and interpret complex data sets to drive business decisions.",
+    "company": "Insight Analytics",
+    "skills": ["Python", "Tableau", "SQL"],
+    "experience": "3+ years",
+    "education": "Bachelor's in Statistics",
+    "category": "Data Science",
+    "image": "https://c8.alamy.com/comp/BP6K22/business-executives-in-a-training-class-BP6K22.jpg"
+  },
+  {
+    "position": "DevOps Engineer",
+    "type": "Full Time",
+    "posted": "8 months ago",
+    "description": "Build and manage CI/CD pipelines, ensuring efficient deployment processes.",
+    "company": "CloudTech",
+    "skills": ["AWS", "Docker", "Kubernetes"],
+    "experience": "5+ years",
+    "education": "Bachelor's in IT",
+    "category": "DevOps",
+    "image": "https://c8.alamy.com/comp/2J0X1Y7/smiling-young-workers-sitting-at-office-desk-talking-and-discussing-ideas-at-briefing-at-workplace-2J0X1Y7.jpg"
+  },
+  {
+    "position": "Mobile App Developer",
+    "type": "Contract",
+    "posted": "2 weeks ago",
+    "description": "Develop cross-platform mobile applications with modern frameworks.",
+    "company": "App Masters",
+    "skills": ["React Native", "Flutter", "Swift"],
+    "experience": "2+ years",
+    "education": "Bachelor's in Computer Science",
+    "category": "Mobile Development",
+    "image": "https://c8.alamy.com/comp/KTH7PA/director-of-company-having-business-meeting-with-his-staff-KTH7PA.jpg"
+  },
+  {
+    "position": "Project Manager",
+    "type": "Full Time",
+    "posted": "9 months ago",
+    "description": "Lead large-scale software development projects and ensure timely delivery.",
+    "company": "Enterprise Solutions",
+    "skills": ["JIRA", "Project Planning", "Risk Management"],
+    "experience": "7+ years",
+    "education": "PMP Certification",
+    "category": "Management",
+    "image": "https://c8.alamy.com/comp/2CF5FYT/successful-team-leader-and-business-owner-leading-informal-in-business-meeting-2CF5FYT.jpg"
+  },
+  {
+    "position": "Software Tester",
+    "type": "Full Time",
+    "posted": "5 months ago",
+    "description": "Conduct manual and automated testing to ensure software quality.",
+    "company": "Quality Assurance Inc.",
+    "skills": ["Selenium", "Test Automation", "Jenkins"],
+    "experience": "4+ years",
+    "education": "Bachelor's in Information Technology",
+    "category": "Quality Assurance",
+    "image": "https://c8.alamy.com/comp/2BWE72D/serious-confident-african-american-businesswoman-leading-corporate-meeting-2BWE72D.jpg"
+  }
+]

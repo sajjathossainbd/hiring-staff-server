@@ -1,5 +1,167 @@
 [
   {
-    "title": "Candidates Demo"
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 555-987-6543",
+      "address": {
+        "street": "123 Main St",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalCode": "90001",
+        "country": "USA"
+      },
+      "profilePicture": "https://example.com/profile/john-doe.jpg",
+      "linkedInProfile": "https://linkedin.com/in/johndoe",
+      "website": "https://johndoe.com",
+      "socialLinks": {
+        "github": "https://github.com/johndoe",
+        "twitter": "https://twitter.com/johndoe"
+      },
+      "dateOfBirth": "1990-05-15"
+    },
+    "professionalSummary": "Experienced software engineer with over 5 years of experience specializing in web development and cloud solutions. Passionate about building scalable applications and working with cross-functional teams.",
+    "workExperience": [
+      {
+        "company": "Tech Innovators",
+        "position": "Senior Software Engineer",
+        "startDate": "2022-01-01",
+        "endDate": "Present",
+        "location": {
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "USA"
+        },
+        "responsibilities": [
+          "Led a team of 5 engineers to develop scalable web applications using React and Node.js.",
+          "Improved application performance by 30% by refactoring core components.",
+          "Collaborated with product managers and designers to deliver new features on time."
+        ],
+        "achievements": [
+          "Employee of the Year 2023",
+          "Implemented CI/CD pipelines to automate deployment processes."
+        ]
+      },
+      {
+        "company": "Cloud Solutions",
+        "position": "Software Engineer",
+        "startDate": "2019-06-01",
+        "endDate": "2021-12-31",
+        "location": {
+          "city": "Los Angeles",
+          "state": "CA",
+          "country": "USA"
+        },
+        "responsibilities": [
+          "Developed and maintained cloud-based applications using AWS.",
+          "Worked closely with front-end developers to create seamless API integrations.",
+          "Wrote unit and integration tests to ensure code quality."
+        ],
+        "achievements": [
+          "Reduced server costs by 20% by optimizing cloud resources.",
+          "Promoted to Senior Engineer within 2 years."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of California, Berkeley",
+        "degree": "Bachelor of Science in Computer Science",
+        "startDate": "2012-09-01",
+        "endDate": "2016-06-01",
+        "location": {
+          "city": "Berkeley",
+          "state": "CA",
+          "country": "USA"
+        }
+      }
+    ],
+    "skills": ["JavaScript", "React", "Node.js", "AWS", "SQL", "Docker", "Git"],
+    "certifications": [
+      {
+        "name": "AWS Certified Solutions Architect",
+        "issuer": "Amazon Web Services",
+        "issueDate": "2021-07-01",
+        "expiryDate": "2024-07-01"
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "proficiencyLevel": "Native"
+      },
+      {
+        "language": "Spanish",
+        "proficiencyLevel": "Intermediate"
+      }
+    ],
+    "projects": [
+      {
+        "title": "E-commerce Platform",
+        "description": "Developed a full-stack e-commerce platform using React, Node.js, and MongoDB, handling over 10,000 daily users.",
+        "role": "Lead Developer",
+        "technologies": ["React", "Node.js", "MongoDB", "AWS"],
+        "startDate": "2020-01-01",
+        "endDate": "2021-12-31",
+        "link": "https://github.com/johndoe/ecommerce-platform"
+      },
+      {
+        "title": "Chat Application",
+        "description": "Built a real-time chat application with WebSocket integration for seamless communication between users.",
+        "role": "Developer",
+        "technologies": ["WebSockets", "Node.js", "Redis", "Docker"],
+        "startDate": "2019-05-01",
+        "endDate": "2019-09-30",
+        "link": "https://github.com/johndoe/chat-app"
+      }
+    ],
+    "volunteerExperience": [
+      {
+        "organization": "Code for Good",
+        "role": "Volunteer Developer",
+        "startDate": "2018-05-01",
+        "endDate": "2019-05-01",
+        "description": "Developed open-source tools for nonprofits to manage their volunteer programs."
+      }
+    ],
+    "references": [
+      {
+        "name": "Jane Smith",
+        "position": "Engineering Manager",
+        "company": "Tech Innovators",
+        "email": "jane.smith@example.com",
+        "phone": "+1 555-111-2222",
+        "relationship": "Manager"
+      },
+      {
+        "name": "Michael Johnson",
+        "position": "CTO",
+        "company": "Cloud Solutions",
+        "email": "michael.johnson@example.com",
+        "phone": "+1 555-333-4444",
+        "relationship": "Former Manager"
+      }
+    ],
+    "desiredPosition": {
+      "title": "Lead Software Engineer",
+      "jobType": "Full-time",
+      "preferredLocation": {
+        "city": "Remote",
+        "country": "USA"
+      },
+      "salaryExpectation": {
+        "minSalary": 150000,
+        "maxSalary": 180000,
+        "currency": "USD",
+        "frequency": "per year"
+      },
+      "remotePreference": true,
+      "relocationAvailability": false
+    },
+    "availability": {
+      "noticePeriod": "2 weeks",
+      "startAvailability": "2024-10-15"
+    }
   }
 ]

@@ -21,8 +21,16 @@ exports.postJob = async (req, res) => {
 // Get all jobs and filter by category
 exports.getAllJobs = async (req, res) => {
   try {
-    const { category } = req.query;
-    const query = category ? { category } : {};
+    const { category, position } = req.query;
+    const query = {};
+
+    if (category) {
+      query.category = category;
+    }
+
+    if (position) {
+      query.position = { $regex: position, $options: "i" };
+    }
 
     const result = await jobsCollection.find(query).toArray();
     res.send(result);
@@ -37,12 +45,10 @@ exports.getJob = async (req, res) => {
   try {
     const jobId = req.params.id;
 
-    // Validate if jobId is a valid ObjectId
     if (!ObjectId.isValid(jobId)) {
       return res.status(400).send({ message: "Invalid Job ID" });
     }
 
-    // Fetch the job from the database
     const result = await jobsCollection.findOne({ _id: new ObjectId(jobId) });
 
     if (!result) {

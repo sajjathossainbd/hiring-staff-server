@@ -4,19 +4,18 @@ exports.postPayment = async (req, res) => {
     try {
         const { price } = req.body;
 
-        console.log("Price Received:", price); // Check if price is received correctly
+        console.log("Price Received:", price);
 
         if (!price || price <= 0) {
             return res.status(400).send("Invalid price value");
         }
 
-        // Create a PaymentIntent with the order amount and currency
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: price * 100, // Price should be in cents
+            amount: price * 100, 
             currency: "usd",
         });
 
-        console.log("Generated Client Secret:", paymentIntent.client_secret); // Log the client secret
+        console.log("Generated Client Secret:", paymentIntent.client_secret); 
 
         res.send({
             clientSecret: paymentIntent.client_secret,

@@ -1,5 +1,3 @@
-// routes/jobsRoutes.js
-
 const express = require("express");
 const {
   postJob,

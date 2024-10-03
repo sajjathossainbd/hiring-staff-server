@@ -23,17 +23,28 @@ app.use(cors());
 connectDB();
 
 // Define routes
+
+// User
 app.use("/users", userRoutes);
+
+// Jobs
 app.use("/jobs", jobsRoutes);
 app.use("/jobs/:id", jobsRoutes);
+
+// Candidates
 app.use("/candidates", candidateRoutes);
+
+// recruiters
 app.use("/recruiters", recruiterRoutes);
-app.use("/create-payment-intent", paymentRoutes);
+
+// Blogs
 app.use("/blogs", blogsRoutes);
+
+// Payment
+app.use("/create-payment-intent", paymentRoutes);
 app.use("/payment-history", paymentHistory);
 
 // Default route for server status
-
 app.get("/", (req, res) => {
   res.send("Hiring Staff Server Is Running!");
 });

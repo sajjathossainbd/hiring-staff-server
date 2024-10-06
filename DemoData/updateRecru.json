@@ -1,0 +1,162 @@
+[
+  {
+    "name": "NeuroTech Systems",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4rgSTwQ9TL6SnSSNmeH7VQiEGf7a32Wu-1A&s",
+    "description": "NeuroTech Systems is a pioneer in the development of brain-computer interface technologies. Founded in 2016, the company has been at the forefront of innovations that allow humans to interact with devices using neural signals. Our vision is to bridge the gap between biology and technology to create a more connected and efficient world.",
+    "industry": "Healthcare Technology",
+    "website": "https://neurotechsystems.com",
+    "phone": "+1-800-999-2345",
+    "email": "info@neurotechsystems.com",
+    "map": {
+      "latitude": "37.774929",
+      "longitude": "-122.419416"
+    },
+    "location": {
+      "address": "100 Brainwave Street",
+      "zip": "94110",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Dr. Susan Clarke",
+    "businessType": "Private",
+    "annualRevenue": "$50 million",
+    "foundedYear": "2016",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 320,
+    "certifications": ["FDA Approved", "ISO 9001"],
+    "awards": ["Top HealthTech Startup 2021", "Best Neural Innovations 2023"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/neurotech-systems",
+      "twitter": "https://twitter.com/neurotechsystems"
+    }
+  },
+  {
+    "name": "QuantumLeap Technologies",
+    "logo": "https://storage.googleapis.com/clean-finder-353810/$qkjniiWz1m1KFwWqceooH3EihTivYkC5DKS0BjQpVZi8Mlh0iidn98",
+    "description": "Founded in 2018, QuantumLeap Technologies is revolutionizing the field of quantum computing. Our mission is to make quantum computing accessible and practical for industries ranging from finance to pharmaceuticals. With cutting-edge research and a growing team of world-class scientists, we are leading the charge towards the next big leap in computational power.",
+    "industry": "Quantum Computing",
+    "website": "https://quantumleaptech.com",
+    "phone": "+1-800-345-9876",
+    "email": "contact@quantumleaptech.com",
+    "map": {
+      "latitude": "51.507351",
+      "longitude": "-0.127758"
+    },
+    "location": {
+      "address": "500 Quantum Road",
+      "zip": "SW1A 1AA",
+      "city": "London",
+      "state": "England",
+      "country": "UK"
+    },
+    "ceo": "Dr. Richard Feynman",
+    "businessType": "Private",
+    "annualRevenue": "$100 million",
+    "foundedYear": "2018",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 500,
+    "certifications": ["ISO 27001", "Quantum Computing Standard 2023"],
+    "awards": ["Quantum Innovation Award 2023", "Best Startup 2022"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/quantumleap-tech",
+      "twitter": "https://twitter.com/quantumleaptech"
+    }
+  },
+  {
+    "name": "GreenEnergy Solutions",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA70aBkvx5IaAsyjlrr1u49qnqzTrwIY6-JA&s",
+    "description": "GreenEnergy Solutions was established in 2010 with a vision to transform the global energy landscape by providing sustainable and eco-friendly power solutions. From solar grids to energy-efficient smart homes, we are committed to building a greener future. Our team is dedicated to harnessing renewable energy to fight climate change and reduce our carbon footprint.",
+    "industry": "Renewable Energy",
+    "website": "https://greenenergysolutions.com",
+    "phone": "+1-800-654-3210",
+    "email": "info@greenenergysolutions.com",
+    "map": {
+      "latitude": "40.712776",
+      "longitude": "-74.005974"
+    },
+    "location": {
+      "address": "300 Solar Drive",
+      "zip": "10001",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA"
+    },
+    "ceo": "Jane Goodall",
+    "businessType": "Public",
+    "annualRevenue": "$200 million",
+    "foundedYear": "2010",
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 1200,
+    "certifications": ["ISO 14001", "Energy Star Partner"],
+    "awards": ["Top Green Company 2022", "Sustainable Innovation Award 2023"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/greenenergy-solutions",
+      "twitter": "https://twitter.com/greenenergy_s"
+    }
+  },
+  {
+    "name": "CyberSafe Technologies",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgvTeWRrJgLhsN_lEF4Rxrui-QIj2rpp08aA&s",
+    "description": "CyberSafe Technologies, founded in 2012, is a leader in cybersecurity solutions for both enterprises and governments. We provide end-to-end security products and services to help organizations protect against digital threats. With our cutting-edge encryption and detection tools, we ensure the safety and privacy of your digital assets.",
+    "industry": "Cybersecurity",
+    "website": "https://cybersafetech.com",
+    "phone": "+1-800-789-9876",
+    "email": "support@cybersafetech.com",
+    "map": {
+      "latitude": "34.052235",
+      "longitude": "-118.243683"
+    },
+    "location": {
+      "address": "400 Firewall Lane",
+      "zip": "90001",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "John Doe",
+    "businessType": "Private",
+    "annualRevenue": "$150 million",
+    "foundedYear": "2012",
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 850,
+    "certifications": ["ISO 27001", "SOC 2"],
+    "awards": ["Cybersecurity Excellence Award 2023", "Top Security Firm 2022"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/cybersafe-technologies",
+      "twitter": "https://twitter.com/cybersafetech"
+    }
+  },
+  {
+    "name": "FinNext Solutions",
+    "logo": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/15/4a/b3/154ab355-8fe7-4875-73e5-d5866d364bf5/AppIcon-0-0-1x_U007ephone-0-0-85-220.png/512x512bb.jpg",
+    "description": "Founded in 2017, FinNext Solutions is at the forefront of financial technology innovation. We specialize in AI-driven financial tools and blockchain solutions to help businesses optimize their financial processes. Our mission is to simplify complex financial operations through innovative digital solutions and ensure transparency in transactions.",
+    "industry": "FinTech",
+    "website": "https://finnextsolutions.com",
+    "phone": "+1-800-333-5678",
+    "email": "hello@finnextsolutions.com",
+    "map": {
+      "latitude": "40.416775",
+      "longitude": "-3.703790"
+    },
+    "location": {
+      "address": "200 FinTech Avenue",
+      "zip": "28001",
+      "city": "Madrid",
+      "state": "Madrid",
+      "country": "Spain"
+    },
+    "ceo": "Maria Gomez",
+    "businessType": "Private",
+    "annualRevenue": "$85 million",
+    "foundedYear": "2017",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 450,
+    "certifications": ["ISO 27001", "FinTech Innovation Award 2023"],
+    "awards": ["Best FinTech Solution 2022", "Blockchain Excellence 2023"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/finnext-solutions",
+      "twitter": "https://twitter.com/finnextsolutions"
+    }
+  }
+]

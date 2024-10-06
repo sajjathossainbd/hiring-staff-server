@@ -13,13 +13,9 @@ const router = express.Router();
 router.post("/", postJob);
 
 // get all jobs
+router.get("/categories", getUniqueCategories);
+router.get("/email/:email", getJobsByEmail);
 router.get("/", getAllJobs);
 router.get("/:id", getJob);
-
-// get all job categories
-router.get("/categories", getUniqueCategories);
-
-// get jobs by email
-router.get("/email/:email", getJobsByEmail);
 
 module.exports = router;

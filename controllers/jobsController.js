@@ -150,6 +150,36 @@ exports.getUniqueCategories = async (req, res) => {
   }
 };
 
+// get all location
+exports.getUniqueLocation = async () => {
+  try {
+    const locations = jobsCollection
+      .aggregate([
+        {
+          $group: {
+            _id: "$job_location",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            job_location: "$_id",
+          },
+        },
+      ])
+      .toArray();
+
+    const LocationNames = locations.map((loc) => loc.job_location);
+
+    if (LocationNames.length === 0) {
+      return res.status(500).json({ message: "No location found!" });
+    }
+    res.json(LocationNames);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching location" });
+  }
+};
+
 // Get a single job
 exports.getJob = async (req, res) => {
   try {

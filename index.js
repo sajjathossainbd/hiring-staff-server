@@ -33,7 +33,6 @@ app.use("/users", userRoutes);
 
 // Jobs
 app.use("/jobs", jobsRoutes);
-app.use("/jobs/:id", jobsRoutes);
 
 // Candidates
 app.use("/candidates", candidateRoutes);

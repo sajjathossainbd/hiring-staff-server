@@ -21,6 +21,7 @@ exports.getAllCandidates = async (req, res) => {
 
 // Get candidate by id
 exports.getCandidateById = async (req, res) => {
+
   const id = req.params.id;
 
   if (!ObjectId.isValid(id)) {

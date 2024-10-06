@@ -1,0 +1,390 @@
+[
+  {
+    "name": "AI Innovators",
+    "logo": "https://jobpilot.templatecookie.com/dummy-data/images/companies/company-logo-12.png",
+    "industry": "Artificial Intelligence",
+    "website": "https://aiinnovators.com",
+    "phone": "+1-800-123-9876",
+    "email": "info@aiinnovators.com",
+    "map": "https://maps.app.goo.gl/example1",
+    "location": {
+      "address": "200 AI Blvd",
+      "zip": "94107",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Dr. Alan Turing",
+    "businessType": "Private",
+    "annualRevenue": "$75 million",
+    "foundedYear": "2015",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 400,
+    "certifications": ["ISO 27001", "AI Excellence Award 2022"],
+    "awards": ["Best AI Solutions 2023", "AI Startup of the Year 2022"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/ai-innovators",
+      "twitter": "https://twitter.com/aiinnovators"
+    }
+  },
+  {
+    "name": "DeepMind Technologies",
+    "logo": "https://finestwp.co/demos/html/jobcamp/image/l2/png/featured-job-logo-1.png",
+    "industry": "Artificial Intelligence",
+    "website": "https://deepmind.com",
+    "phone": "+44-20-1234-5678",
+    "email": "contact@deepmind.com",
+    "map": "https://maps.app.goo.gl/example2",
+    "location": {
+      "address": "76 Buckingham Palace Rd",
+      "zip": "SW1W 9TQ",
+      "city": "London",
+      "state": "England",
+      "country": "UK"
+    },
+    "ceo": "Demis Hassabis",
+    "businessType": "Private",
+    "annualRevenue": "$150 million",
+    "foundedYear": 2010,
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 1000,
+    "certifications": ["ISO 27001", "AI Research Leadership Award 2021"],
+    "awards": ["Top AI Company 2022", "AI Breakthrough Award 2021"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/deepmind",
+      "twitter": "https://twitter.com/deepmind"
+    }
+  },
+  {
+    "name": "BlockTech Solutions",
+    "logo": "https://finestwp.co/demos/html/jobcamp/image/l1/png/feature-brand-1.png",
+    "industry": "Blockchain",
+    "website": "https://blocktech.com",
+    "phone": "+1-800-555-1234",
+    "email": "info@blocktech.com",
+    "map": "https://maps.app.goo.gl/example3",
+    "location": {
+      "address": "400 Blockchain Ave",
+      "zip": "94111",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Satoshi Nakamoto",
+    "businessType": "Private",
+    "annualRevenue": "$100 million",
+    "foundedYear": "2014",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 300,
+    "certifications": ["Blockchain Security Certification", "ISO 27001"],
+    "awards": [
+      "Best Blockchain Provider 2022",
+      "Top 10 Blockchain Innovators 2023"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/blocktech",
+      "twitter": "https://twitter.com/blocktech"
+    }
+  },
+  {
+    "name": "CloudFirst Solutions",
+    "logo": "https://finestwp.co/demos/html/jobcamp/image/l1/png/feature-brand-4.png",
+    "industry": "Cloud Computing",
+    "website": "https://cloudfirst.com",
+    "phone": "+1-888-123-4567",
+    "email": "info@cloudfirst.com",
+    "map": "https://maps.app.goo.gl/example5",
+    "location": {
+      "address": "700 Cloud Way",
+      "zip": "94109",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Alice Johnson",
+    "businessType": "Private",
+    "annualRevenue": "$200 million",
+    "foundedYear": "2012",
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 800,
+    "certifications": ["AWS Certified Partner", "ISO 27001"],
+    "awards": [
+      "Top Cloud Solutions Provider 2023",
+      "Cloud Innovation Award 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/cloudfirst",
+      "twitter": "https://twitter.com/cloudfirst"
+    }
+  },
+  {
+    "name": "SkyHigh Technologies",
+    "logo": "https://templates.envytheme.com/eeza/default/assets/images/employers/employers-1.png",
+    "industry": "Cloud Computing",
+    "website": "https://skyhightech.com",
+    "phone": "+1-800-789-1234",
+    "email": "contact@skyhightech.com",
+    "map": "https://maps.app.goo.gl/example6",
+    "location": {
+      "address": "900 Sky Blvd",
+      "zip": "94110",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Bob Davis",
+    "businessType": "Private",
+    "annualRevenue": "$180 million",
+    "foundedYear": "2010",
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 900,
+    "certifications": ["Microsoft Azure Certified Partner", "ISO 27001"],
+    "awards": [
+      "Best Cloud Platform Provider 2023",
+      "Top 100 Cloud Innovators 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/skyhightech",
+      "twitter": "https://twitter.com/skyhightech"
+    }
+  },
+  {
+    "name": "CyberSecure Solutions",
+    "logo": "https://templates.envytheme.com/eeza/default/assets/images/employers/employers-2.png",
+    "industry": "Cybersecurity",
+    "website": "https://cybersecuresolutions.com",
+    "phone": "+1-800-555-0987",
+    "email": "contact@cybersecuresolutions.com",
+    "map": "https://maps.app.goo.gl/example7",
+    "location": {
+      "address": "1200 Secure Blvd",
+      "zip": "94115",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Eve Williams",
+    "businessType": "Private",
+    "annualRevenue": "$120 million",
+    "foundedYear": "2013",
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 500,
+    "certifications": ["CISSP", "ISO 27001"],
+    "awards": [
+      "Best Cybersecurity Provider 2022",
+      "Cybersecurity Innovation Award 2023"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/company/cybersecure",
+      "twitter": "https://twitter.com/cybersecure"
+    }
+  },
+  {
+    "name": "CloudX Solutions",
+    "logo": "https://templates.envytheme.com/eeza/default/assets/images/employers/employers-6.png",
+    "industry": "SaaS",
+    "website": "https://cloudxsolutions.com",
+    "phone": "+1-800-987-6543",
+    "email": "info@cloudxsolutions.com",
+    "map": "https://maps.app.goo.gl/xyzabc",
+    "location": {
+      "address": "456 Park Ave",
+      "zip": "10022",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA"
+    },
+    "ceo": "Emily White",
+    "businessType": "Private",
+    "annualRevenue": "$75 million",
+    "foundedYear": 2012,
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 300,
+    "certifications": ["ISO 27001", "SOC 2 Type II"],
+    "awards": ["Best SaaS Startup 2022", "Cloud Innovator Award 2023"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/emilywhite",
+      "twitter": "https://twitter.com/cloudxsolutions"
+    }
+  },
+  {
+    "name": "SaaSify Inc.",
+    "logo": "https://templates.envytheme.com/eeza/default/assets/images/employers/employers-9.png",
+    "industry": "SaaS",
+    "website": "https://saasify.com",
+    "phone": "+1-800-654-3210",
+    "email": "contact@saasify.com",
+    "map": "https://maps.app.goo.gl/saasifymap",
+    "location": {
+      "address": "789 Market St",
+      "zip": "94103",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "ceo": "Michael Brown",
+    "businessType": "Public",
+    "annualRevenue": "$120 million",
+    "foundedYear": 2015,
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 800,
+    "certifications": ["ISO 9001:2015", "Certified Salesforce Partner"],
+    "awards": ["Top SaaS Provider 2023", "Innovation in SaaS Award 2022"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/michaelbrown",
+      "twitter": "https://twitter.com/saasify"
+    }
+  },
+  {
+    "name": "WebInnovate LLC",
+    "logo": "https://templates.envytheme.com/eeza/default/assets/images/employers/employers-8.png",
+    "industry": "Web Development",
+    "website": "https://webinnovate.com",
+    "phone": "+1-866-654-3210",
+    "email": "contact@webinnovate.com",
+    "map": "https://maps.app.goo.gl/webinnovatemap",
+    "location": {
+      "address": "500 Tech Park",
+      "zip": "60614",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "USA"
+    },
+    "ceo": "Robert Lee",
+    "businessType": "Private",
+    "annualRevenue": "$40 million",
+    "foundedYear": 2013,
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 250,
+    "certifications": ["Google Certified Partner", "Certified Scrum Master"],
+    "awards": [
+      "Outstanding Web Developer 2023",
+      "Innovative Web Solutions 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/robertlee",
+      "twitter": "https://twitter.com/webinnovate"
+    }
+  },
+  {
+    "name": "SelfDrive Innovations",
+    "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-12.svg",
+    "industry": "Autonomous Vehicles",
+    "website": "https://selfdriveinnovations.com",
+    "phone": "+1-877-654-3210",
+    "email": "info@selfdriveinnovations.com",
+    "map": "https://maps.app.goo.gl/selfdrivemap",
+    "location": {
+      "address": "789 Mobility Ln",
+      "zip": "85001",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA"
+    },
+    "ceo": "Thomas Nguyen",
+    "businessType": "Private",
+    "annualRevenue": "$85 million",
+    "foundedYear": 2018,
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 500,
+    "certifications": ["ISO 21434", "Automotive SPICE"],
+    "awards": ["Innovative Auto Tech 2023", "Autonomous Excellence 2022"],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/thomasnguyen",
+      "twitter": "https://twitter.com/selfdriveinnov"
+    }
+  },
+  {
+    "name": "HomeSmart Tech",
+    "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-8.svg",
+    "industry": "Smart Home Technology",
+    "website": "https://homesmarttech.com",
+    "phone": "+1-844-555-6789",
+    "email": "info@homesmarttech.com",
+    "map": "https://maps.app.goo.gl/homesmartmap",
+    "location": {
+      "address": "654 Automation Rd",
+      "zip": "77005",
+      "city": "Houston",
+      "state": "TX",
+      "country": "USA"
+    },
+    "ceo": "Daniel Kim",
+    "businessType": "Private",
+    "annualRevenue": "$65 million",
+    "foundedYear": 2015,
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 450,
+    "certifications": ["Google Nest Partner", "Energy Star Certified"],
+    "awards": [
+      "Smart Home Excellence 2023",
+      "Top Home Automation Company 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/danielkim",
+      "twitter": "https://twitter.com/homesmarttech"
+    }
+  },
+  {
+    "name": "PayWave Digital",
+    "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-3-1.svg",
+    "industry": "Digital Payments",
+    "website": "https://paywavedigital.com",
+    "phone": "+1-800-444-5555",
+    "email": "contact@paywavedigital.com",
+    "map": "https://maps.app.goo.gl/paywavemap",
+    "location": {
+      "address": "789 Finance Ave",
+      "zip": "10022",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA"
+    },
+    "ceo": "Sophia Turner",
+    "businessType": "Private",
+    "annualRevenue": "$90 million",
+    "foundedYear": 2014,
+    "companySizeCategory": "Medium",
+    "numberOfEmployees": 550,
+    "certifications": ["PCI DSS", "ISO 20022"],
+    "awards": [
+      "Best Digital Payment Platform 2023",
+      "Fintech Innovation Award 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/sophiaturner",
+      "twitter": "https://twitter.com/paywavedigital"
+    }
+  },
+  {
+    "name": "ConnectPlus Networks",
+    "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-14.svg",
+    "industry": "Networking Hardware",
+    "website": "https://connectplusnetworks.com",
+    "phone": "+1-877-888-9999",
+    "email": "info@connectplusnetworks.com",
+    "map": "https://maps.app.goo.gl/connectplusmap",
+    "location": {
+      "address": "456 Connectivity Ave",
+      "zip": "85001",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA"
+    },
+    "ceo": "Linda Thompson",
+    "businessType": "Private",
+    "annualRevenue": "$95 million",
+    "foundedYear": 2012,
+    "companySizeCategory": "Large",
+    "numberOfEmployees": 650,
+    "certifications": ["Juniper Networks Certified", "ISO/IEC 27001"],
+    "awards": [
+      "Top Networking Solutions 2023",
+      "Innovation in Connectivity 2022"
+    ],
+    "socialProfiles": {
+      "linkedin": "https://www.linkedin.com/in/lindathompson",
+      "twitter": "https://twitter.com/connectplusnet"
+    }
+  }
+]

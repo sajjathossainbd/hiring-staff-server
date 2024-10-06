@@ -1,0 +1,416 @@
+[
+  {
+    "company": {
+      "recId": 1,
+      "name": "Tech Innovators",
+      "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-14.svg",
+      "industry": "Technology",
+      "website": "https://techinnovators.com",
+      "map": "https://maps.app.goo.gl/P4jZLrGeLKVrkMWN8",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "USA"
+      },
+      "jobPostings": [
+        {
+          "jobTitle": "Software Engineer",
+          "category": "Software Engineer",
+          "jobDescription": "We are looking for a passionate Software Engineer to design, develop and install software solutions. Responsibilities include coding, debugging, and collaborating with cross-functional teams.",
+          "jobRequirements": {
+            "experience": "3-5 years",
+            "education": "Bachelor's degree in Computer Science or related field",
+            "skills": ["JavaScript", "React", "Node.js", "RESTful APIs", "SQL"],
+            "certifications": ["AWS Certified Solutions Architect"],
+            "languages": ["English (Required)", "Spanish (Preferred)"]
+          },
+          "responsibilities": [
+            "Write clean, scalable code using JavaScript frameworks",
+            "Test and deploy applications and systems",
+            "Revise, update, and debug code",
+            "Improve existing software"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 120000,
+            "currency": "USD",
+            "frequency": "per year",
+            "additionalCompensation": {
+              "bonuses": true,
+              "stockOptions": true,
+              "healthBenefits": true,
+              "pension": false
+            }
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": true,
+            "remoteWorkOptions": false
+          },
+          "postedDate": "2024-10-01",
+          "applicationDeadline": "2024-11-01",
+          "contactInfo": {
+            "recruiterName": "Jane Doe",
+            "recruiterEmail": "jane.doe@techinnovators.com",
+            "phone": "+1 555-123-4567"
+          },
+          "applicationInstructions": "Please submit your resume, cover letter, and portfolio via our online application portal.",
+          "requiredDocuments": ["Resume", "Cover Letter", "Portfolio"],
+          "benefits": [
+            "Health Insurance",
+            "401(k) Matching",
+            "Paid Time Off",
+            "Gym Membership",
+            "Tuition Reimbursement"
+          ],
+          "keywords": [
+            "Software Engineer",
+            "JavaScript",
+            "Web Development",
+            "San Francisco Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.5,
+            "reviews": 123
+          }
+        },
+        {
+          "jobTitle": "Data Scientist",
+          "category": "Data Science",
+          "jobDescription": "We are seeking a skilled Data Scientist to analyze and interpret complex data sets to help inform strategic decisions.",
+          "jobRequirements": {
+            "experience": "2-4 years",
+            "education": "Master's degree in Data Science, Statistics, or related field",
+            "skills": ["Python", "R", "Machine Learning", "SQL"],
+            "certifications": ["Certified Data Scientist"],
+            "languages": ["English (Required)", "Mandarin (Preferred)"]
+          },
+          "responsibilities": [
+            "Analyze large data sets to identify trends",
+            "Develop predictive models",
+            "Present findings to stakeholders"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 115000,
+            "currency": "USD",
+            "frequency": "per year",
+            "additionalCompensation": {
+              "bonuses": true,
+              "stockOptions": true,
+              "healthBenefits": true,
+              "pension": false
+            }
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": true,
+            "remoteWorkOptions": true
+          },
+          "postedDate": "2024-09-28",
+          "applicationDeadline": "2024-10-28",
+          "contactInfo": {
+            "recruiterName": "Tom Smith",
+            "recruiterEmail": "tom.smith@techinnovators.com",
+            "phone": "+1 555-987-6543"
+          },
+          "applicationInstructions": "Please submit your resume and cover letter online.",
+          "requiredDocuments": ["Resume", "Cover Letter"],
+          "benefits": [
+            "Health Insurance",
+            "Paid Time Off",
+            "Professional Development Opportunities"
+          ],
+          "keywords": [
+            "Data Scientist",
+            "Data Analysis",
+            "Machine Learning",
+            "San Francisco Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.6,
+            "reviews": 89
+          }
+        }
+      ]
+    }
+  },
+  {
+    "company": {
+      "name": "Tech Innovators",
+      "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-11.svg",
+      "industry": "Technology",
+      "website": "https://techinnovators.com",
+      "map": "https://maps.app.goo.gl/P4jZLrGeLKVrkMWN8",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "USA"
+      },
+      "jobPostings": [
+        {
+          "jobTitle": "Software Engineer",
+          "category": "Software Engineer",
+          "jobDescription": "We are looking for a passionate Software Engineer to design, develop and install software solutions. Responsibilities include coding, debugging, and collaborating with cross-functional teams.",
+          "jobRequirements": {
+            "experience": "3-5 years",
+            "education": "Bachelor's degree in Computer Science or related field",
+            "skills": ["JavaScript", "React", "Node.js", "RESTful APIs", "SQL"],
+            "certifications": ["AWS Certified Solutions Architect"],
+            "languages": ["English (Required)", "Spanish (Preferred)"]
+          },
+          "responsibilities": [
+            "Write clean, scalable code using JavaScript frameworks",
+            "Test and deploy applications and systems",
+            "Revise, update, and debug code",
+            "Improve existing software"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 120000,
+            "currency": "USD",
+            "frequency": "per year",
+            "additionalCompensation": {
+              "bonuses": true,
+              "stockOptions": true,
+              "healthBenefits": true,
+              "pension": false
+            }
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": true,
+            "remoteWorkOptions": false
+          },
+          "postedDate": "2024-10-01",
+          "applicationDeadline": "2024-11-01",
+          "contactInfo": {
+            "recruiterName": "Jane Doe",
+            "recruiterEmail": "jane.doe@techinnovators.com",
+            "phone": "+1 555-123-4567"
+          },
+          "applicationInstructions": "Please submit your resume, cover letter, and portfolio via our online application portal.",
+          "requiredDocuments": ["Resume", "Cover Letter", "Portfolio"],
+          "benefits": [
+            "Health Insurance",
+            "401(k) Matching",
+            "Paid Time Off",
+            "Gym Membership",
+            "Tuition Reimbursement"
+          ],
+          "keywords": [
+            "Software Engineer",
+            "JavaScript",
+            "Web Development",
+            "San Francisco Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.5,
+            "reviews": 123
+          }
+        },
+        {
+          "jobTitle": "Data Scientist",
+          "category": "Data Science",
+          "jobDescription": "We are seeking a skilled Data Scientist to analyze and interpret complex data sets to help inform strategic decisions.",
+          "jobRequirements": {
+            "experience": "2-4 years",
+            "education": "Master's degree in Data Science, Statistics, or related field",
+            "skills": ["Python", "R", "Machine Learning", "SQL"],
+            "certifications": ["Certified Data Scientist"],
+            "languages": ["English (Required)", "Mandarin (Preferred)"]
+          },
+          "responsibilities": [
+            "Analyze large data sets to identify trends",
+            "Develop predictive models",
+            "Present findings to stakeholders"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 115000,
+            "currency": "USD",
+            "frequency": "per year",
+            "additionalCompensation": {
+              "bonuses": true,
+              "stockOptions": true,
+              "healthBenefits": true,
+              "pension": false
+            }
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": true,
+            "remoteWorkOptions": true
+          },
+          "postedDate": "2024-09-28",
+          "applicationDeadline": "2024-10-28",
+          "contactInfo": {
+            "recruiterName": "Tom Smith",
+            "recruiterEmail": "tom.smith@techinnovators.com",
+            "phone": "+1 555-987-6543"
+          },
+          "applicationInstructions": "Please submit your resume and cover letter online.",
+          "requiredDocuments": ["Resume", "Cover Letter"],
+          "benefits": [
+            "Health Insurance",
+            "Paid Time Off",
+            "Professional Development Opportunities"
+          ],
+          "keywords": [
+            "Data Scientist",
+            "Data Analysis",
+            "Machine Learning",
+            "San Francisco Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.6,
+            "reviews": 89
+          }
+        }
+      ]
+    }
+  },
+  {
+    "company": {
+      "name": "Digital Dynamics",
+      "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-14.svg",
+      "industry": "Marketing",
+      "website": "https://digitaldynamics.com",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "USA"
+      },
+      "jobPostings": [
+        {
+          "jobTitle": "SEO Specialist",
+          "category": "Marketing",
+          "jobDescription": "We are looking for an SEO Specialist to optimize our company's online content.",
+          "jobRequirements": {
+            "experience": "2-3 years",
+            "education": "Bachelor's degree in Marketing or related field",
+            "skills": ["SEO", "Google Analytics", "HTML", "Content Management"],
+            "certifications": ["Google Analytics Certified"],
+            "languages": ["English (Required)"]
+          },
+          "responsibilities": [
+            "Optimize website content for search engines",
+            "Conduct keyword research",
+            "Monitor and report on SEO performance"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 85000,
+            "currency": "USD",
+            "frequency": "per year"
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": true,
+            "remoteWorkOptions": true
+          },
+          "postedDate": "2024-09-15",
+          "applicationDeadline": "2024-10-15",
+          "contactInfo": {
+            "recruiterName": "Emily White",
+            "recruiterEmail": "emily.white@digitaldynamics.com",
+            "phone": "+1 555-678-9123"
+          },
+          "applicationInstructions": "Submit your resume and cover letter online.",
+          "requiredDocuments": ["Resume", "Cover Letter"],
+          "benefits": ["Health Insurance", "401(k)", "Paid Time Off"],
+          "keywords": [
+            "SEO",
+            "Marketing",
+            "Digital Marketing",
+            "New York Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.7,
+            "reviews": 98
+          }
+        }
+      ]
+    }
+  },
+  {
+    "company": {
+      "name": "Bright Health",
+      "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-11.svg",
+      "industry": "Healthcare",
+      "website": "https://brighthealth.com",
+      "location": {
+        "city": "Austin",
+        "state": "TX",
+        "country": "USA"
+      },
+      "jobPostings": [
+        {
+          "jobTitle": "Nurse Practitioner",
+          "category": "Healthcare",
+          "jobDescription": "Seeking a licensed Nurse Practitioner to provide patient care and conduct routine health checkups.",
+          "jobRequirements": {
+            "experience": "5+ years",
+            "education": "Master's degree in Nursing",
+            "certifications": ["State RN License", "CPR Certified"],
+            "languages": ["English (Required)", "Spanish (Preferred)"]
+          },
+          "responsibilities": [
+            "Provide primary patient care",
+            "Diagnose and prescribe treatments",
+            "Consult with healthcare professionals"
+          ],
+          "jobType": "Full-time",
+          "employmentType": "Permanent",
+          "salary": {
+            "baseSalary": 100000,
+            "currency": "USD",
+            "frequency": "per year"
+          },
+          "workSchedule": {
+            "hoursPerWeek": 40,
+            "shift": "Day",
+            "flexibleHours": false,
+            "remoteWorkOptions": false
+          },
+          "postedDate": "2024-09-20",
+          "applicationDeadline": "2024-10-20",
+          "contactInfo": {
+            "recruiterName": "John Peterson",
+            "recruiterEmail": "john.peterson@brighthealth.com",
+            "phone": "+1 555-432-9876"
+          },
+          "applicationInstructions": "Submit your resume and cover letter online.",
+          "requiredDocuments": ["Resume", "Cover Letter"],
+          "benefits": ["Health Insurance", "401(k)", "Paid Time Off"],
+          "keywords": [
+            "SEO",
+            "Marketing",
+            "Digital Marketing",
+            "New York Jobs",
+            "Full-time"
+          ],
+          "rating": {
+            "averageRating": 4.7,
+            "reviews": 98
+          }
+        }
+      ]
+    }
+  }
+]

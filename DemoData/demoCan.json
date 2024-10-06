@@ -1,0 +1,681 @@
+[
+  {
+    "first_name": "Alice",
+    "last_name": "Johnson",
+    "email": "alice.johnson@example.com",
+    "phone_number": "+1-555-123-4567",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-1.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Science",
+        "institution": "University of Technology",
+        "graduation_year": 2019
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Frontend Developer",
+        "company": "Tech Innovators",
+        "duration": "June 2019 - Present",
+        "responsibilities": [
+          "Developed user-facing features using React.js",
+          "Optimized applications for maximum speed and scalability",
+          "Collaborated with backend developers to integrate APIs"
+        ]
+      },
+      {
+        "job_title": "Junior Web Developer",
+        "company": "Web Solutions Inc.",
+        "duration": "January 2018 - May 2019",
+        "responsibilities": [
+          "Assisted in developing website features",
+          "Participated in code reviews and testing",
+          "Maintained documentation for projects"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified JavaScript Developer",
+      "React Professional Certification"
+    ],
+    "location": {
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-15",
+    "job_email_applied_to": "info@aiinnovators.com"
+  },
+  {
+    "first_name": "Bob",
+    "last_name": "Smith",
+    "email": "bob.smith@example.com",
+    "phone_number": "+1-555-234-5678",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-2.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Python", "Django", "Machine Learning", "TensorFlow"],
+    "education": [
+      {
+        "degree": "Master of Science in Data Science",
+        "institution": "State University",
+        "graduation_year": 2020
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Machine Learning Engineer",
+        "company": "DeepMind",
+        "duration": "July 2020 - Present",
+        "responsibilities": [
+          "Developed machine learning models to enhance product capabilities",
+          "Collaborated with data scientists to refine algorithms",
+          "Implemented data pipelines for model training and deployment"
+        ]
+      },
+      {
+        "job_title": "Data Analyst Intern",
+        "company": "Analytics Corp.",
+        "duration": "June 2019 - August 2019",
+        "responsibilities": [
+          "Analyzed large datasets to derive actionable insights",
+          "Created data visualizations to support business decisions",
+          "Assisted in the development of predictive models"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified TensorFlow Developer",
+      "Data Science Professional Certificate"
+    ],
+    "location": {
+      "city": "New York",
+      "state": "NY",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-16",
+    "job_email_applied_to": "contact@deepmind.com"
+  },
+  {
+    "first_name": "Carol",
+    "last_name": "Williams",
+    "email": "carol.williams@example.com",
+    "phone_number": "+1-555-345-6789",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-3.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": [
+      "Solidity",
+      "Blockchain Development",
+      "Smart Contracts",
+      "Ethereum"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Engineering",
+        "institution": "Institute of Technology",
+        "graduation_year": 2018
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Blockchain Developer",
+        "company": "BlockTech",
+        "duration": "September 2018 - Present",
+        "responsibilities": [
+          "Designed and implemented smart contracts using Solidity",
+          "Developed decentralized applications (DApps) on the Ethereum platform",
+          "Conducted security audits for blockchain solutions"
+        ]
+      },
+      {
+        "job_title": "Software Developer Intern",
+        "company": "FinTech Solutions",
+        "duration": "June 2017 - August 2017",
+        "responsibilities": [
+          "Assisted in developing financial software applications",
+          "Participated in code reviews and testing processes",
+          "Maintained technical documentation"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified Solidity Developer",
+      "Ethereum Developer Certification"
+    ],
+    "location": {
+      "city": "Austin",
+      "state": "TX",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-17",
+    "job_email_applied_to": "info@blocktech.com"
+  },
+  {
+    "first_name": "David",
+    "last_name": "Brown",
+    "email": "david.brown@example.com",
+    "phone_number": "+1-555-456-7890",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-4.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["AWS", "Azure", "Cloud Architecture", "DevOps"],
+    "education": [
+      {
+        "degree": "Master of Science in Information Technology",
+        "institution": "Tech University",
+        "graduation_year": 2017
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Cloud Solutions Architect",
+        "company": "CloudFirst",
+        "duration": "October 2017 - Present",
+        "responsibilities": [
+          "Designed scalable cloud architectures using AWS and Azure",
+          "Implemented DevOps practices to streamline deployment processes",
+          "Collaborated with cross-functional teams to define cloud strategies"
+        ]
+      },
+      {
+        "job_title": "DevOps Engineer",
+        "company": "InnovateTech",
+        "duration": "June 2015 - September 2017",
+        "responsibilities": [
+          "Managed CI/CD pipelines and automated deployment processes",
+          "Monitored system performance and implemented optimizations",
+          "Worked with development teams to integrate cloud services"
+        ]
+      }
+    ],
+    "certifications": [
+      "AWS Certified Solutions Architect",
+      "Azure DevOps Engineer"
+    ],
+    "location": {
+      "city": "Austin",
+      "state": "TX",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-18",
+    "job_email_applied_to": "info@cloudfirst.com"
+  },
+  {
+    "first_name": "Eva",
+    "last_name": "Davis",
+    "email": "eva.davis@example.com",
+    "phone_number": "+1-555-567-8901",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-5.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Python", "Cybersecurity", "Penetration Testing", "SIEM Tools"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Cybersecurity",
+        "institution": "National University",
+        "graduation_year": 2020
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Cybersecurity Analyst",
+        "company": "CyberSecure Solutions",
+        "duration": "August 2020 - Present",
+        "responsibilities": [
+          "Monitored and protected IT infrastructure from cyber threats",
+          "Conducted regular security assessments and vulnerability scans",
+          "Implemented security protocols and best practices"
+        ]
+      },
+      {
+        "job_title": "Security Intern",
+        "company": "SecureTech",
+        "duration": "June 2019 - July 2020",
+        "responsibilities": [
+          "Assisted in penetration testing and security audits",
+          "Maintained and monitored security information and event management (SIEM) systems",
+          "Supported the implementation of security measures"
+        ]
+      }
+    ],
+    "certifications": ["Certified Ethical Hacker (CEH)", "CompTIA Security+"],
+    "location": {
+      "city": "Boston",
+      "state": "MA",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-19",
+    "job_email_applied_to": "contact@cybersecuresolutions.com"
+  },
+  {
+    "first_name": "Frank",
+    "last_name": "Miller",
+    "email": "frank.miller@example.com",
+    "phone_number": "+1-555-678-9012",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-6.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["AWS", "DevOps", "Kubernetes", "Terraform"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Information Systems",
+        "institution": "Global Tech University",
+        "graduation_year": 2016
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Cloud Operations Manager",
+        "company": "CloudX Solutions",
+        "duration": "January 2017 - Present",
+        "responsibilities": [
+          "Managed cloud infrastructure and ensured optimal performance",
+          "Led a team of DevOps engineers to implement automation tools",
+          "Collaborated with development teams to streamline deployment processes"
+        ]
+      },
+      {
+        "job_title": "DevOps Engineer",
+        "company": "TechSolutions",
+        "duration": "June 2014 - December 2016",
+        "responsibilities": [
+          "Developed and maintained CI/CD pipelines",
+          "Implemented infrastructure as code using Terraform",
+          "Monitored system performance and resolved issues"
+        ]
+      }
+    ],
+    "certifications": [
+      "AWS Certified DevOps Engineer",
+      "Certified Kubernetes Administrator"
+    ],
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-20",
+    "job_email_applied_to": "info@cloudxsolutions.com"
+  },
+  {
+    "first_name": "Grace",
+    "last_name": "Lee",
+    "email": "grace.lee@example.com",
+    "phone_number": "+1-555-789-0123",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-7.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": [
+      "Salesforce",
+      "SaaS",
+      "Product Management",
+      "Agile Methodologies"
+    ],
+    "education": [
+      {
+        "degree": "Master of Business Administration (MBA)",
+        "institution": "Business School of Excellence",
+        "graduation_year": 2018
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "SaaS Product Manager",
+        "company": "SaaSify",
+        "duration": "March 2018 - Present",
+        "responsibilities": [
+          "Led the development and launch of new SaaS products",
+          "Conducted market research to identify customer needs",
+          "Collaborated with cross-functional teams to ensure timely delivery"
+        ]
+      },
+      {
+        "job_title": "Sales Manager",
+        "company": "TechSales Inc.",
+        "duration": "June 2015 - February 2018",
+        "responsibilities": [
+          "Managed a team of sales representatives",
+          "Developed sales strategies to achieve targets",
+          "Built and maintained relationships with key clients"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified Scrum Product Owner (CSPO)",
+      "Salesforce Certified Administrator"
+    ],
+    "location": {
+      "city": "Remote",
+      "state": "",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-21",
+    "job_email_applied_to": "contact@saasify.com"
+  },
+  {
+    "first_name": "Henry",
+    "last_name": "Kim",
+    "email": "henry.kim@example.com",
+    "phone_number": "+1-555-890-1234",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-8.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Java", "Spring Boot", "Microservices", "RESTful APIs"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Software Engineering",
+        "institution": "Engineering University",
+        "graduation_year": 2017
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Backend Developer",
+        "company": "WebInnovate",
+        "duration": "April 2018 - Present",
+        "responsibilities": [
+          "Developed and maintained server-side applications using Java and Spring Boot",
+          "Designed RESTful APIs to support frontend applications",
+          "Implemented microservices architecture to enhance scalability"
+        ]
+      },
+      {
+        "job_title": "Software Developer",
+        "company": "Innovative Apps LLC",
+        "duration": "June 2015 - March 2018",
+        "responsibilities": [
+          "Built and deployed web applications",
+          "Collaborated with designers to implement UI/UX features",
+          "Performed code reviews and ensured code quality"
+        ]
+      }
+    ],
+    "certifications": [
+      "Oracle Certified Professional, Java SE Programmer",
+      "Spring Professional Certification"
+    ],
+    "location": {
+      "city": "Remote",
+      "state": "",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-22",
+    "job_email_applied_to": "contact@webinnovate.com"
+  },
+  {
+    "first_name": "Isabella",
+    "last_name": "Martinez",
+    "email": "isabella.martinez@example.com",
+    "phone_number": "+1-555-901-2345",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-9.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Robotics", "C++", "ROS", "Machine Learning"],
+    "education": [
+      {
+        "degree": "Master of Science in Robotics",
+        "institution": "Tech Institute",
+        "graduation_year": 2019
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Autonomous Systems Engineer",
+        "company": "SelfDrive Innovations",
+        "duration": "May 2019 - Present",
+        "responsibilities": [
+          "Designed and developed autonomous vehicle systems",
+          "Implemented perception, planning, and control algorithms",
+          "Collaborated with hardware teams to integrate sensors and actuators"
+        ]
+      },
+      {
+        "job_title": "Robotics Engineer Intern",
+        "company": "RoboTech Labs",
+        "duration": "June 2018 - August 2018",
+        "responsibilities": [
+          "Assisted in the development of robotic arms",
+          "Conducted testing and debugging of robotics software",
+          "Maintained documentation for robotics projects"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified Robotics Professional",
+      "Machine Learning Specialization"
+    ],
+    "location": {
+      "city": "Palo Alto",
+      "state": "CA",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-23",
+    "job_email_applied_to": "info@selfdriveinnovations.com"
+  },
+  {
+    "first_name": "James",
+    "last_name": "Wilson",
+    "email": "james.wilson@example.com",
+    "phone_number": "+1-555-012-3456",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-10.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Python", "IoT", "Embedded Systems", "C"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Electrical Engineering",
+        "institution": "Engineering College",
+        "graduation_year": 2016
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "IoT Engineer",
+        "company": "SmartHomeTech",
+        "duration": "July 2016 - Present",
+        "responsibilities": [
+          "Developed IoT solutions for smart home devices",
+          "Implemented embedded systems using C and Python",
+          "Collaborated with hardware teams to integrate sensors and actuators"
+        ]
+      },
+      {
+        "job_title": "Embedded Systems Developer",
+        "company": "TechGadgets LLC",
+        "duration": "June 2014 - June 2016",
+        "responsibilities": [
+          "Designed and developed firmware for consumer electronics",
+          "Performed testing and validation of embedded systems",
+          "Maintained technical documentation and specifications"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified IoT Professional",
+      "Embedded Systems Certification"
+    ],
+    "location": {
+      "city": "Seattle",
+      "state": "WA",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-24",
+    "job_email_applied_to": "info@homesmarttech.com"
+  },
+  {
+    "first_name": "Karen",
+    "last_name": "Taylor",
+    "email": "karen.taylor@example.com",
+    "phone_number": "+1-555-123-6789",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-11.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": ["Payment Systems", "Java", "SQL", "Security Compliance"],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Information Systems",
+        "institution": "Business University",
+        "graduation_year": 2015
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Digital Payments Developer",
+        "company": "PayWave Digital",
+        "duration": "August 2015 - Present",
+        "responsibilities": [
+          "Developed and maintained digital payment platforms",
+          "Ensured compliance with financial regulations and PCI DSS standards",
+          "Collaborated with cross-functional teams to implement security measures"
+        ]
+      },
+      {
+        "job_title": "Software Engineer",
+        "company": "FinTech Innovations",
+        "duration": "June 2013 - July 2015",
+        "responsibilities": [
+          "Designed and implemented payment processing systems",
+          "Optimized database queries for faster transaction processing",
+          "Participated in code reviews and quality assurance processes"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified Payment Professional",
+      "PCI DSS Certification"
+    ],
+    "location": {
+      "city": "New York",
+      "state": "NY",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-25",
+    "job_email_applied_to": "contact@paywavedigital.com"
+  },
+  {
+    "first_name": "Linda",
+    "last_name": "Anderson",
+    "email": "linda.anderson@example.com",
+    "phone_number": "+1-555-234-7890",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-12.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": [
+      "Network Engineering",
+      "Cisco Systems",
+      "Security Protocols",
+      "Troubleshooting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Network Engineering",
+        "institution": "Tech Institute",
+        "graduation_year": 2017
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Networking Hardware Engineer",
+        "company": "ConnectPlus Networks",
+        "duration": "September 2017 - Present",
+        "responsibilities": [
+          "Designed and developed networking hardware solutions",
+          "Configured and maintained Cisco networking equipment",
+          "Implemented security protocols to protect network infrastructure"
+        ]
+      },
+      {
+        "job_title": "Network Technician",
+        "company": "NetSolutions LLC",
+        "duration": "June 2015 - August 2017",
+        "responsibilities": [
+          "Installed and configured network hardware",
+          "Troubleshot network connectivity issues",
+          "Provided technical support to clients"
+        ]
+      }
+    ],
+    "certifications": [
+      "Cisco Certified Network Professional (CCNP)",
+      "Certified Information Systems Security Professional (CISSP)"
+    ],
+    "location": {
+      "city": "Dallas",
+      "state": "TX",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-26",
+    "job_email_applied_to": "info@connectplusnetworks.com"
+  },
+  {
+    "first_name": "Michael",
+    "last_name": "Garcia",
+    "email": "michael.garcia@example.com",
+    "phone_number": "+1-555-345-8901",
+    "photo_url": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/candidate-13.svg",
+    "resume": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "cover_letter": "https://drive.google.com/drive/u/0/folders/1qh_29jALZv6XmuyhhIpP1udPGQqokDur",
+    "skills": [
+      "Python",
+      "Software Development",
+      "Agile Methodologies",
+      "RESTful APIs"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Science",
+        "institution": "State University",
+        "graduation_year": 2016
+      }
+    ],
+    "experience": [
+      {
+        "job_title": "Full Stack Developer",
+        "company": "ConnectPlus Networks",
+        "duration": "July 2016 - Present",
+        "responsibilities": [
+          "Developed and maintained full stack applications using Python and JavaScript",
+          "Implemented RESTful APIs for frontend-backend communication",
+          "Collaborated with cross-functional teams to define project requirements"
+        ]
+      },
+      {
+        "job_title": "Backend Developer",
+        "company": "Tech Solutions",
+        "duration": "June 2014 - June 2016",
+        "responsibilities": [
+          "Built and optimized server-side logic",
+          "Managed database systems and ensured data integrity",
+          "Participated in code reviews and testing processes"
+        ]
+      }
+    ],
+    "certifications": [
+      "Certified Python Developer",
+      "Agile Certified Practitioner (PMI-ACP)"
+    ],
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "country": "USA"
+    },
+    "date_applied": "2024-04-27",
+    "job_email_applied_to": "info@connectplusnetworks.com"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+

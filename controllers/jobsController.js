@@ -33,8 +33,9 @@ exports.postJob = async (req, res) => {
     sendResponse(res, { message: "Failed to post job" }, 500);
   }
 };
-// get all jobs
-exports.getAllJobs = async (req, res) => {
+
+// get all job with filter
+exports.getAllJobsWithFilter = async (req, res) => {
   try {
     const {
       category,
@@ -50,48 +51,60 @@ exports.getAllJobs = async (req, res) => {
 
     const query = {};
 
-    // categories
+    // Categories filtering
     if (category) {
-      const categoriesArray = category.split(",").map((cat) => cat.trim());
-      query.category = { $in: categoriesArray };
+      query.category = new RegExp(category, "i");
     }
 
-    // title and keywords
+    // Title and keywords filtering
     if (job_title) {
       const regex = new RegExp(job_title, "i");
       query.$or = [{ jobTitle: regex }, { tags: regex }];
     }
 
-    // job type
+    // Job type filtering
     if (job_type) {
       query.job_type = new RegExp(job_type, "i");
     }
 
-    // job location
+    // Job location filtering
     if (job_location) {
       query.job_location = new RegExp(job_location, "i");
     }
 
-    // posted date
+    // Posted date range filtering
     if (posted_within) {
       const dateLimit = new Date();
       dateLimit.setDate(dateLimit.getDate() - Number(posted_within));
-      query.postedDate = { $gte: dateLimit };
+      query.postedDate = {
+        $gte: dateLimit.toISOString().split("T")[0],
+      };
     }
 
-    // salary range filtering
+    // Salary range filtering
     if (min_salary || max_salary) {
+      const conditions = [];
+
       if (min_salary) {
-        query.salary_max = { $gte: parseInt(min_salary) };
+        conditions.push({
+          $gte: [{ $toInt: "$min_salary" }, parseInt(min_salary, 10)],
+        });
       }
+
       if (max_salary) {
-        query.salary_min = { $lte: parseInt(max_salary) };
+        conditions.push({
+          $lte: [{ $toInt: "$max_salary" }, parseInt(max_salary, 10)],
+        });
+      }
+
+      if (conditions.length > 0) {
+        query.$expr = { $and: conditions };
       }
     }
 
-    // pagination
-    const pageNumber = parseInt(page);
-    const pageSize = parseInt(limit);
+    // Pagination setup
+    const pageNumber = parseInt(page, 10);
+    const pageSize = parseInt(limit, 10);
     const skip = (pageNumber - 1) * pageSize;
 
     // Fetch jobs with pagination
@@ -106,6 +119,7 @@ exports.getAllJobs = async (req, res) => {
     }
 
     const totalCount = await jobsCollection.countDocuments(query);
+
     res.json({
       totalJobs: totalCount,
       totalPages: Math.ceil(totalCount / pageSize),
@@ -113,12 +127,14 @@ exports.getAllJobs = async (req, res) => {
       jobs: result,
     });
   } catch (error) {
-    console.error("Error fetching jobs:", error);
-    res.status(500).json({ message: "Error fetching jobs" });
+    console.error("Error fetching jobs:", error); // Log the entire error object
+    res
+      .status(500)
+      .json({ message: "Error fetching jobs", error: error.message });
   }
 };
 
-// get all category
+// get all unique category
 exports.getUniqueCategories = async (req, res) => {
   try {
     const categories = await jobsCollection
@@ -150,10 +166,10 @@ exports.getUniqueCategories = async (req, res) => {
   }
 };
 
-// get all location
-exports.getUniqueLocation = async () => {
+// get all unique location
+exports.getUniqueLocation = async (req, res) => {
   try {
-    const locations = jobsCollection
+    const locations = await jobsCollection
       .aggregate([
         {
           $group: {
@@ -169,14 +185,15 @@ exports.getUniqueLocation = async () => {
       ])
       .toArray();
 
-    const LocationNames = locations.map((loc) => loc.job_location);
+    const locationNames = locations.map((loc) => loc.job_location);
 
-    if (LocationNames.length === 0) {
-      return res.status(500).json({ message: "No location found!" });
+    if (locationNames.length === 0) {
+      return res.status(404).json({ message: "No locations found!" });
     }
-    res.json(LocationNames);
+    res.json(locationNames);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching location" });
+    // Handle any errors
+    res.status(500).json({ message: "Error fetching locations" });
   }
 };
 

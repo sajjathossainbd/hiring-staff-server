@@ -1,5 +1,5 @@
 const express = require("express");
-const { paymentHistory, getPaymentHistory, updatePaymentStatus, getPaymentByEmail } = require("../controllers/paymentHistoryController");
+const { paymentHistory, getPaymentHistory, updatePaymentStatus, getPaymentByEmail, deletePaymentHistory } = require("../controllers/paymentHistoryController");
 
 const router = express.Router();
 
@@ -13,5 +13,8 @@ router.patch("/status/:id", updatePaymentStatus);
 
 // get payment by email
 router.get("/:email", getPaymentByEmail);
+
+// delete payment history
+router.delete("/:id", deletePaymentHistory);
 
 module.exports = router;

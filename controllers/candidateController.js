@@ -54,7 +54,7 @@ exports.searchAndFilterCandidates = async (req, res) => {
     const jobType = req.query.jobType || "";
 
     const query = {};
- 
+
     if (profession) {
       query.special_profession = { $regex: profession, $options: "i" };
     }

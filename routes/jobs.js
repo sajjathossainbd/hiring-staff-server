@@ -5,6 +5,7 @@ const {
   getJob,
   getJobsByEmail,
   getUniqueCategories,
+  deleteJob,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -21,5 +22,8 @@ router.get("/categories", getUniqueCategories);
 
 // get jobs by email
 router.get("/email/:email", getJobsByEmail);
+
+// delete jobs
+router.delete("/delete/:id", deleteJob);
 
 module.exports = router;

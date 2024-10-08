@@ -46,7 +46,7 @@ exports.getAllJobsWithFilter = async (req, res) => {
       min_salary,
       max_salary,
       page = 1,
-      limit = 10,
+      limit,
     } = req.query;
 
     const query = {};
@@ -103,8 +103,8 @@ exports.getAllJobsWithFilter = async (req, res) => {
     }
 
     // Pagination setup
-    const pageNumber = parseInt(page, 10);
-    const pageSize = parseInt(limit, 10);
+    const pageNumber = parseInt(page);
+    const pageSize = parseInt(limit);
     const skip = (pageNumber - 1) * pageSize;
 
     // Fetch jobs with pagination
@@ -127,7 +127,7 @@ exports.getAllJobsWithFilter = async (req, res) => {
       jobs: result,
     });
   } catch (error) {
-    console.error("Error fetching jobs:", error); // Log the entire error object
+    console.error("Error fetching jobs:", error);
     res
       .status(500)
       .json({ message: "Error fetching jobs", error: error.message });

@@ -12,8 +12,8 @@ const router = express.Router();
 // GET /candidates
 router.get("/", getAllCandidates);
 
-// Route to get unique professions
-router.get('/professions',getCandidatesData);
+// Route to get unique data
+router.get('/unique',getCandidatesData);
 
 // GET/candidate by id
 router.get("/:id", getCandidateById);

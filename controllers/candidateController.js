@@ -86,11 +86,11 @@ exports.getAllCandidates = async (req, res) => {
   }
 };
 
-// Get unique professions
+// Get unique data
 exports.getCandidatesData = async (req, res) => {
   try {
     const [professions, cities, skills, experience, education] = await Promise.all([
-      // Get unique professions
+      
       candidatesCollection.aggregate([
         {
           $group: {
@@ -105,7 +105,7 @@ exports.getCandidatesData = async (req, res) => {
         },
       ]).toArray(),
 
-      // Get unique cities
+   
       candidatesCollection.aggregate([
         {
           $group: {
@@ -120,8 +120,7 @@ exports.getCandidatesData = async (req, res) => {
         },
       ]).toArray(),
 
-      // Get unique skills (you might need to flatten the array)
-      candidatesCollection.aggregate([
+       candidatesCollection.aggregate([
         {
           $unwind: "$skills",
         },
@@ -138,8 +137,7 @@ exports.getCandidatesData = async (req, res) => {
         },
       ]).toArray(),
 
-      // Get unique experience years
-      candidatesCollection.aggregate([
+       candidatesCollection.aggregate([
         {
           $group: {
             _id: "$experience_year",
@@ -153,8 +151,7 @@ exports.getCandidatesData = async (req, res) => {
         },
       ]).toArray(),
 
-      // Get unique education degrees
-      candidatesCollection.aggregate([
+       candidatesCollection.aggregate([
         {
           $unwind: "$education",
         },
@@ -172,12 +169,25 @@ exports.getCandidatesData = async (req, res) => {
       ]).toArray(),
     ]);
 
-    res.json({ professions, cities, skills, experience, education });
+     const flatProfessions = professions.map((p) => p.profession);
+    const flatCities = cities.map((c) => c.city);
+    const flatSkills = skills.map((s) => s.skill);
+    const flatExperience = experience.map((e) => e.experience);
+    const flatEducation = education.map((ed) => ed.degree);
+
+    res.json({
+      professions: flatProfessions,
+      cities: flatCities,
+      skills: flatSkills,
+      experience: flatExperience,
+      education: flatEducation,
+    });
   } catch (error) {
     console.error("Error fetching candidates data:", error);
     res.status(500).json({ message: "Error fetching data", error: error.message });
   }
 };
+
 
 
 

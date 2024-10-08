@@ -19,7 +19,7 @@ exports.getAllCandidates = async (req, res) => {
     const jobType = req.query.jobType || "";
     
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 3;
     const skip = (page - 1) * limit;
 
     const query = {};
@@ -48,9 +48,18 @@ exports.getAllCandidates = async (req, res) => {
     }
 
     if (jobType) {
-      if (jobType === "remote") {
-      } else if (jobType === "onsite") {
-      } else if (jobType === "hybrid") {
+      switch (jobType.toLowerCase()) {
+        case "remote":
+          query.job_type = "remote";  
+          break;
+        case "onsite":
+          query.job_type = "onsite";  
+          break;
+        case "hybrid":
+          query.job_type = "hybrid";  
+          break;
+        default:
+          return res.status(400).json({ message: "Invalid job type" });
       }
     }
 
@@ -76,6 +85,101 @@ exports.getAllCandidates = async (req, res) => {
     sendResponse(res, { message: "Failed to fetch candidates" }, 500);
   }
 };
+
+// Get unique professions
+exports.getCandidatesData = async (req, res) => {
+  try {
+    const [professions, cities, skills, experience, education] = await Promise.all([
+      // Get unique professions
+      candidatesCollection.aggregate([
+        {
+          $group: {
+            _id: "$special_profession",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            profession: "$_id",
+          },
+        },
+      ]).toArray(),
+
+      // Get unique cities
+      candidatesCollection.aggregate([
+        {
+          $group: {
+            _id: "$location.city",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            city: "$_id",
+          },
+        },
+      ]).toArray(),
+
+      // Get unique skills (you might need to flatten the array)
+      candidatesCollection.aggregate([
+        {
+          $unwind: "$skills",
+        },
+        {
+          $group: {
+            _id: "$skills",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            skill: "$_id",
+          },
+        },
+      ]).toArray(),
+
+      // Get unique experience years
+      candidatesCollection.aggregate([
+        {
+          $group: {
+            _id: "$experience_year",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            experience: "$_id",
+          },
+        },
+      ]).toArray(),
+
+      // Get unique education degrees
+      candidatesCollection.aggregate([
+        {
+          $unwind: "$education",
+        },
+        {
+          $group: {
+            _id: "$education.degree",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            degree: "$_id",
+          },
+        },
+      ]).toArray(),
+    ]);
+
+    res.json({ professions, cities, skills, experience, education });
+  } catch (error) {
+    console.error("Error fetching candidates data:", error);
+    res.status(500).json({ message: "Error fetching data", error: error.message });
+  }
+};
+
+
 
 // Get candidate by id
 exports.getCandidateById = async (req, res) => {

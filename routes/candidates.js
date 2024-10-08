@@ -2,13 +2,18 @@ const express = require("express");
 const {
   getAllCandidates,
   getCandidateById,
-  searchAndFilterCandidates,
+   getUniqueProfessions,
+   getUniqueProfessionsAndCities,
+   getCandidatesData,
 } = require("../controllers/candidateController");
 
 const router = express.Router();
 
 // GET /candidates
 router.get("/", getAllCandidates);
+
+// Route to get unique professions
+router.get('/professions',getCandidatesData);
 
 // GET/candidate by id
 router.get("/:id", getCandidateById);

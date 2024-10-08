@@ -1,10 +1,11 @@
 const express = require("express");
 const {
   postJob,
-  getAllJobs,
   getJob,
   getJobsByEmail,
   getUniqueCategories,
+  getUniqueLocation,
+  getAllJobsWithFilter,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -13,13 +14,10 @@ const router = express.Router();
 router.post("/", postJob);
 
 // get all jobs
-router.get("/", getAllJobs);
-router.get("/:id", getJob);
-
-// get all job categories
 router.get("/categories", getUniqueCategories);
-
-// get jobs by email
+router.get("/job_location", getUniqueLocation);
 router.get("/email/:email", getJobsByEmail);
+router.get("/", getAllJobsWithFilter);
+router.get("/:id", getJob);
 
 module.exports = router;

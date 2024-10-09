@@ -17,9 +17,9 @@ exports.getAllCandidates = async (req, res) => {
     const experience = req.query.experience || "";
     const education = req.query.education || "";
     const jobType = req.query.jobType || "";
-    
+
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 2;
+    const limit = parseInt(req.query.limit) || 12;
     const skip = (page - 1) * limit;
 
     const query = {};
@@ -50,13 +50,13 @@ exports.getAllCandidates = async (req, res) => {
     if (jobType) {
       switch (jobType.toLowerCase()) {
         case "remote":
-          query.job_type = "remote";  
+          query.job_type = "remote";
           break;
         case "onsite":
-          query.job_type = "onsite";  
+          query.job_type = "onsite";
           break;
         case "hybrid":
-          query.job_type = "hybrid";  
+          query.job_type = "hybrid";
           break;
         default:
           return res.status(400).json({ message: "Invalid job type" });
@@ -74,11 +74,10 @@ exports.getAllCandidates = async (req, res) => {
     }
     const totalCandidates = await candidatesCollection.countDocuments(query);
     res.json({
-    
       totalPages: Math.ceil(totalCandidates / limit),
       currentPage: page,
       totalCandidates,
-      candidates
+      candidates,
     });
   } catch (error) {
     console.error("Error fetching candidates:", error);
@@ -89,90 +88,101 @@ exports.getAllCandidates = async (req, res) => {
 // Get unique data
 exports.getCandidatesData = async (req, res) => {
   try {
-    const [professions, cities, skills, experience, education] = await Promise.all([
-      
-      candidatesCollection.aggregate([
-        {
-          $group: {
-            _id: "$special_profession",
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            profession: "$_id",
-          },
-        },
-      ]).toArray(),
+    const [professions, cities, skills, experience, education] =
+      await Promise.all([
+        candidatesCollection
+          .aggregate([
+            {
+              $group: {
+                _id: "$special_profession",
+              },
+            },
+            {
+              $project: {
+                _id: 0,
+                profession: "$_id",
+              },
+            },
+          ])
+          .toArray(),
 
-   
-      candidatesCollection.aggregate([
-        {
-          $group: {
-            _id: "$location.city",
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            city: "$_id",
-          },
-        },
-      ]).toArray(),
+        candidatesCollection
+          .aggregate([
+            {
+              $group: {
+                _id: "$location.city",
+              },
+            },
+            {
+              $project: {
+                _id: 0,
+                city: "$_id",
+              },
+            },
+          ])
+          .toArray(),
 
-       candidatesCollection.aggregate([
-        {
-          $unwind: "$skills",
-        },
-        {
-          $group: {
-            _id: "$skills",
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            skill: "$_id",
-          },
-        },
-      ]).toArray(),
+        candidatesCollection
+          .aggregate([
+            {
+              $unwind: "$skills",
+            },
+            {
+              $group: {
+                _id: "$skills",
+              },
+            },
+            {
+              $project: {
+                _id: 0,
+                skill: "$_id",
+              },
+            },
+          ])
+          .toArray(),
 
-       candidatesCollection.aggregate([
-        {
-          $group: {
-            _id: "$experience_year",
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            experience: "$_id",
-          },
-        },
-      ]).toArray(),
+        candidatesCollection
+          .aggregate([
+            {
+              $group: {
+                _id: "$experience_year",
+              },
+            },
+            {
+              $project: {
+                _id: 0,
+                experience: "$_id",
+              },
+            },
+          ])
+          .toArray(),
 
-       candidatesCollection.aggregate([
-        {
-          $unwind: "$education",
-        },
-        {
-          $group: {
-            _id: "$education.degree",
-          },
-        },
-        {
-          $project: {
-            _id: 0,
-            degree: "$_id",
-          },
-        },
-      ]).toArray(),
-    ]);
+        candidatesCollection
+          .aggregate([
+            {
+              $unwind: "$education",
+            },
+            {
+              $group: {
+                _id: "$education.degree",
+              },
+            },
+            {
+              $project: {
+                _id: 0,
+                degree: "$_id",
+              },
+            },
+          ])
+          .toArray(),
+      ]);
 
-     const flatProfessions = professions.map((p) => p.profession);
+    const flatProfessions = professions.map((p) => p.profession);
     const flatCities = cities.map((c) => c.city);
     const flatSkills = skills.map((s) => s.skill);
-    const flatExperience = experience.map((e) => e.experience);
+    const flatExperience = experience
+      .map((e) => e.experience)
+      .sort((a, b) => a - b);
     const flatEducation = education.map((ed) => ed.degree);
 
     res.json({
@@ -184,12 +194,11 @@ exports.getCandidatesData = async (req, res) => {
     });
   } catch (error) {
     console.error("Error fetching candidates data:", error);
-    res.status(500).json({ message: "Error fetching data", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Error fetching data", error: error.message });
   }
 };
-
-
-
 
 // Get candidate by id
 exports.getCandidateById = async (req, res) => {
@@ -213,5 +222,3 @@ exports.getCandidateById = async (req, res) => {
     sendResponse(res, { message: "Failed to fetch candidate" }, 500);
   }
 };
-
- 

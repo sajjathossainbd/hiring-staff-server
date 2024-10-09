@@ -6,8 +6,9 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
-// Get all candidates
+// Get all blogs
 exports.getAllBlogs = async (req, res) => {
+  
   try {
     const result = await blogsCollection.find().toArray();
     sendResponse(res, result);

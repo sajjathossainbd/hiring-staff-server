@@ -1,0 +1,292 @@
+[
+  {
+    "company_id": "670210fdfce2b7a500c44e61",
+    "company_email": "info@neurotechsystems.com",
+    "jobTitle": "Frontend Developer",
+    "category": "Web Development",
+    "description": [
+      "NeuroTech Systems is looking for a skilled Frontend Developer to join our dynamic team.",
+      "You will be responsible for building responsive user interfaces.",
+      "Work closely with designers to create an engaging user experience."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Remote",
+    "salary_range": "$80,000 - $120,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-01",
+    "requirements": [
+      "Bachelor’s Degree in Computer Science or related field",
+      "Proficiency in HTML, CSS, and JavaScript",
+      "Experience with React or Angular",
+      "Strong problem-solving skills"
+    ],
+    "responsibilities": [
+      "Develop and maintain web applications",
+      "Collaborate with the backend team to integrate APIs",
+      "Ensure the technical feasibility of UI/UX designs"
+    ],
+    "education": "Bachelor’s Degree in Computer Science or related field",
+    "tags": ["Frontend Development", "React", "Web Development"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e61",
+    "company_email": "info@neurotechsystems.com",
+    "jobTitle": "Data Scientist",
+    "category": "Data Science",
+    "description": [
+      "NeuroTech Systems is seeking a Data Scientist to analyze complex datasets.",
+      "You will develop predictive models to improve product offerings.",
+      "Collaborate with cross-functional teams to implement data-driven solutions."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Remote",
+    "salary_range": "$90,000 - $130,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-01",
+    "requirements": [
+      "Master’s Degree in Data Science or related field",
+      "Proficiency in Python and machine learning libraries",
+      "Experience with data visualization tools",
+      "Strong analytical and problem-solving skills"
+    ],
+    "responsibilities": [
+      "Analyze and interpret complex data sets",
+      "Develop and implement data models and algorithms",
+      "Communicate findings and insights to stakeholders"
+    ],
+    "education": "Master’s Degree in Data Science or related field",
+    "tags": ["Data Science", "Machine Learning", "Analytics"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e62",
+    "company_email": "contact@quantumleaptech.com",
+    "jobTitle": "Software Engineer",
+    "category": "Engineering",
+    "description": [
+      "QuantumLeap Technologies is seeking a talented Software Engineer to join our innovative team.",
+      "You will work on developing cutting-edge quantum computing applications.",
+      "Collaborate with researchers and scientists to bring quantum solutions to life."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "On-site",
+    "salary_range": "$100,000 - $150,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-15",
+    "requirements": [
+      "Master’s Degree in Computer Science or related field",
+      "Experience with C++ and Python",
+      "Knowledge of quantum algorithms is a plus",
+      "Strong analytical and communication skills"
+    ],
+    "responsibilities": [
+      "Design, develop, and implement software solutions for quantum systems",
+      "Collaborate with cross-functional teams to define and implement new features",
+      "Conduct research on quantum computing methodologies and technologies"
+    ],
+    "education": "Master’s Degree in Computer Science or related field",
+    "tags": ["Quantum Computing", "Software Development", "Engineering"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e62",
+    "company_email": "contact@quantumleaptech.com",
+    "jobTitle": "Research Scientist",
+    "category": "Research",
+    "description": [
+      "QuantumLeap Technologies is looking for a Research Scientist specializing in quantum algorithms.",
+      "You will conduct groundbreaking research and publish your findings.",
+      "Collaborate with other scientists and engineers on advanced projects."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "On-site",
+    "salary_range": "$120,000 - $180,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-15",
+    "requirements": [
+      "Ph.D. in Quantum Physics, Computer Science, or related field",
+      "Proven research experience in quantum computing",
+      "Strong publication record in reputable journals",
+      "Excellent teamwork and communication skills"
+    ],
+    "responsibilities": [
+      "Conduct research in quantum algorithms and computation",
+      "Publish findings and present at conferences",
+      "Collaborate with internal teams on practical applications of research"
+    ],
+    "education": "Ph.D. in Quantum Physics, Computer Science, or related field",
+    "tags": ["Quantum Research", "Algorithms", "Science"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e63",
+    "company_email": "info@greenenergysolutions.com",
+    "jobTitle": "Project Manager",
+    "category": "Project Management",
+    "description": [
+      "GreenEnergy Solutions is looking for a dedicated Project Manager to oversee our renewable energy projects.",
+      "You will be responsible for planning, executing, and closing projects within the specified timeline and budget.",
+      "Work with diverse teams to deliver sustainable energy solutions."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Hybrid",
+    "salary_range": "$90,000 - $130,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-10",
+    "requirements": [
+      "Bachelor’s Degree in Environmental Science, Engineering, or related field",
+      "Proven experience as a Project Manager in the renewable energy sector",
+      "Familiarity with project management tools (e.g., Trello, Asana)",
+      "Excellent leadership and communication skills"
+    ],
+    "responsibilities": [
+      "Plan and implement project plans for renewable energy initiatives",
+      "Monitor and report on project progress, ensuring compliance with regulations",
+      "Coordinate with clients, contractors, and stakeholders to ensure project success"
+    ],
+    "education": "Bachelor’s Degree in Environmental Science, Engineering, or related field",
+    "tags": ["Project Management", "Renewable Energy", "Sustainability"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e63",
+    "company_email": "info@greenenergysolutions.com",
+    "jobTitle": "Electrical Engineer",
+    "category": "Engineering",
+    "description": [
+      "GreenEnergy Solutions is hiring an Electrical Engineer to design and implement electrical systems.",
+      "You will work on innovative projects in renewable energy.",
+      "Collaborate with a team of engineers and project managers."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "On-site",
+    "salary_range": "$80,000 - $120,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-10",
+    "requirements": [
+      "Bachelor’s Degree in Electrical Engineering or related field",
+      "Experience in renewable energy systems design",
+      "Proficiency in CAD software",
+      "Strong analytical skills"
+    ],
+    "responsibilities": [
+      "Design electrical systems for renewable energy projects",
+      "Conduct feasibility studies and site assessments",
+      "Collaborate with cross-functional teams to deliver projects"
+    ],
+    "education": "Bachelor’s Degree in Electrical Engineering or related field",
+    "tags": ["Electrical Engineering", "Renewable Energy", "Engineering"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e64",
+    "company_email": "support@cybersafetech.com",
+    "jobTitle": "Cybersecurity Analyst",
+    "category": "Cybersecurity",
+    "description": [
+      "CyberSafe Technologies is seeking a Cybersecurity Analyst to protect our systems from cyber threats.",
+      "You will monitor networks and respond to security incidents.",
+      "Conduct vulnerability assessments and recommend security measures."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Remote",
+    "salary_range": "$75,000 - $115,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-05",
+    "requirements": [
+      "Bachelor’s Degree in Cybersecurity or related field",
+      "Experience with security tools (e.g., firewalls, intrusion detection systems)",
+      "Knowledge of compliance regulations (e.g., GDPR, HIPAA)",
+      "Strong analytical and problem-solving skills"
+    ],
+    "responsibilities": [
+      "Monitor and analyze security incidents",
+      "Conduct security assessments and audits",
+      "Develop and implement security policies and procedures"
+    ],
+    "education": "Bachelor’s Degree in Cybersecurity or related field",
+    "tags": ["Cybersecurity", "IT Security", "Network Security"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e64",
+    "company_email": "support@cybersafetech.com",
+    "jobTitle": "Penetration Tester",
+    "category": "Cybersecurity",
+    "description": [
+      "CyberSafe Technologies is looking for a skilled Penetration Tester to evaluate security systems.",
+      "You will simulate attacks to identify vulnerabilities.",
+      "Provide recommendations for strengthening security measures."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Remote",
+    "salary_range": "$85,000 - $125,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-05",
+    "requirements": [
+      "Bachelor’s Degree in Computer Science or related field",
+      "Experience with penetration testing tools",
+      "Strong understanding of networking and web application security",
+      "Certifications like CEH or OSCP are a plus"
+    ],
+    "responsibilities": [
+      "Perform penetration tests on applications and networks",
+      "Document findings and provide detailed reports",
+      "Work with teams to remediate identified vulnerabilities"
+    ],
+    "education": "Bachelor’s Degree in Computer Science or related field",
+    "tags": ["Penetration Testing", "Cybersecurity", "Ethical Hacking"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e65",
+    "company_email": "hello@finnextsolutions.com",
+    "jobTitle": "Machine Learning Engineer",
+    "category": "Artificial Intelligence",
+    "description": [
+      "FinNext Solutions is seeking a Machine Learning Engineer to develop predictive models.",
+      "You will work on cutting-edge AI projects that impact various industries.",
+      "Collaborate with data scientists and software engineers."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Hybrid",
+    "salary_range": "$100,000 - $140,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-10",
+    "requirements": [
+      "Bachelor’s Degree in Computer Science, Mathematics, or related field",
+      "Experience with machine learning frameworks (e.g., TensorFlow, PyTorch)",
+      "Strong programming skills in Python or R",
+      "Knowledge of data processing and feature engineering"
+    ],
+    "responsibilities": [
+      "Design and implement machine learning models",
+      "Analyze large datasets to derive insights",
+      "Collaborate with cross-functional teams to enhance AI products"
+    ],
+    "education": "Bachelor’s Degree in Computer Science, Mathematics, or related field",
+    "tags": ["Machine Learning", "AI", "Data Science"]
+  },
+  {
+    "company_id": "670210fdfce2b7a500c44e65",
+    "company_email": "hello@finnextsolutions.com",
+    "jobTitle": "AI Research Scientist",
+    "category": "Research",
+    "description": [
+      "FinNext Solutions is looking for an AI Research Scientist to lead research projects.",
+      "You will explore advanced AI methodologies and publish your findings.",
+      "Collaborate with a team of researchers to drive innovation."
+    ],
+    "job_Duration": "Full-time",
+    "job_type": "Hybrid",
+    "salary_range": "$120,000 - $160,000",
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-10",
+    "requirements": [
+      "Ph.D. in Computer Science, AI, or related field",
+      "Strong background in machine learning and AI research",
+      "Proven track record of publications in reputable journals",
+      "Excellent collaboration and communication skills"
+    ],
+    "responsibilities": [
+      "Conduct original research in AI and publish findings",
+      "Mentor junior researchers and interns",
+      "Collaborate with industry partners on AI applications"
+    ],
+    "education": "Ph.D. in Computer Science, AI, or related field",
+    "tags": ["AI Research", "Machine Learning", "Innovation"]
+  }
+]

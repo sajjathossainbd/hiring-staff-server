@@ -11,6 +11,7 @@ const recruiterRoutes = require("./routes/recruiters");
 const paymentRoutes = require("./routes/payment");
 const blogsRoutes = require("./routes/blogs");
 const paymentHistory = require("./routes/paymentHistory");
+const reviewsRoute = require("./routes/reviews");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -46,6 +47,10 @@ app.use("/blogs", blogsRoutes);
 // Payment
 app.use("/create-payment-intent", paymentRoutes);
 app.use("/payment-history", paymentHistory);
+
+// Reviews
+app.use("/reviews", reviewsRoute);
+
 
 // Default route for server status
 app.get("/", (req, res) => {

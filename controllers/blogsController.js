@@ -6,12 +6,40 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
+<<<<<<< HEAD
+// Get all Blogs with pagination
+exports.searchAndFilterBlogs = async (req, res) => {
+  const { page = 1, limit = 3, query = "" } = req.query;
+  const skip = (page - 1) * limit;
+  const searchQuery = query.trim().toLowerCase();
+
+  const filter = searchQuery
+    ? {
+      $or: [
+        { title: { $regex: searchQuery, $options: "i" } },
+        { tags: { $regex: searchQuery, $options: "i" } },
+        { author: { $regex: searchQuery, $options: "i" } },
+        { date_published: { $regex: searchQuery, $options: "i" } },
+      ],
+    }
+    : {};
+
+=======
 // Get all blogs
 exports.getAllBlogs = async (req, res) => {
   
+>>>>>>> c93e11230b372a2006fcb78da03f9379c25e1726
   try {
-    const result = await blogsCollection.find().toArray();
-    sendResponse(res, result);
+    const blogs = await blogsCollection.find(filter).skip(skip).limit(parseInt(limit)).toArray();
+    const totalBlogs = await blogsCollection.countDocuments(filter);
+    const totalPages = Math.ceil(totalBlogs / limit);
+
+    sendResponse(res, {
+      blogs,
+      currentPage: parseInt(page),
+      totalPages,
+      totalBlogs,
+    });
   } catch (error) {
     console.error("Error fetching blogs:", error);
     sendResponse(res, { message: "Failed to fetch blogs" }, 500);

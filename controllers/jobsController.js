@@ -33,8 +33,9 @@ exports.postJob = async (req, res) => {
     sendResponse(res, { message: "Failed to post job" }, 500);
   }
 };
-// get all jobs
-exports.getAllJobs = async (req, res) => {
+
+// get all job with filter
+exports.getAllJobsWithFilter = async (req, res) => {
   try {
     const {
       category,
@@ -45,51 +46,63 @@ exports.getAllJobs = async (req, res) => {
       min_salary,
       max_salary,
       page = 1,
-      limit = 10,
+      limit,
     } = req.query;
 
     const query = {};
 
-    // categories
+    // Categories filtering
     if (category) {
-      const categoriesArray = category.split(",").map((cat) => cat.trim());
-      query.category = { $in: categoriesArray };
+      query.category = new RegExp(category, "i");
     }
 
-    // title and keywords
+    // Title and keywords filtering
     if (job_title) {
       const regex = new RegExp(job_title, "i");
       query.$or = [{ jobTitle: regex }, { tags: regex }];
     }
 
-    // job type
+    // Job type filtering
     if (job_type) {
       query.job_type = new RegExp(job_type, "i");
     }
 
-    // job location
+    // Job location filtering
     if (job_location) {
       query.job_location = new RegExp(job_location, "i");
     }
 
-    // posted date
+    // Posted date range filtering
     if (posted_within) {
       const dateLimit = new Date();
       dateLimit.setDate(dateLimit.getDate() - Number(posted_within));
-      query.postedDate = { $gte: dateLimit };
+      query.postedDate = {
+        $gte: dateLimit.toISOString().split("T")[0],
+      };
     }
 
-    // salary range filtering
+    // Salary range filtering
     if (min_salary || max_salary) {
+      const conditions = [];
+
       if (min_salary) {
-        query.salary_max = { $gte: parseInt(min_salary) };
+        conditions.push({
+          $gte: [{ $toInt: "$min_salary" }, parseInt(min_salary, 10)],
+        });
       }
+
       if (max_salary) {
-        query.salary_min = { $lte: parseInt(max_salary) };
+        conditions.push({
+          $lte: [{ $toInt: "$max_salary" }, parseInt(max_salary, 10)],
+        });
+      }
+
+      if (conditions.length > 0) {
+        query.$expr = { $and: conditions };
       }
     }
 
-    // pagination
+    // Pagination setup
     const pageNumber = parseInt(page);
     const pageSize = parseInt(limit);
     const skip = (pageNumber - 1) * pageSize;
@@ -106,6 +119,7 @@ exports.getAllJobs = async (req, res) => {
     }
 
     const totalCount = await jobsCollection.countDocuments(query);
+
     res.json({
       totalJobs: totalCount,
       totalPages: Math.ceil(totalCount / pageSize),
@@ -114,11 +128,13 @@ exports.getAllJobs = async (req, res) => {
     });
   } catch (error) {
     console.error("Error fetching jobs:", error);
-    res.status(500).json({ message: "Error fetching jobs" });
+    res
+      .status(500)
+      .json({ message: "Error fetching jobs", error: error.message });
   }
 };
 
-// get all category
+// get all unique category
 exports.getUniqueCategories = async (req, res) => {
   try {
     const categories = await jobsCollection
@@ -147,6 +163,37 @@ exports.getUniqueCategories = async (req, res) => {
   } catch (error) {
     console.error("Error fetching categories:", error);
     res.status(500).json({ message: "Error fetching categories" });
+  }
+};
+
+// get all unique location
+exports.getUniqueLocation = async (req, res) => {
+  try {
+    const locations = await jobsCollection
+      .aggregate([
+        {
+          $group: {
+            _id: "$job_location",
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            job_location: "$_id",
+          },
+        },
+      ])
+      .toArray();
+
+    const locationNames = locations.map((loc) => loc.job_location);
+
+    if (locationNames.length === 0) {
+      return res.status(404).json({ message: "No locations found!" });
+    }
+    res.json(locationNames);
+  } catch (error) {
+    // Handle any errors
+    res.status(500).json({ message: "Error fetching locations" });
   }
 };
 
@@ -191,5 +238,32 @@ exports.getJobsByEmail = async (req, res) => {
   } catch (error) {
     console.error("Error fetching jobs by email:", error);
     sendResponse(res, { message: "Error fetching jobs" }, 500);
+  }
+};
+
+
+// Delete user
+exports.deleteJob = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid User ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await jobsCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Job not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Job deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting Job:", error);
+    sendResponse(res, { message: "Failed to delete Job" }, 500);
   }
 };

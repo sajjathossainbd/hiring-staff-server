@@ -8,6 +8,10 @@ const postReviews = async (req, res) => {
 }
 
 
-
+const getReviews = async (req, res) => {
+    const cursor = reviewCollection.find().sort({ _id: -1 });
+    const result = await cursor.toArray();
+    res.send(result);
+}
 
 module.exports = { postReviews, getReviews };

@@ -2,7 +2,9 @@ const express = require("express");
 const {
   getAllCandidates,
   getCandidateById,
-  searchAndFilterCandidates,
+   getUniqueProfessions,
+   getUniqueProfessionsAndCities,
+   getCandidatesData,
 } = require("../controllers/candidateController");
 
 const router = express.Router();
@@ -10,8 +12,8 @@ const router = express.Router();
 // GET /candidates
 router.get("/", getAllCandidates);
 
-// search and filter candidates
-router.get("/search", searchAndFilterCandidates);
+// Route to get unique data
+router.get('/unique',getCandidatesData);
 
 // GET/candidate by id
 router.get("/:id", getCandidateById);

@@ -240,3 +240,30 @@ exports.getJobsByEmail = async (req, res) => {
     sendResponse(res, { message: "Error fetching jobs" }, 500);
   }
 };
+
+
+// Delete user
+exports.deleteJob = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid User ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await jobsCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Job not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Job deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting Job:", error);
+    sendResponse(res, { message: "Failed to delete Job" }, 500);
+  }
+};

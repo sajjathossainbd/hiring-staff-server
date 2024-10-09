@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 const corsOptions = {
   origin: ["https://hiring-staff.vercel.app", "http://localhost:5173"],
-  methods: "GET,POST,PUT,DELETE",
+  methods: "GET,POST,PUT,DELETE,PATCH",
 };
 app.use(cors(corsOptions));
 

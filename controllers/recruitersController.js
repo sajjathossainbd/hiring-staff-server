@@ -21,58 +21,63 @@ exports.getRecruiterById = async (req, res) => {
   res.send(result);
 };
 
-  
 exports.getAllRecruiters = async (req, res) => {
   try {
-    const { page = 1, limit = 10, search = '', location = '', industry = '', organization = '', teamSize = '' } = req.query;
+    const { search, country, city, industry, organization, teamSize, page = 1, limit = 10 } = req.query;
 
-    
-    const skip = (page - 1) * limit;
+    const pageNumber = parseInt(page);
+    const limitNumber = parseInt(limit);
+
     const query = {};
 
-   
+    // Search functionality
     if (search) {
-      query.name = { $regex: search, $options: 'i' }; 
+      query.$or = [
+        { name: { $regex: search, $options: "i" } },
+        { organization: { $regex: search, $options: "i" } }
+      ];
     }
 
-   
-    if (location) {
-      query['location.city'] = { $regex: location, $options: 'i' }; 
+    // Filtering by location
+    if (country) {
+      query["location.country"] = { $regex: new RegExp(country, "i") };
+    }
+    if (city) {
+      query["location.city"] = { $regex: new RegExp(city, "i") };
     }
 
+    // Additional filters
     if (industry) {
-      query.industry = { $regex: industry, $options: 'i' }; 
+      query.industry = { $regex: new RegExp(industry, "i") };
     }
-
-   
     if (organization) {
-      query.name = { $regex: organization, $options: 'i' }; 
+      query.organization = { $regex: new RegExp(organization, "i") };
     }
-
-
     if (teamSize) {
-      const numberOfEmployees = parseInt(teamSize);
-      if (!isNaN(numberOfEmployees)) {
-        query.numberOfEmployees = numberOfEmployees;
-      }
+      query.teamSize = teamSize;
     }
 
-    
-    const result = await recruitersCollection.find(query).skip(skip).limit(parseInt(limit)).toArray();
-    
- 
-    const totalCount = await recruitersCollection.countDocuments(query);
-    const totalPages = Math.ceil(totalCount / limit);
+    // Apply pagination using skip and limit
+    const result = await recruitersCollection
+      .find(query)
+      .skip((pageNumber - 1) * limitNumber) 
+      .limit(limitNumber)                    
+      .toArray();
 
-    res.send({
+  
+    const totalDocuments = await recruitersCollection.countDocuments(query);
+
+    res.status(200).json({
       data: result,
-      totalPages,
-      currentPage: parseInt(page),
-      totalCount
+      total: totalDocuments,
+      page: pageNumber,
+      limit: limitNumber,
+      totalPages: Math.ceil(totalDocuments / limitNumber),
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).send({ message: "Error fetching recruiters" });
+    res.status(500).send({ message: "Error fetching recruiters", error });
   }
 };
+
+  
 

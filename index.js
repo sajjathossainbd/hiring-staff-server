@@ -11,13 +11,18 @@ const recruiterRoutes = require("./routes/recruiters");
 const paymentRoutes = require("./routes/payment");
 const blogsRoutes = require("./routes/blogs");
 const paymentHistory = require("./routes/paymentHistory");
+const reviewsRoute = require("./routes/reviews");
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: ["https://hiring-staff.vercel.app", "http://localhost:5173"],
+  methods: "GET,POST,PUT,DELETE,PATCH",
+};
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();
@@ -29,7 +34,6 @@ app.use("/users", userRoutes);
 
 // Jobs
 app.use("/jobs", jobsRoutes);
-app.use("/jobs/:id", jobsRoutes);
 
 // Candidates
 app.use("/candidates", candidateRoutes);
@@ -43,6 +47,10 @@ app.use("/blogs", blogsRoutes);
 // Payment
 app.use("/create-payment-intent", paymentRoutes);
 app.use("/payment-history", paymentHistory);
+
+// Reviews
+app.use("/reviews", reviewsRoute);
+
 
 // Default route for server status
 app.get("/", (req, res) => {

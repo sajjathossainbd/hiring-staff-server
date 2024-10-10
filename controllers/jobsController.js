@@ -242,7 +242,7 @@ exports.getJobsByEmail = async (req, res) => {
 };
 
 
-// Delete user
+// Delete job
 exports.deleteJob = async (req, res) => {
   const id = req.params.id;
 
@@ -267,3 +267,52 @@ exports.deleteJob = async (req, res) => {
     sendResponse(res, { message: "Failed to delete Job" }, 500);
   }
 };
+
+// applier add on job
+exports.updateJobApplications = async (req, res) => {
+  const id = req.params.id;
+  const application = req.body;
+
+  try {
+    const result = await jobsCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $push: { appliers: application } }
+    );
+
+    if (result.modifiedCount === 0) {
+      return sendResponse(res, { message: "No changes made" }, 204);
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully submitted" });
+  } catch (error) {
+    console.error("Error updating job applications:", error);
+    sendResponse(res, { message: "Failed to update job applications" }, 500);
+  }
+};
+
+
+
+// applier delete on job
+exports.deleteJobApplication = async (req, res) => {
+  const id = req.params.id; // Job ID
+  const email = req.body.email; // Email of the user whose application is to be deleted
+
+  try {
+    const result = await jobsCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $pull: { appliers: { email: email } } } // Remove application based on email
+    );
+
+    if (result.matchedCount === 0) {
+      return sendResponse(res, { message: "No application found to delete" }, 404); // Change to 404 for not found
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully deleted" });
+  } catch (error) {
+    console.error("Error deleting job application:", error);
+    sendResponse(res, { message: "Failed to delete job application" }, 500);
+  }
+};
+
+
+

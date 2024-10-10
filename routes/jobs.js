@@ -7,6 +7,8 @@ const {
   deleteJob,
   getUniqueLocation,
   getAllJobsWithFilter,
+  updateJobApplications,
+  deleteJobApplication,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -29,5 +31,13 @@ router.get("/email/:email", getJobsByEmail);
 
 // delete jobs
 router.delete("/delete/:id", deleteJob);
+
+
+router.patch("/applications/:id", updateJobApplications);
+
+
+router.delete("/applications/delete/:id", deleteJobApplication);
+
+
 
 module.exports = router;

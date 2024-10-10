@@ -267,3 +267,26 @@ exports.deleteJob = async (req, res) => {
     sendResponse(res, { message: "Failed to delete Job" }, 500);
   }
 };
+
+
+exports.updateJobApplications = async (req, res) => {
+  const id = req.params.id;
+  const application = req.body;
+
+  try {
+    const result = await jobsCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $push: { appliers: application } }
+    );
+
+    if (result.modifiedCount === 0) {
+      return sendResponse(res, { message: "No changes made" }, 204);
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully submitted" });
+  } catch (error) {
+    console.error("Error updating job applications:", error);
+    sendResponse(res, { message: "Failed to update job applications" }, 500);
+  }
+};
+

@@ -320,8 +320,25 @@ exports.appliedJobApplication = async (req, res) => {
   }
 };
 
+// Get all applied jobs
+
+exports.getAllAppliedJobs = async (req, res) => {
+  try {
+    const appliedJobs = await appliedJobsCollection.find().toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res.status(404).json({ message: "No applied jobs found." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
 // Get applied jobs for a specific applicant
-exports.getAppliedJobs = async (req, res) => {
+exports.getAppliedJobsById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -371,3 +388,7 @@ exports.deleteAppliedJob = async (req, res) => {
     res.status(500).json({ message: "Failed to delete applied job." });
   }
 };
+
+// Get applied jobs by email address
+
+

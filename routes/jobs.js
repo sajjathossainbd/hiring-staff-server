@@ -10,8 +10,10 @@ const {
 
   deleteJobApplication,
   appliedJobApplication,
-  getAppliedJobs,
+  getAppliedJobsById,
   deleteAppliedJob,
+  getAppliedJobsByEmail,
+  getAllAppliedJobs,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -37,8 +39,14 @@ router.delete("/delete/:id", deleteJob);
 // applyJob
 router.post("/applied-jobs", appliedJobApplication);
 
+// get apliedJobs
+router.get("/get/applied-jobs", getAllAppliedJobs);
+
 // get apliedJobs for singele candidate
-router.get("/applied-jobs/:id", getAppliedJobs);
+router.get("/applied-jobs/:id", getAppliedJobsById);
+
+// get applied jobs by email
+router.get("/applied-jobs/email/:email", getAppliedJobsByEmail);
 
 // delete applied job
 router.delete("/applied-jobs/delete", deleteAppliedJob);

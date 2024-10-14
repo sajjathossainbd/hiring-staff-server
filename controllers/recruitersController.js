@@ -35,6 +35,24 @@ exports.addRecruiter = async (req, res) => {
   }
 };
 
+// Get current user by email
+exports.getCurrentRecruiter = async (req, res) => {
+
+  const email = req.params.email;
+
+  try {
+    const result = await recruitersCollection.findOne({ email });
+
+    if (!result) {
+      return sendResponse(res, { message: "recruiter not found." }, 404);
+    }
+
+    sendResponse(res, result);
+  } catch (error) {
+    console.error("Error fetching recruiter:", error);
+    sendResponse(res, { message: "Failed to fetch recruiter" }, 500);
+  }
+};
 
 // Get all recruiters - Search by jobTitle and category
 exports.getAllRecruiters = async (req, res) => {

@@ -42,9 +42,9 @@ exports.getAllRecruiters = async (req, res) => {
       country,
       city,
       industry,
-      numberofEmployees,
+      numberOfEmployees,
       page = 1,
-      limit = 10,
+      limit = 3,
     } = req.query;
 
     // Parse page and limit to numbers
@@ -73,9 +73,10 @@ exports.getAllRecruiters = async (req, res) => {
     if (industry) {
       query.industry = { $regex: new RegExp(industry, "i") };
     }
-    if (numberofEmployees) {
-      query.numberofEmployees = numberofEmployees;
+    if (numberOfEmployees) {
+      query.numberOfEmployees = parseInt(numberOfEmployees); // Exact match
     }
+
 
     // Apply pagination using skip and limit
     const result = await recruitersCollection
@@ -83,15 +84,15 @@ exports.getAllRecruiters = async (req, res) => {
       .skip((pageNumber - 1) * limitNumber)
       .limit(limitNumber)
       .toArray();
-
+  
     // Get total documents count for pagination info
     const totalDocuments = await recruitersCollection.countDocuments(query);
 
     // Respond with the results and pagination data
     res.status(200).json({
       data: result,
-      total: totalDocuments,
-      page: pageNumber,
+      totalDocuments,
+      currentPage: pageNumber,
       limit: limitNumber,
       totalPages: Math.ceil(totalDocuments / limitNumber),
     });
@@ -171,14 +172,7 @@ exports.getRecruitersData = async (req, res) => {
     const flatCountries = countries.map((country) => country.country);
     const flatTeamSizes = teamSizes.map((size) => size.numberOfEmployees);
 
-    // Log the correct aggregated data
-    // console.log("Corrected Aggregated Data:", {
-    //   industries: flatIndustries,
-    //   cities: flatCities,
-    //   countries: flatCountries,
-    //   teamSizes: flatTeamSizes,
-    // });
-
+  
     // Responding with the unique data
     res.status(200).json({
       uniqueData: {
@@ -192,3 +186,5 @@ exports.getRecruitersData = async (req, res) => {
     res.status(500).json({ message: "Error fetching unique recruiter data", error });
   }
 };
+
+

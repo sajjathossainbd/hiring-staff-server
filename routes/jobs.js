@@ -11,6 +11,7 @@ const {
   deleteJobApplication,
   appliedJobApplication,
   getAppliedJobs,
+  deleteAppliedJob,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -40,6 +41,7 @@ router.post("/applied-jobs", appliedJobApplication);
 // get apliedJobs for singele candidate
 router.get("/applied-jobs/:id", getAppliedJobs);
 
-router.delete("/applications/delete/:id", deleteJobApplication);
+// delete applied job
+router.delete("/applied-jobs/delete", deleteAppliedJob);
 
 module.exports = router;

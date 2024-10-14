@@ -293,11 +293,12 @@ exports.appliedJobApplication = async (req, res) => {
     }
 
     const applicationData = {
-      jobId,
+      _id: new ObjectId(),
+      jobId: new ObjectId(jobId),
       jobTitle,
       company_email,
       company_id,
-      applicantId,
+      applicantId: new ObjectId(applicantId),
       applicantName,
       applicantEmail,
       coverLetter,
@@ -307,7 +308,6 @@ exports.appliedJobApplication = async (req, res) => {
     };
 
     const result = await appliedJobsCollection.insertOne(applicationData);
-    console.log(result);
 
     if (result.acknowledged) {
       res.status(201).json({
@@ -327,7 +327,6 @@ exports.appliedJobApplication = async (req, res) => {
 exports.getAppliedJobs = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
 
     if (!ObjectId.isValid(id)) {
       return res.status(400).json({ message: "Invalid Applicant ID" });
@@ -352,31 +351,26 @@ exports.getAppliedJobs = async (req, res) => {
   }
 };
 
-// applier delete on job
-exports.deleteJobApplication = async (req, res) => {
-  const id = req.params.id; // Job ID
-  const email = req.body.email; // Email of the user whose application is to be deleted
-
+// Delete controller for applied jobs
+exports.deleteAppliedJob = async (req, res) => {
+  const { email } = req.body;
   try {
-    const result = await jobsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      { $pull: { appliers: { email: email } } } // Remove application based on email
-    );
+    const result = await appliedJobsCollection.deleteOne({
+      applicantEmail: email,
+    });
 
-    if (result.matchedCount === 0) {
-      return sendResponse(
-        res,
-        { message: "No application found to delete" },
-        404
-      ); // Change to 404 for not found
+    if (result.deletedCount === 0) {
+      return res
+        .status(404)
+        .json({ message: "No matching application found to delete." });
     }
 
-    sendResponse(res, {
-      modifiedCount: result.modifiedCount,
-      message: "Application successfully deleted",
+    res.status(200).json({
+      message: "Applied job deleted successfully.",
+      deletedCount: result.deletedCount,
     });
   } catch (error) {
-    console.error("Error deleting job application:", error);
-    sendResponse(res, { message: "Failed to delete job application" }, 500);
+    console.error("Error deleting applied job:", error);
+    res.status(500).json({ message: "Failed to delete applied job." });
   }
 };

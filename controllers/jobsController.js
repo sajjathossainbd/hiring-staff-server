@@ -365,30 +365,54 @@ exports.getAppliedJobsById = async (req, res) => {
   }
 };
 
+
 // Delete controller for applied jobs
+
 exports.deleteAppliedJob = async (req, res) => {
-  const { email } = req.body;
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid User ID" }, 400);
+  }
+
   try {
-    const result = await appliedJobsCollection.deleteOne({
-      applicantEmail: email,
-    });
+    const query = { _id: new ObjectId(id) };
+    const result = await appliedJobsCollection.deleteOne(query);
 
     if (result.deletedCount === 0) {
-      return res
-        .status(404)
-        .json({ message: "No matching application found to delete." });
+      return sendResponse(res, { message: "Job not found" }, 404);
     }
 
-    res.status(200).json({
-      message: "Applied job deleted successfully.",
+    sendResponse(res, {
+      message: "Applied Job deleted successfully",
       deletedCount: result.deletedCount,
     });
   } catch (error) {
-    console.error("Error deleting applied job:", error);
-    res.status(500).json({ message: "Failed to delete applied job." });
+    console.error("Error deleting Job:", error);
+    sendResponse(res, { message: "Failed to delete Job" }, 500);
   }
 };
 
 // Get applied jobs by email address
 
+exports.getAppliedJobsByEmail = async (req, res) => {
+  try {
+    const { email } = req.params;
 
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        company_email: email,
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this email address." });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};

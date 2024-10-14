@@ -49,6 +49,6 @@ router.get("/applied-jobs/:id", getAppliedJobsById);
 router.get("/applied-jobs/email/:email", getAppliedJobsByEmail);
 
 // delete applied job
-router.delete("/applied-jobs/delete", deleteAppliedJob);
+router.delete("/applied-jobs/delete/:id", deleteAppliedJob);
 
 module.exports = router;

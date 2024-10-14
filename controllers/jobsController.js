@@ -223,7 +223,6 @@ exports.getJob = async (req, res) => {
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
-    console.log("Email Received:", email);
 
     const query = { company_email: email };
     const result = await jobsCollection.find(query).toArray();

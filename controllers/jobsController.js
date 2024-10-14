@@ -223,23 +223,22 @@ exports.getJob = async (req, res) => {
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
+    console.log("Email Received:", email);
+
     const query = { company_email: email };
     const result = await jobsCollection.find(query).toArray();
 
     if (result.length === 0) {
-      return sendResponse(
-        res,
-        { message: "No jobs found for this email" },
-        404
-      );
+      return res.status(404).json({ message: "No jobs found for this email" });
     }
 
-    sendResponse(res, result);
+    res.status(200).json(result);
   } catch (error) {
     console.error("Error fetching jobs by email:", error);
-    sendResponse(res, { message: "Error fetching jobs" }, 500);
+    res.status(500).json({ message: "Error fetching jobs" });
   }
 };
+
 
 
 // Delete job

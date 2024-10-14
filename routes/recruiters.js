@@ -1,7 +1,10 @@
 const express = require("express");
-const { getAllRecruiters, getRecruiterById } = require("../controllers/recruitersController");
+const { getAllRecruiters, getRecruiterById, addRecruiter } = require("../controllers/recruitersController");
 
 const router = express.Router();
+
+// POST /recruiters
+router.post("/", addRecruiter);
 
 // GET all recruiters
 router.get("/", getAllRecruiters);

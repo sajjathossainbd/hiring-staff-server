@@ -1,6 +1,9 @@
 const { ObjectId } = require("mongodb");
 const { client } = require("../config/db");
 const jobsCollection = client.db("hiringStaffDB").collection("jobs");
+const appliedJobsCollection = client
+  .db("hiringStaffDB")
+  .collection("appliedjobs");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -239,8 +242,6 @@ exports.getJobsByEmail = async (req, res) => {
   }
 };
 
-
-
 // Delete job
 exports.deleteJob = async (req, res) => {
   const id = req.params.id;
@@ -267,51 +268,107 @@ exports.deleteJob = async (req, res) => {
   }
 };
 
-// applier add on job
-exports.updateJobApplications = async (req, res) => {
-  const id = req.params.id;
-  const application = req.body;
+// applied job
+exports.appliedJobApplication = async (req, res) => {
+  const {
+    jobId,
+    jobTitle,
+    company_email,
+    company_id,
+    applicantId,
+    applicantName,
+    applicantEmail,
+    coverLetter,
+    resume,
+    availability,
+  } = req.body;
 
   try {
-    const result = await jobsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      { $push: { appliers: application } }
-    );
+    const job = await jobsCollection.findOne({ _id: new ObjectId(jobId) });
 
-    if (result.modifiedCount === 0) {
-      return sendResponse(res, { message: "No changes made" }, 204);
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
     }
 
-    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully submitted" });
+    const applicationData = {
+      _id: new ObjectId(),
+      jobId: new ObjectId(jobId),
+      jobTitle,
+      company_email,
+      company_id,
+      applicantId: new ObjectId(applicantId),
+      applicantName,
+      applicantEmail,
+      coverLetter,
+      resume,
+      availability,
+      appliedDate: new Date(),
+    };
+
+    const result = await appliedJobsCollection.insertOne(applicationData);
+
+    if (result.acknowledged) {
+      res.status(201).json({
+        message: "Application submitted successfully",
+        applicationId: result.insertedId,
+      });
+    } else {
+      res.status(500).json({ message: "Failed to submit application" });
+    }
   } catch (error) {
-    console.error("Error updating job applications:", error);
-    sendResponse(res, { message: "Failed to update job applications" }, 500);
+    console.error("Error submitting job application:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
-
-
-// applier delete on job
-exports.deleteJobApplication = async (req, res) => {
-  const id = req.params.id; // Job ID
-  const email = req.body.email; // Email of the user whose application is to be deleted
-
+// Get applied jobs for a specific applicant
+exports.getAppliedJobs = async (req, res) => {
   try {
-    const result = await jobsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      { $pull: { appliers: { email: email } } } // Remove application based on email
-    );
+    const { id } = req.params;
 
-    if (result.matchedCount === 0) {
-      return sendResponse(res, { message: "No application found to delete" }, 404); // Change to 404 for not found
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Applicant ID" });
     }
 
-    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully deleted" });
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        applicantId: new ObjectId(id),
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this applicant." });
+    }
   } catch (error) {
-    console.error("Error deleting job application:", error);
-    sendResponse(res, { message: "Failed to delete job application" }, 500);
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
   }
 };
 
+// Delete controller for applied jobs
+exports.deleteAppliedJob = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const result = await appliedJobsCollection.deleteOne({
+      applicantEmail: email,
+    });
 
+    if (result.deletedCount === 0) {
+      return res
+        .status(404)
+        .json({ message: "No matching application found to delete." });
+    }
 
+    res.status(200).json({
+      message: "Applied job deleted successfully.",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting applied job:", error);
+    res.status(500).json({ message: "Failed to delete applied job." });
+  }
+};

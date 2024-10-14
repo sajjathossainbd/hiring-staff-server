@@ -1,6 +1,9 @@
 const { ObjectId } = require("mongodb");
 const { client } = require("../config/db");
 const jobsCollection = client.db("hiringStaffDB").collection("jobs");
+const appliedJobsCollection = client
+  .db("hiringStaffDB")
+  .collection("appliedjobs");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -241,7 +244,6 @@ exports.getJobsByEmail = async (req, res) => {
   }
 };
 
-
 // Delete job
 exports.deleteJob = async (req, res) => {
   const id = req.params.id;
@@ -268,29 +270,87 @@ exports.deleteJob = async (req, res) => {
   }
 };
 
-// applier add on job
-exports.updateJobApplications = async (req, res) => {
-  const id = req.params.id;
-  const application = req.body;
+// applied job
+exports.appliedJobApplication = async (req, res) => {
+  const {
+    jobId,
+    jobTitle,
+    company_email,
+    company_id,
+    applicantId,
+    applicantName,
+    applicantEmail,
+    coverLetter,
+    resume,
+    availability,
+  } = req.body;
 
   try {
-    const result = await jobsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      { $push: { appliers: application } }
-    );
+    const job = await jobsCollection.findOne({ _id: new ObjectId(jobId) });
 
-    if (result.modifiedCount === 0) {
-      return sendResponse(res, { message: "No changes made" }, 204);
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
     }
 
-    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully submitted" });
+    const applicationData = {
+      jobId,
+      jobTitle,
+      company_email,
+      company_id,
+      applicantId,
+      applicantName,
+      applicantEmail,
+      coverLetter,
+      resume,
+      availability,
+      appliedDate: new Date(),
+    };
+
+    const result = await appliedJobsCollection.insertOne(applicationData);
+    console.log(result);
+
+    if (result.acknowledged) {
+      res.status(201).json({
+        message: "Application submitted successfully",
+        applicationId: result.insertedId,
+      });
+    } else {
+      res.status(500).json({ message: "Failed to submit application" });
+    }
   } catch (error) {
-    console.error("Error updating job applications:", error);
-    sendResponse(res, { message: "Failed to update job applications" }, 500);
+    console.error("Error submitting job application:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
+// Get applied jobs for a specific applicant
+exports.getAppliedJobs = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
 
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Applicant ID" });
+    }
+
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        applicantId: new ObjectId(id),
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this applicant." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
 
 // applier delete on job
 exports.deleteJobApplication = async (req, res) => {
@@ -304,15 +364,19 @@ exports.deleteJobApplication = async (req, res) => {
     );
 
     if (result.matchedCount === 0) {
-      return sendResponse(res, { message: "No application found to delete" }, 404); // Change to 404 for not found
+      return sendResponse(
+        res,
+        { message: "No application found to delete" },
+        404
+      ); // Change to 404 for not found
     }
 
-    sendResponse(res, { modifiedCount: result.modifiedCount, message: "Application successfully deleted" });
+    sendResponse(res, {
+      modifiedCount: result.modifiedCount,
+      message: "Application successfully deleted",
+    });
   } catch (error) {
     console.error("Error deleting job application:", error);
     sendResponse(res, { message: "Failed to delete job application" }, 500);
   }
 };
-
-
-

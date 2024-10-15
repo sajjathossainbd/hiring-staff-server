@@ -515,3 +515,57 @@ exports.updateJobSelectedStatus = async (req, res) => {
     res.status(500).json({ message: "Error updating job status." });
   }
 };
+
+// get aproved shortlist data for candidates
+exports.getApprovedShortlistedJobs = async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const shortlistedJobs = await appliedJobsCollection
+      .find({
+        applicantEmail: email,
+        shortlist: "approved",
+      })
+      .toArray();
+
+    if (shortlistedJobs.length === 0) {
+      return res
+        .status(404)
+        .json({
+          message: "No approved shortlisted jobs found for this candidate",
+        });
+    }
+
+    res.status(200).json(shortlistedJobs);
+  } catch (error) {
+    console.error("Error fetching shortlisted jobs:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// get selected jobs for candidates
+exports.getSelectedJobs = async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const shortlistedJobs = await appliedJobsCollection
+      .find({
+        applicantEmail: email,
+        shortlist: "selected",
+      })
+      .toArray();
+
+    if (shortlistedJobs.length === 0) {
+      return res
+        .status(404)
+        .json({
+          message: "No approved shortlisted jobs found for this candidate",
+        });
+    }
+
+    res.status(200).json(shortlistedJobs);
+  } catch (error) {
+    console.error("Error fetching shortlisted jobs:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

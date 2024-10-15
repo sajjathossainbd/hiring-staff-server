@@ -16,6 +16,7 @@ const {
   getAllAppliedJobs,
   updateAppliedJobStatus,
   getAppliedJobsByEmailAndShortlist,
+  updateJobSelectedStatus,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -59,5 +60,9 @@ router.patch("/applied-jobs/update/:id", updateAppliedJobStatus);
 
 // Get applied jobs by email and shortlisted jobs
 router.get("/applied-jobs/email/shortlist/:email", getAppliedJobsByEmailAndShortlist);
+
+
+// update applied jobs select status
+router.patch("/applied-jobs/selected/:id", updateJobSelectedStatus);
 
 module.exports = router;

@@ -303,6 +303,7 @@ exports.appliedJobApplication = async (req, res) => {
       availability,
       shortlist: "pending",
       reject: false,
+      selected: false,
       appliedDate: new Date(),
     };
 
@@ -480,3 +481,32 @@ exports.getAppliedJobsByEmailAndShortlist = async (req, res) => {
     return res.status(500).json({ message: "Error fetching applied jobs." });
   }
 };
+
+// API to update the 'selected' status of an applied job
+exports.updateJobSelectedStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Job ID" });
+    }
+
+    const query = { _id: new ObjectId(id) };
+    const update = { $set: { selected: true } };
+
+    const result = await appliedJobsCollection.updateOne(query, update);
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    res.status(200).json({
+      message: "Job status updated successfully",
+      updatedCount: result.modifiedCount,
+    });
+  } catch (error) {
+    console.error("Error updating job status:", error);
+    res.status(500).json({ message: "Error updating job status." });
+  }
+};
+

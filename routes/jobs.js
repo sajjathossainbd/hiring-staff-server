@@ -7,6 +7,16 @@ const {
   deleteJob,
   getUniqueLocation,
   getAllJobsWithFilter,
+
+  deleteJobApplication,
+  appliedJobApplication,
+  getAppliedJobsById,
+  deleteAppliedJob,
+  getAppliedJobsByEmail,
+  getAllAppliedJobs,
+  updateAppliedJobStatus,
+  getAppliedJobsByEmailAndShortlist,
+  updateJobSelectedStatus,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -17,7 +27,6 @@ router.post("/", postJob);
 // get all jobs
 router.get("/categories", getUniqueCategories);
 router.get("/job_location", getUniqueLocation);
-router.get("/email/:email", getJobsByEmail);
 router.get("/", getAllJobsWithFilter);
 router.get("/:id", getJob);
 
@@ -29,5 +38,31 @@ router.get("/email/:email", getJobsByEmail);
 
 // delete jobs
 router.delete("/delete/:id", deleteJob);
+
+// applyJob
+router.post("/applied-jobs", appliedJobApplication);
+
+// get apliedJobs
+router.get("/get/applied-jobs", getAllAppliedJobs);
+
+// get apliedJobs for singele candidate
+router.get("/applied-jobs/:id", getAppliedJobsById);
+
+// get applied jobs by email
+router.get("/applied-jobs/email/:email", getAppliedJobsByEmail);
+
+// delete applied job
+router.delete("/applied-jobs/delete/:id", deleteAppliedJob);
+
+
+// update applied jobs
+router.patch("/applied-jobs/update/:id", updateAppliedJobStatus);
+
+// Get applied jobs by email and shortlisted jobs
+router.get("/applied-jobs/email/shortlist/:email", getAppliedJobsByEmailAndShortlist);
+
+
+// update applied jobs select status
+router.patch("/applied-jobs/selected/:id", updateJobSelectedStatus);
 
 module.exports = router;

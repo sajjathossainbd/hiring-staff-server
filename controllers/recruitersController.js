@@ -12,6 +12,8 @@ exports.getAllRecruiters = async (req, res) => {
   }
 };
 
+
+
 exports.getRecruiterById = async (req, res) => {
   try {
     const recruiterId = req.params.id;

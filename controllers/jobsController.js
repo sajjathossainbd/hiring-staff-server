@@ -455,3 +455,28 @@ exports.updateAppliedJobStatus = async (req, res) => {
     sendResponse(res, { message: "Error updating job status" }, 500);
   }
 };
+
+
+exports.getAppliedJobsByEmailAndShortlist = async (req, res) => {
+  try {
+    const { email } = req.params;
+
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        company_email: email,
+        shortlist: "approved",
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No shortlisted jobs found for this email address." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};

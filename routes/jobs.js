@@ -15,6 +15,7 @@ const {
   getAppliedJobsByEmail,
   getAllAppliedJobs,
   updateAppliedJobStatus,
+  getAppliedJobsByEmailAndShortlist,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -55,5 +56,8 @@ router.delete("/applied-jobs/delete/:id", deleteAppliedJob);
 
 // update applied jobs
 router.patch("/applied-jobs/update/:id", updateAppliedJobStatus);
+
+// Get applied jobs by email and shortlisted jobs
+router.get("/applied-jobs/email/shortlist/:email", getAppliedJobsByEmailAndShortlist);
 
 module.exports = router;

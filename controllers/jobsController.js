@@ -301,6 +301,8 @@ exports.appliedJobApplication = async (req, res) => {
       coverLetter,
       resume,
       availability,
+      shortlist: "pending",
+      reject: false,
       appliedDate: new Date(),
     };
 
@@ -414,5 +416,42 @@ exports.getAppliedJobsByEmail = async (req, res) => {
     }
   } catch (error) {
     return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+
+// Update applied job status
+
+exports.updateAppliedJobStatus = async (req, res) => {
+  const { id } = req.params;
+  const { shortlist, reject } = req.body; // Accept both shortlist and reject values from the request
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Job ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+
+    // Dynamically build the update object based on the provided fields
+    const update = {
+      $set: {},
+    };
+    if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
+    if (typeof reject === 'boolean') update.$set.reject = reject; // e.g., true or false
+
+    const result = await appliedJobsCollection.updateOne(query, update);
+
+    if (result.matchedCount === 0) {
+      return sendResponse(res, { message: "Job not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Applied Job status updated successfully",
+      updatedCount: result.matchedCount,
+    });
+  } catch (error) {
+    console.error("Error updating applied job status:", error);
+    sendResponse(res, { message: "Error updating job status" }, 500);
   }
 };

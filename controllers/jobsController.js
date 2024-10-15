@@ -289,6 +289,17 @@ exports.appliedJobApplication = async (req, res) => {
       return res.status(404).json({ message: "Job not found" });
     }
 
+    const existingApplication = await appliedJobsCollection.findOne({
+      jobId: new ObjectId(jobId),
+      applicantId: new ObjectId(applicantId),
+    });
+
+    if (existingApplication) {
+      return res
+        .status(409)
+        .json({ message: "You have already applied for this job" });
+    }
+
     const applicationData = {
       _id: new ObjectId(),
       jobId: new ObjectId(jobId),
@@ -314,8 +325,6 @@ exports.appliedJobApplication = async (req, res) => {
         message: "Application submitted successfully",
         applicationId: result.insertedId,
       });
-    } else {
-      res.status(500).json({ message: "Failed to submit application" });
     }
   } catch (error) {
     console.error("Error submitting job application:", error);
@@ -368,7 +377,6 @@ exports.getAppliedJobsById = async (req, res) => {
   }
 };
 
-
 // Delete controller for applied jobs
 
 exports.deleteAppliedJob = async (req, res) => {
@@ -420,7 +428,6 @@ exports.getAppliedJobsByEmail = async (req, res) => {
   }
 };
 
-
 // Update applied job status
 
 exports.updateAppliedJobStatus = async (req, res) => {
@@ -439,7 +446,7 @@ exports.updateAppliedJobStatus = async (req, res) => {
       $set: {},
     };
     if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
-    if (typeof reject === 'boolean') update.$set.reject = reject; // e.g., true or false
+    if (typeof reject === "boolean") update.$set.reject = reject; // e.g., true or false
 
     const result = await appliedJobsCollection.updateOne(query, update);
 
@@ -456,7 +463,6 @@ exports.updateAppliedJobStatus = async (req, res) => {
     sendResponse(res, { message: "Error updating job status" }, 500);
   }
 };
-
 
 exports.getAppliedJobsByEmailAndShortlist = async (req, res) => {
   try {
@@ -509,4 +515,3 @@ exports.updateJobSelectedStatus = async (req, res) => {
     res.status(500).json({ message: "Error updating job status." });
   }
 };
-

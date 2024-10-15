@@ -139,10 +139,45 @@ exports.getRecruitersData = async (req, res) => {
 
 exports.addRecruiter = async (req, res) => {
   try {
-    const recruiter = req.body; // Assuming recruiter details are sent in the request body
+    const recruiter = req.body;
+    const query = { _id: recruiter._id };
+    const existingRecruiter = await recruitersCollection.findOne(query);
+
+    if (existingRecruiter) {
+      return sendResponse(
+        res,
+        { message: "Recruiter Already Exists", insertId: null },
+        409
+      );
+    }
+
     const result = await recruitersCollection.insertOne(recruiter);
-    res.status(201).send(result);
+    sendResponse(
+      res,
+      { message: "Recruiter added successfully", insertId: result.insertedId },
+      201
+    );
   } catch (error) {
-    res.status(500).json({ message: "Error adding recruiter", error });
+    console.error("Error adding Recruiter:", error);
+    sendResponse(res, { message: "Failed to add Recruiter" }, 500);
+  }
+};
+
+// Get current user by email
+exports.getCurrentRecruiter = async (req, res) => {
+
+  const email = req.params.email;
+
+  try {
+    const result = await recruitersCollection.findOne({ email });
+
+    if (!result) {
+      return sendResponse(res, { message: "recruiter not found." }, 404);
+    }
+
+    sendResponse(res, result);
+  } catch (error) {
+    console.error("Error fetching recruiter:", error);
+    sendResponse(res, { message: "Failed to fetch recruiter" }, 500);
   }
 };

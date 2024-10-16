@@ -202,7 +202,7 @@ exports.getCandidatesData = async (req, res) => {
 
 // Get candidate by id
 exports.getCandidateById = async (req, res) => {
-  // console.log(req.params);
+
   const id = req.params.id;
 
   if (!ObjectId.isValid(id)) {

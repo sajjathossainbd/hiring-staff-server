@@ -13,7 +13,7 @@ exports.getAllRecruiters = async (req, res) => {
       industry,
       numberOfEmployees,
       page = 1,
-      limit = 3,
+      limit = 10,
     } = req.query;
 
     const pageNumber = parseInt(page);

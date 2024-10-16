@@ -3,16 +3,16 @@ const {
   getAllRecruiters,
   getRecruiterById,
   addRecruiter,
-  getCurrentRecruiter,
   getRecruitersData,
+  getCurrentRecruiter,
 } = require("../controllers/recruitersController");
 const router = express.Router();
 
-// // POST /recruiters
-// router.post("/", addRecruiter);
+// POST /recruiters
+router.post("/", addRecruiter);
 
-// // GET current recruiter by email
-// router.get("/currentRecruiter/:email", getCurrentRecruiter);
+// GET current recruiter by email
+router.get("/currentRecruiter/:email", getCurrentRecruiter);
 
 // GET all recruiters
 router.get("/", getAllRecruiters);

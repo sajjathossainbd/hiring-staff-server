@@ -56,6 +56,9 @@ exports.getCurrentRecruiter = async (req, res) => {
 
 // Get all recruiters - Search by jobTitle and category
 exports.getAllRecruiters = async (req, res) => {
+
+  console.log(req.body);
+
   const { jobTitle, category } = req.query;
 
   const query = {};
@@ -115,3 +118,80 @@ exports.getRecruiterById = async (req, res) => {
     sendResponse(res, { message: "An error occurred." }, 500);
   }
 };
+
+// Fetching unique data
+exports.getRecruitersData = async (req, res) => {
+  try {
+    const [industries, cities, countries, teamSizes] = await Promise.all([
+      recruitersCollection
+        .aggregate([
+          { $group: { _id: { $ifNull: ["$industry", "Unknown Industry"] } } },
+        ])
+        .toArray(),
+      recruitersCollection
+        .aggregate([
+          { $group: { _id: { $ifNull: ["$location.city", "Unknown City"] } } },
+        ])
+        .toArray(),
+      recruitersCollection
+        .aggregate([
+          {
+            $group: {
+              _id: { $ifNull: ["$location.country", "Unknown Country"] },
+            },
+          },
+        ])
+        .toArray(),
+      recruitersCollection
+        .aggregate([{ $group: { _id: "$numberOfEmployees" } }])
+        .toArray(),
+    ]);
+
+    // Simplified extraction of unique data
+    const flatIndustries = industries.map(({ _id }) => _id);
+    const flatCities = cities.map(({ _id }) => _id);
+    const flatCountries = countries.map(({ _id }) => _id);
+    const flatTeamSizes = teamSizes.map(({ _id }) => _id);
+
+    res.status(200).json({
+      uniqueData: {
+        industries: flatIndustries,
+        cities: flatCities,
+        countries: flatCountries,
+        teamSizes: flatTeamSizes,
+      },
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Error fetching unique recruiter data", error });
+  }
+};
+
+exports.addRecruiter = async (req, res) => {
+  try {
+    const recruiter = req.body;
+    const query = { _id: recruiter._id };
+    const existingRecruiter = await recruitersCollection.findOne(query);
+
+    if (existingRecruiter) {
+      return sendResponse(
+        res,
+        { message: "Recruiter Already Exists", insertId: null },
+        409
+      );
+    }
+
+    const result = await recruitersCollection.insertOne(recruiter);
+    sendResponse(
+      res,
+      { message: "Recruiter added successfully", insertId: result.insertedId },
+      201
+    );
+  } catch (error) {
+    console.error("Error adding Recruiter:", error);
+    sendResponse(res, { message: "Failed to add Recruiter" }, 500);
+  }
+};
+
+

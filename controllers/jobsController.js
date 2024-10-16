@@ -4,6 +4,7 @@ const jobsCollection = client.db("hiringStaffDB").collection("jobs");
 const appliedJobsCollection = client
   .db("hiringStaffDB")
   .collection("appliedjobs");
+const sendEmail = require("../utils/sendEmail");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -14,10 +15,10 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const query = { jobTitle: jobData.jobTitle };
-    // const query = { jobTitle: new RegExp(`^${jobData.jobTitle}$`, "i") };
-    const existingJob = await jobsCollection.findOne(query);
+    const { jobTitle, company_email, company_id, candidateEmails } = jobData;
 
+    const query = { jobTitle: jobData.jobTitle };
+    const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
       return sendResponse(
         res,
@@ -27,8 +28,48 @@ exports.postJob = async (req, res) => {
     }
 
     const result = await jobsCollection.insertOne(jobData);
+
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">New Job Opportunity!</h2>
+      <p style="font-size: 16px;">
+        A new job titled <strong style="color: #333;">${jobTitle}</strong> has been posted by 
+        <strong style="color: #0073e6;">${company_id}</strong>.
+      </p>
+      <p style="font-size: 16px; margin-top: 20px;">
+        <em>Check it out now on Hiring Staff!</em>
+      </p>
+      <div style="margin-top: 30px;">
+        <a 
+          href="http://localhost:5000/jobs/id" 
+          style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+          View Job Details
+        </a>
+      </div>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+      <hr style="border: none; border-top: 1px solid #ddd; margin-top: 40px;">
+      <footer style="font-size: 12px; color: #777;">
+        This email was sent to you because you subscribed to job notifications on Hiring Staff. 
+        If you no longer wish to receive these emails, you can <a href="#" style="color: #0073e6;">unsubscribe</a> at any time.
+      </footer>
+    </div>
+  `;
+
+    for (const candidateEmail of candidateEmails) {
+      await sendEmail({
+        recruiterName: company_id,
+        recruiterEmail: company_email,
+        email: candidateEmail,
+        subject: `New Job Opportunity: ${jobTitle}`,
+        message,
+      });
+    }
+
     sendResponse(res, {
-      message: "Job posted successfully",
+      message: "Job posted successfully and emails sent",
       insertId: result.insertedId,
     });
   } catch (error) {
@@ -510,6 +551,35 @@ exports.updateJobSelectedStatus = async (req, res) => {
       message: "Job status updated successfully",
       updatedCount: result.modifiedCount,
     });
+
+    const appliedJob = await appliedJobsCollection.findOne(query);
+    const applicantEmail = appliedJob.applicantEmail;
+
+    if (appliedJob) {
+      const { jobTitle, company_id } = appliedJob;
+      const message = `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
+          <p style="font-size: 16px;">
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+          </p>
+          <p style="font-size: 16px; margin-top: 20px;">
+            We will contact you shortly with further details.
+          </p>
+          <p style="margin-top: 40px; font-size: 14px; color: #777;">
+            Best regards,<br />
+            <strong>Hiring Staff Team</strong>
+          </p>
+        </div>
+      `;
+
+      await sendEmail({
+        recruiterName: company_id,
+        email: applicantEmail,
+        subject: `You Have Been Selected for ${jobTitle}!`,
+        message,
+      });
+    }
   } catch (error) {
     console.error("Error updating job status:", error);
     res.status(500).json({ message: "Error updating job status." });
@@ -529,11 +599,9 @@ exports.getApprovedShortlistedJobs = async (req, res) => {
       .toArray();
 
     if (shortlistedJobs.length === 0) {
-      return res
-        .status(404)
-        .json({
-          message: "No approved shortlisted jobs found for this candidate",
-        });
+      return res.status(404).json({
+        message: "No approved shortlisted jobs found for this candidate",
+      });
     }
 
     res.status(200).json(shortlistedJobs);
@@ -556,11 +624,9 @@ exports.getSelectedJobs = async (req, res) => {
       .toArray();
 
     if (shortlistedJobs.length === 0) {
-      return res
-        .status(404)
-        .json({
-          message: "No approved shortlisted jobs found for this candidate",
-        });
+      return res.status(404).json({
+        message: "No approved shortlisted jobs found for this candidate",
+      });
     }
 
     res.status(200).json(shortlistedJobs);

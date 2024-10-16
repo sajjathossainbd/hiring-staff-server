@@ -8,7 +8,6 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
-
 exports.addRecruiter = async (req, res) => {
   try {
     const recruiter = req.body;
@@ -37,7 +36,6 @@ exports.addRecruiter = async (req, res) => {
 
 // Get current user by email
 exports.getCurrentRecruiter = async (req, res) => {
-
   const email = req.params.email;
 
   try {
@@ -51,45 +49,6 @@ exports.getCurrentRecruiter = async (req, res) => {
   } catch (error) {
     console.error("Error fetching recruiter:", error);
     sendResponse(res, { message: "Failed to fetch recruiter" }, 500);
-  }
-};
-
-// Get all recruiters - Search by jobTitle and category
-exports.getAllRecruiters = async (req, res) => {
-
-
-  const { jobTitle, category } = req.query;
-
-  const query = {};
-
-  if (jobTitle || category) {
-    const jobPostingsQuery = [];
-
-    if (jobTitle) {
-      jobPostingsQuery.push({
-        "jobPostings.jobTitle": { $regex: jobTitle, $options: "i" },
-      });
-    }
-
-    if (category) {
-      jobPostingsQuery.push({
-        "jobPostings.category": { $regex: category, $options: "i" },
-      });
-    }
-
-    query.jobPostings = { $or: jobPostingsQuery };
-  }
-
-  try {
-    const result = await recruitersCollection.find(query).toArray();
-    sendResponse(res, result);
-  } catch (error) {
-    console.error("Error fetching recruiters: ", error);
-    sendResponse(
-      res,
-      { message: "An error occurred while fetching recruiters.", error },
-      500
-    );
   }
 };
 
@@ -118,52 +77,124 @@ exports.getRecruiterById = async (req, res) => {
   }
 };
 
-// Fetching unique data
+// get all recruiter with filtering
+exports.getAllRecruiters = async (req, res) => {
+  try {
+    const industry = req.query.industry || "";
+    const location = req.query.city || "";
+    const numberOfEmployees = req.query.numberOfEmployees || "";
+
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 9;
+    const skip = (page - 1) * limit;
+
+    const query = {};
+
+    if (industry) {
+      query.industry = { $regex: industry, $options: "i" };
+    }
+
+    if (location) {
+      query["location.city"] = { $regex: location, $options: "i" };
+    }
+
+    if (numberOfEmployees) {
+      query.numberOfEmployees = { $lte: parseInt(numberOfEmployees) };
+    }
+
+    const recruiters = await recruitersCollection
+      .find(query)
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+
+    if (recruiters.length === 0) {
+      return res.status(404).json({ message: "No recruiters found" });
+    }
+
+    const totalRecruiters = await recruitersCollection.countDocuments(query);
+
+    res.json({
+      totalPages: Math.ceil(totalRecruiters / limit),
+      currentPage: page,
+      totalRecruiters,
+      recruiters,
+    });
+  } catch (error) {
+    console.error("Error fetching recruiters:", error);
+    res
+      .status(500)
+      .json({ message: "Failed to fetch recruiters", error: error.message });
+  }
+};
+
+// uniqe data
 exports.getRecruitersData = async (req, res) => {
   try {
-    const [industries, cities, countries, teamSizes] = await Promise.all([
-      recruitersCollection
-        .aggregate([
-          { $group: { _id: { $ifNull: ["$industry", "Unknown Industry"] } } },
-        ])
-        .toArray(),
-      recruitersCollection
-        .aggregate([
-          { $group: { _id: { $ifNull: ["$location.city", "Unknown City"] } } },
-        ])
-        .toArray(),
+    const [industries, cities, teamSizes] = await Promise.all([
       recruitersCollection
         .aggregate([
           {
             $group: {
-              _id: { $ifNull: ["$location.country", "Unknown Country"] },
+              _id: "$industry",
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              industry: "$_id",
             },
           },
         ])
         .toArray(),
+
       recruitersCollection
-        .aggregate([{ $group: { _id: "$numberOfEmployees" } }])
+        .aggregate([
+          {
+            $group: {
+              _id: "$location.city",
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              city: "$_id",
+            },
+          },
+        ])
+        .toArray(),
+
+      recruitersCollection
+        .aggregate([
+          {
+            $group: {
+              _id: "$numberOfEmployees",
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              teamSize: "$_id",
+            },
+          },
+        ])
         .toArray(),
     ]);
 
-    // Simplified extraction of unique data
-    const flatIndustries = industries.map(({ _id }) => _id);
-    const flatCities = cities.map(({ _id }) => _id);
-    const flatCountries = countries.map(({ _id }) => _id);
-    const flatTeamSizes = teamSizes.map(({ _id }) => _id);
+    const flatIndustries = industries.map((i) => i.industry);
+    const flatCities = cities.map((c) => c.city);
+    const flatTeamSizes = teamSizes.map((t) => t.teamSize);
 
-    res.status(200).json({
-      uniqueData: {
-        industries: flatIndustries,
-        cities: flatCities,
-        countries: flatCountries,
-        teamSizes: flatTeamSizes,
-      },
+    res.json({
+      industries: flatIndustries,
+      cities: flatCities,
+      teamSizes: flatTeamSizes,
     });
   } catch (error) {
+    console.error("Error fetching recruiters data:", error);
     res
       .status(500)
-      .json({ message: "Error fetching unique recruiter data", error });
+      .json({ message: "Error fetching data", error: error.message });
   }
 };
 
@@ -192,5 +223,3 @@ exports.addRecruiter = async (req, res) => {
     sendResponse(res, { message: "Failed to add Recruiter" }, 500);
   }
 };
-
-

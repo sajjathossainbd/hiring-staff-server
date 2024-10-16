@@ -18,7 +18,7 @@ router.get("/currentRecruiter/:email", getCurrentRecruiter);
 router.get("/", getAllRecruiters);
 
 // GET unique data
-router.get("/unique", getRecruitersData);
+router.get("/unique",  getRecruitersData);
 
 // GET recruiter by id
 router.get("/:id", getRecruiterById);

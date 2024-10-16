@@ -57,7 +57,6 @@ exports.getCurrentRecruiter = async (req, res) => {
 // Get all recruiters - Search by jobTitle and category
 exports.getAllRecruiters = async (req, res) => {
 
-  console.log(req.body);
 
   const { jobTitle, category } = req.query;
 

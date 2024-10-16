@@ -19,7 +19,7 @@ exports.getAllCandidates = async (req, res) => {
     const jobType = req.query.jobType || "";
 
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 12;
+    const limit = parseInt(req.query.limit) || 9;
     const skip = (page - 1) * limit;
 
     const query = {};
@@ -202,7 +202,7 @@ exports.getCandidatesData = async (req, res) => {
 
 // Get candidate by id
 exports.getCandidateById = async (req, res) => {
-  // console.log(req.params);
+
   const id = req.params.id;
 
   if (!ObjectId.isValid(id)) {

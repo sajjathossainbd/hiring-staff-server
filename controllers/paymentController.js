@@ -6,7 +6,6 @@ exports.postPayment = async (req, res) => {
   try {
     const { price } = req.body;
 
-    console.log("Price Received:", price);
 
     if (!price || price <= 0) {
       return res.status(400).send("Invalid price value");
@@ -17,7 +16,6 @@ exports.postPayment = async (req, res) => {
       currency: "usd",
     });
 
-    console.log("Generated Client Secret:", paymentIntent.client_secret);
 
     res.send({
       clientSecret: paymentIntent.client_secret,

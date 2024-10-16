@@ -145,7 +145,6 @@ exports.updateUserRole = async (req, res) => {
       return sendResponse(res, { message: "No changes made" }, 204);
     }
 
-    console.log(`Modified count: ${result.modifiedCount}`);
     sendResponse(res, { modifiedCount: result.modifiedCount });
   } catch (error) {
     console.error("Error updating user role:", error);

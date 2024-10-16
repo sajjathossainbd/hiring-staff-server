@@ -57,7 +57,6 @@ exports.postJob = async (req, res) => {
       </footer>
     </div>
   `;
-  
 
     for (const candidateEmail of candidateEmails) {
       await sendEmail({
@@ -552,6 +551,35 @@ exports.updateJobSelectedStatus = async (req, res) => {
       message: "Job status updated successfully",
       updatedCount: result.modifiedCount,
     });
+
+    const appliedJob = await appliedJobsCollection.findOne(query);
+    const applicantEmail = appliedJob.applicantEmail;
+
+    if (appliedJob) {
+      const { jobTitle, company_id } = appliedJob;
+      const message = `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
+          <p style="font-size: 16px;">
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+          </p>
+          <p style="font-size: 16px; margin-top: 20px;">
+            We will contact you shortly with further details.
+          </p>
+          <p style="margin-top: 40px; font-size: 14px; color: #777;">
+            Best regards,<br />
+            <strong>Hiring Staff Team</strong>
+          </p>
+        </div>
+      `;
+
+      await sendEmail({
+        recruiterName: company_id,
+        email: applicantEmail,
+        subject: `You Have Been Selected for ${jobTitle}!`,
+        message,
+      });
+    }
   } catch (error) {
     console.error("Error updating job status:", error);
     res.status(500).json({ message: "Error updating job status." });

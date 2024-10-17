@@ -85,7 +85,6 @@ const updatePaymentStatus = async (req, res) => {
     { $set: { status: status } }
   );
 
-  console.log(`Modified count: ${result.modifiedCount}`);
   res.send({ modifiedCount: result.modifiedCount });
 };
 

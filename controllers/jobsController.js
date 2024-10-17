@@ -1,6 +1,10 @@
 const { ObjectId } = require("mongodb");
 const { client } = require("../config/db");
 const jobsCollection = client.db("hiringStaffDB").collection("jobs");
+const appliedJobsCollection = client
+  .db("hiringStaffDB")
+  .collection("appliedjobs");
+const sendEmail = require("../utils/sendEmail");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -11,10 +15,10 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const query = { jobTitle: jobData.jobTitle };
-    // const query = { jobTitle: new RegExp(`^${jobData.jobTitle}$`, "i") };
-    const existingJob = await jobsCollection.findOne(query);
+    const { jobTitle, company_email, company_id, candidateEmails } = jobData;
 
+    const query = { jobTitle: jobData.jobTitle };
+    const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
       return sendResponse(
         res,
@@ -24,8 +28,48 @@ exports.postJob = async (req, res) => {
     }
 
     const result = await jobsCollection.insertOne(jobData);
+
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">New Job Opportunity!</h2>
+      <p style="font-size: 16px;">
+        A new job titled <strong style="color: #333;">${jobTitle}</strong> has been posted by 
+        <strong style="color: #0073e6;">${company_id}</strong>.
+      </p>
+      <p style="font-size: 16px; margin-top: 20px;">
+        <em>Check it out now on Hiring Staff!</em>
+      </p>
+      <div style="margin-top: 30px;">
+        <a 
+          href="http://localhost:5000/jobs/id" 
+          style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+          View Job Details
+        </a>
+      </div>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+      <hr style="border: none; border-top: 1px solid #ddd; margin-top: 40px;">
+      <footer style="font-size: 12px; color: #777;">
+        This email was sent to you because you subscribed to job notifications on Hiring Staff. 
+        If you no longer wish to receive these emails, you can <a href="#" style="color: #0073e6;">unsubscribe</a> at any time.
+      </footer>
+    </div>
+  `;
+
+    for (const candidateEmail of candidateEmails) {
+      await sendEmail({
+        recruiterName: company_id,
+        recruiterEmail: company_email,
+        email: candidateEmail,
+        subject: `New Job Opportunity: ${jobTitle}`,
+        message,
+      });
+    }
+
     sendResponse(res, {
-      message: "Job posted successfully",
+      message: "Job posted successfully and emails sent",
       insertId: result.insertedId,
     });
   } catch (error) {
@@ -223,26 +267,22 @@ exports.getJob = async (req, res) => {
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
+
     const query = { company_email: email };
     const result = await jobsCollection.find(query).toArray();
 
     if (result.length === 0) {
-      return sendResponse(
-        res,
-        { message: "No jobs found for this email" },
-        404
-      );
+      return res.status(404).json({ message: "No jobs found for this email" });
     }
 
-    sendResponse(res, result);
+    res.status(200).json(result);
   } catch (error) {
     console.error("Error fetching jobs by email:", error);
-    sendResponse(res, { message: "Error fetching jobs" }, 500);
+    res.status(500).json({ message: "Error fetching jobs" });
   }
 };
 
-
-// Delete user
+// Delete job
 exports.deleteJob = async (req, res) => {
   const id = req.params.id;
 
@@ -265,5 +305,333 @@ exports.deleteJob = async (req, res) => {
   } catch (error) {
     console.error("Error deleting Job:", error);
     sendResponse(res, { message: "Failed to delete Job" }, 500);
+  }
+};
+
+// applied job
+exports.appliedJobApplication = async (req, res) => {
+  const {
+    jobId,
+    jobTitle,
+    company_email,
+    company_id,
+    applicantId,
+    applicantName,
+    applicantEmail,
+    coverLetter,
+    resume,
+    availability,
+  } = req.body;
+
+  try {
+    const job = await jobsCollection.findOne({ _id: new ObjectId(jobId) });
+
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    const existingApplication = await appliedJobsCollection.findOne({
+      jobId: new ObjectId(jobId),
+      applicantId: new ObjectId(applicantId),
+    });
+
+    if (existingApplication) {
+      return res
+        .status(409)
+        .json({ message: "You have already applied for this job" });
+    }
+
+    const applicationData = {
+      _id: new ObjectId(),
+      jobId: new ObjectId(jobId),
+      jobTitle,
+      company_email,
+      company_id,
+      applicantId: new ObjectId(applicantId),
+      applicantName,
+      applicantEmail,
+      coverLetter,
+      resume,
+      availability,
+      shortlist: "pending",
+      reject: false,
+      selected: false,
+      appliedDate: new Date(),
+    };
+
+    const result = await appliedJobsCollection.insertOne(applicationData);
+
+    if (result.acknowledged) {
+      res.status(201).json({
+        message: "Application submitted successfully",
+        applicationId: result.insertedId,
+      });
+    }
+  } catch (error) {
+    console.error("Error submitting job application:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// Get all applied jobs
+
+exports.getAllAppliedJobs = async (req, res) => {
+  try {
+    const appliedJobs = await appliedJobsCollection.find().toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res.status(404).json({ message: "No applied jobs found." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+// Get applied jobs for a specific applicant
+exports.getAppliedJobsById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Applicant ID" });
+    }
+
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        applicantId: new ObjectId(id),
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this applicant." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+// Delete controller for applied jobs
+
+exports.deleteAppliedJob = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid User ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await appliedJobsCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Job not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Applied Job deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting Job:", error);
+    sendResponse(res, { message: "Failed to delete Job" }, 500);
+  }
+};
+
+// Get applied jobs by email address
+
+exports.getAppliedJobsByEmail = async (req, res) => {
+  try {
+    const { email } = req.params;
+
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        company_email: email,
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this email address." });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+// Update applied job status
+
+exports.updateAppliedJobStatus = async (req, res) => {
+  const { id } = req.params;
+  const { shortlist, reject } = req.body; // Accept both shortlist and reject values from the request
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Job ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+
+    // Dynamically build the update object based on the provided fields
+    const update = {
+      $set: {},
+    };
+    if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
+    if (typeof reject === "boolean") update.$set.reject = reject; // e.g., true or false
+
+    const result = await appliedJobsCollection.updateOne(query, update);
+
+    if (result.matchedCount === 0) {
+      return sendResponse(res, { message: "Job not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Applied Job status updated successfully",
+      updatedCount: result.matchedCount,
+    });
+  } catch (error) {
+    console.error("Error updating applied job status:", error);
+    sendResponse(res, { message: "Error updating job status" }, 500);
+  }
+};
+
+exports.getAppliedJobsByEmailAndShortlist = async (req, res) => {
+  try {
+    const { email } = req.params;
+
+    const appliedJobs = await appliedJobsCollection
+      .find({
+        company_email: email,
+        shortlist: "approved",
+      })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json(appliedJobs);
+    } else {
+      return res
+        .status(404)
+        .json({ message: "No shortlisted jobs found for this email address." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+// API to update the 'selected' status of an applied job
+exports.updateJobSelectedStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Job ID" });
+    }
+
+    const query = { _id: new ObjectId(id) };
+    const update = { $set: { selected: true } };
+
+    const result = await appliedJobsCollection.updateOne(query, update);
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    res.status(200).json({
+      message: "Job status updated successfully",
+      updatedCount: result.modifiedCount,
+    });
+
+    const appliedJob = await appliedJobsCollection.findOne(query);
+    const applicantEmail = appliedJob.applicantEmail;
+
+    if (appliedJob) {
+      const { jobTitle, company_id } = appliedJob;
+      const message = `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
+          <p style="font-size: 16px;">
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+          </p>
+          <p style="font-size: 16px; margin-top: 20px;">
+            We will contact you shortly with further details.
+          </p>
+          <p style="margin-top: 40px; font-size: 14px; color: #777;">
+            Best regards,<br />
+            <strong>Hiring Staff Team</strong>
+          </p>
+        </div>
+      `;
+
+      await sendEmail({
+        recruiterName: company_id,
+        email: applicantEmail,
+        subject: `You Have Been Selected for ${jobTitle}!`,
+        message,
+      });
+    }
+  } catch (error) {
+    console.error("Error updating job status:", error);
+    res.status(500).json({ message: "Error updating job status." });
+  }
+};
+
+// get aproved shortlist data for candidates
+exports.getApprovedShortlistedJobs = async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const shortlistedJobs = await appliedJobsCollection
+      .find({
+        applicantEmail: email,
+        shortlist: "approved",
+      })
+      .toArray();
+
+    if (shortlistedJobs.length === 0) {
+      return res.status(404).json({
+        message: "No approved shortlisted jobs found for this candidate",
+      });
+    }
+
+    res.status(200).json(shortlistedJobs);
+  } catch (error) {
+    console.error("Error fetching shortlisted jobs:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// get selected jobs for candidates
+exports.getSelectedJobs = async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const shortlistedJobs = await appliedJobsCollection
+      .find({
+        applicantEmail: email,
+        shortlist: "selected",
+      })
+      .toArray();
+
+    if (shortlistedJobs.length === 0) {
+      return res.status(404).json({
+        message: "No approved shortlisted jobs found for this candidate",
+      });
+    }
+
+    res.status(200).json(shortlistedJobs);
+  } catch (error) {
+    console.error("Error fetching shortlisted jobs:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };

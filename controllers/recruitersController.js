@@ -119,19 +119,93 @@ exports.getRecruiterById = async (req, res) => {
 };
 
 // Fetching unique data
+// exports.getRecruitersData = async (req, res) => {
+//   try {
+//     const [industries, cities, countries, teamSizes, page = 1,
+//       limit,] = await Promise.all([
+//       recruitersCollection
+//         .aggregate([
+//           { $group: { _id: { $ifNull: ["$industry", "Unknown Industry"] } } },
+//         ])
+//         .toArray(),
+//       recruitersCollection
+//         .aggregate([
+//           { $group: { _id: { $ifNull: ["$location.city", "Unknown City"] } } },
+//         ])
+//         .toArray(),
+//       recruitersCollection
+//         .aggregate([
+//           {
+//             $group: {
+//               _id: { $ifNull: ["$location.country", "Unknown Country"] },
+//             },
+//           },
+//         ])
+//         .toArray(),
+//       recruitersCollection
+//         .aggregate([{ $group: { _id: "$numberOfEmployees" } }])
+//         .toArray(),
+//     ]);
+
+//     // Simplified extraction of unique data
+//     const flatIndustries = industries.map(({ _id }) => _id);
+//     const flatCities = cities.map(({ _id }) => _id);
+//     const flatCountries = countries.map(({ _id }) => _id);
+//     const flatTeamSizes = teamSizes.map(({ _id }) => _id);
+
+//     res.status(200).json({
+//       uniqueData: {
+//         industries: flatIndustries,
+//         cities: flatCities,
+//         countries: flatCountries,
+//         teamSizes: flatTeamSizes,
+//       },
+//     });
+//   } catch (error) {
+//     res
+//       .status(500)
+//       .json({ message: "Error fetching unique recruiter data", error });
+//   }
+// };
+
 exports.getRecruitersData = async (req, res) => {
   try {
     const [industries, cities, countries, teamSizes] = await Promise.all([
       recruitersCollection
         .aggregate([
-          { $group: { _id: { $ifNull: ["$industry", "Unknown Industry"] } } },
+          {
+            $group: {
+              _id: { $ifNull: ["$industry", "Unknown Industry"] },
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              industry: "$_id",
+            },
+          },
+          {
+            $sort: { industry: 1 }, // Sorting industries alphabetically
+          },
         ])
         .toArray(),
+
       recruitersCollection
         .aggregate([
-          { $group: { _id: { $ifNull: ["$location.city", "Unknown City"] } } },
+          {
+            $group: {
+              _id: { $ifNull: ["$location.city", "Unknown City"] },
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              city: "$_id",
+            },
+          },
         ])
         .toArray(),
+
       recruitersCollection
         .aggregate([
           {
@@ -139,33 +213,51 @@ exports.getRecruitersData = async (req, res) => {
               _id: { $ifNull: ["$location.country", "Unknown Country"] },
             },
           },
+          {
+            $project: {
+              _id: 0,
+              country: "$_id",
+            },
+          },
         ])
         .toArray(),
+
       recruitersCollection
-        .aggregate([{ $group: { _id: "$numberOfEmployees" } }])
+        .aggregate([
+          {
+            $group: {
+              _id: "$numberOfEmployees",
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              teamSize: "$_id",
+            },
+          },
+        ])
         .toArray(),
     ]);
+    const uniqueIndustries = [...new Set(industries.map((i) => i.industry))];
+    // Flatten the results
+    const flatIndustries = industries.map((i) => i.industry);
+    const flatCities = cities.map((c) => c.city);
+    const flatCountries = countries.map((c) => c.country);
+    const flatTeamSizes = teamSizes.map((ts) => ts.teamSize);
+    console.log(industries)
 
-    // Simplified extraction of unique data
-    const flatIndustries = industries.map(({ _id }) => _id);
-    const flatCities = cities.map(({ _id }) => _id);
-    const flatCountries = countries.map(({ _id }) => _id);
-    const flatTeamSizes = teamSizes.map(({ _id }) => _id);
-
-    res.status(200).json({
-      uniqueData: {
-        industries: flatIndustries,
-        cities: flatCities,
-        countries: flatCountries,
-        teamSizes: flatTeamSizes,
-      },
+    res.json({
+      industries: flatIndustries,
+      cities: flatCities,
+      countries: flatCountries,
+      teamSizes: flatTeamSizes,
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Error fetching unique recruiter data", error });
+    console.error("Error fetching recruiters data:", error);
+    res.status(500).json({ message: "Error fetching data", error: error.message });
   }
 };
+
 
 exports.addRecruiter = async (req, res) => {
   try {

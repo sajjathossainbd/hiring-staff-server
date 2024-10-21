@@ -445,6 +445,24 @@ exports.deleteAppliedJob = async (req, res) => {
   }
 };
 
+// get applied job by shortlisted
+
+exports.getAppliedJobByShortlist = async (req, res) => {
+  try {
+    const appliedJobs = await appliedJobsCollection.find({ shortlist: "approved" }).toArray();
+
+    if (!appliedJobs.length) {
+      return res.status(404).json({ message: "No jobs found in shortlist" });
+    }
+
+    return res.status(200).json(appliedJobs);
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+    return res.status(500).json({ message: "Error fetching jobs" });
+  }
+};
+
+
 // Get applied jobs by email address
 
 exports.getAppliedJobsByEmail = async (req, res) => {

@@ -60,6 +60,36 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+
+// Get all Candidates with pagination
+exports.getAllCandidates = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const skip = (page - 1) * limit;
+
+    const candidates = await usersCollection
+      .find({ role: "candidate" })
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+
+    const totalDocuments = await usersCollection.countDocuments({ role: "candidate" });
+    const totalPages = Math.ceil(totalDocuments / limit);
+
+    sendResponse(res, {
+      candidates,
+      currentPage: page,
+      totalPages,
+      totalDocuments,
+    });
+  } catch (error) {
+    console.error("Error fetching candidates:", error);
+    sendResponse(res, { error: "Failed to retrieve candidate list" }, 500);
+  }
+};
+
+
 // Get current user by email
 exports.getCurrentUser = async (req, res) => {
   const email = req.params.email;

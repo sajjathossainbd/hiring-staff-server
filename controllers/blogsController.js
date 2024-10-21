@@ -90,3 +90,24 @@ exports.getAllBlogs = async (req, res) => {
     sendResponse(res, { error: "Failed to retrieve blog list" }, 500);
   }
 };
+
+// Delete a blog
+
+exports.deleteBlog = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid blog ID" }, 400);
+  }
+
+  try {
+    const result = await blogsCollection.deleteOne({ _id: new ObjectId(id) });
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Blog not found" }, 404);
+    }
+    sendResponse(res, { message: "Blog deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting blog:", error);
+    sendResponse(res, { message: "Failed to delete blog" }, 500);
+  }
+};

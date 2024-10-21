@@ -394,19 +394,36 @@ exports.getAllAppliedJobs = async (req, res) => {
 exports.getAppliedJobsById = async (req, res) => {
   try {
     const { id } = req.params;
+    const { page = 1, limit = 10 } = req.query; // Get page and limit from query parameters
 
     if (!ObjectId.isValid(id)) {
       return res.status(400).json({ message: "Invalid Applicant ID" });
     }
 
+    // Convert page and limit to numbers
+    const pageNum = parseInt(page, 10);
+    const limitNum = parseInt(limit, 10);
+
+    // Calculate the number of jobs to skip
+    const skip = (pageNum - 1) * limitNum;
+
     const appliedJobs = await appliedJobsCollection
-      .find({
-        applicantId: new ObjectId(id),
-      })
+      .find({ applicantId: new ObjectId(id) })
+      .skip(skip) // Skip the first 'skip' jobs
+      .limit(limitNum) // Limit to 'limitNum' jobs
       .toArray();
 
+    const totalJobs = await appliedJobsCollection.countDocuments({
+      applicantId: new ObjectId(id),
+    });
+
     if (appliedJobs.length > 0) {
-      return res.status(200).json(appliedJobs);
+      return res.status(200).json({
+        totalJobs, // Include total jobs for pagination
+        totalPages: Math.ceil(totalJobs / limitNum), // Calculate total pages
+        currentPage: pageNum, // Include current page
+        appliedJobs, // Return the applied jobs
+      });
     } else {
       return res
         .status(404)
@@ -417,6 +434,7 @@ exports.getAppliedJobsById = async (req, res) => {
     return res.status(500).json({ message: "Error fetching applied jobs." });
   }
 };
+
 
 // Delete controller for applied jobs
 
@@ -607,14 +625,24 @@ exports.updateJobSelectedStatus = async (req, res) => {
 // get aproved shortlist data for candidates
 exports.getApprovedShortlistedJobs = async (req, res) => {
   const { email } = req.params;
+  const { page = 1, limit = 12 } = req.query; // Get pagination parameters from query
 
   try {
+    const skip = (page - 1) * limit; // Calculate the number of records to skip
     const shortlistedJobs = await appliedJobsCollection
       .find({
         applicantEmail: email,
         shortlist: "approved",
       })
+      .skip(skip) // Skip the calculated number of records
+      .limit(parseInt(limit)) // Limit the number of records returned
       .toArray();
+
+    // Count total approved shortlisted jobs for pagination info
+    const totalShortlistedJobs = await appliedJobsCollection.countDocuments({
+      applicantEmail: email,
+      shortlist: "approved",
+    });
 
     if (shortlistedJobs.length === 0) {
       return res.status(404).json({
@@ -622,34 +650,55 @@ exports.getApprovedShortlistedJobs = async (req, res) => {
       });
     }
 
-    res.status(200).json(shortlistedJobs);
+    res.status(200).json({
+      totalJobs: totalShortlistedJobs,
+      totalPages: Math.ceil(totalShortlistedJobs / limit), // Calculate total pages
+      currentPage: parseInt(page),
+      jobs: shortlistedJobs, // Return the jobs
+    });
   } catch (error) {
     console.error("Error fetching shortlisted jobs:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 // get selected jobs for candidates
 exports.getSelectedJobs = async (req, res) => {
   const { email } = req.params;
+  const { page = 1, limit = 12 } = req.query; // Get page and limit from query parameters
 
   try {
-    const shortlistedJobs = await appliedJobsCollection
+    const skip = (page - 1) * limit; // Calculate how many documents to skip
+    const totalSelectedJobs = await appliedJobsCollection.countDocuments({
+      applicantEmail: email,
+      shortlist: "selected",
+    });
+
+    const selectedJobs = await appliedJobsCollection
       .find({
         applicantEmail: email,
         shortlist: "selected",
       })
+      .skip(skip) // Skip the documents based on page
+      .limit(parseInt(limit)) // Limit the number of documents returned
       .toArray();
 
-    if (shortlistedJobs.length === 0) {
+    if (selectedJobs.length === 0) {
       return res.status(404).json({
-        message: "No approved shortlisted jobs found for this candidate",
+        message: "No selected jobs found for this candidate",
       });
     }
 
-    res.status(200).json(shortlistedJobs);
+    // Return both selected jobs and total count for pagination
+    res.status(200).json({
+      currentPage: parseInt(page),
+      totalPages: Math.ceil(totalSelectedJobs / limit), // Calculate total pages
+      selectedJobs,
+    });
   } catch (error) {
-    console.error("Error fetching shortlisted jobs:", error);
+    console.error("Error fetching selected jobs:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
+

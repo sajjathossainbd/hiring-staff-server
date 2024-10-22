@@ -9,12 +9,16 @@ const {
   deleteUser,
   updateUserRole,
   candidatesEmail,
+  getAllCandidates,
+  getAllRecruiters,
 } = require("../controllers/userController");
 
 const router = express.Router();
 
 router.post("/", addUser);
 router.get("/", getAllUsers);
+router.get("/candidates", getAllCandidates);
+router.get("/recruiters", getAllRecruiters);
 router.get("/current/:email", getCurrentUser);
 router.patch("/profile/:email", updateUserProfile);
 router.delete("/:id", deleteUser);

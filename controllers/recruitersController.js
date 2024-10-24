@@ -2,6 +2,7 @@ const { client, ObjectId } = require("../config/db");
 const recruitersCollection = client
   .db("hiringStaffDB")
   .collection("recruiters");
+const jobsCollection = client.db("hiringStaffDB").collection("jobs");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -128,7 +129,7 @@ exports.getAllRecruiters = async (req, res) => {
   }
 };
 
-// uniqe data
+// unique data
 exports.getRecruitersData = async (req, res) => {
   try {
     const [industries, cities, teamSizes] = await Promise.all([
@@ -198,28 +199,59 @@ exports.getRecruitersData = async (req, res) => {
   }
 };
 
-exports.addRecruiter = async (req, res) => {
-  try {
-    const recruiter = req.body;
-    const query = { _id: recruiter._id };
-    const existingRecruiter = await recruitersCollection.findOne(query);
 
-    if (existingRecruiter) {
-      return sendResponse(
-        res,
-        { message: "Recruiter Already Exists", insertId: null },
-        409
-      );
+// delete recruiters data
+exports.deleteRecruiters = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Recruiters ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await recruitersCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Recruiters not found" }, 404);
     }
 
-    const result = await recruitersCollection.insertOne(recruiter);
-    sendResponse(
-      res,
-      { message: "Recruiter added successfully", insertId: result.insertedId },
-      201
-    );
+    sendResponse(res, {
+      message: "Recruiters deleted successfully",
+      deletedCount: result.deletedCount,
+    });
   } catch (error) {
-    console.error("Error adding Recruiter:", error);
-    sendResponse(res, { message: "Failed to add Recruiter" }, 500);
+    console.error("Error deleting Recruiters:", error);
+    sendResponse(res, { message: "Failed to delete user" }, 500);
+  }
+};
+
+exports.getRecruiterOpenJobsById = async (req, res) => {
+  try {
+    const jobId = req.params.id || "";
+
+    if (!ObjectId.isValid(jobId)) {
+      return res.status(400).json({ message: "Invalid Job ID" });
+    }
+
+    const jobs = await jobsCollection
+      .find({
+        recruiter_id: jobId,
+      })
+      .toArray();
+
+    if (jobs.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No jobs found for this recruiter" });
+    }
+
+    res.json(jobs);
+  } catch (error) {
+    console.error("Error retrieving Recruiter Open Jobs:", error);
+
+    return res.status(500).json({
+      message: "Failed to retrieve open jobs for this recruiter",
+    });
   }
 };

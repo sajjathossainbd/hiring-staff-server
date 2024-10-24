@@ -6,32 +6,7 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
-// Add a new user
-exports.addUser = async (req, res) => {
-  try {
-    const user = req.body;
-    const query = { email: user.email };
-    const existingUser = await usersCollection.findOne(query);
-
-    if (existingUser) {
-      return sendResponse(
-        res,
-        { message: "User Already Exists", insertId: null },
-        409
-      );
-    }
-
-    const result = await usersCollection.insertOne(user);
-    sendResponse(
-      res,
-      { message: "User added successfully", insertId: result.insertedId },
-      201
-    );
-  } catch (error) {
-    console.error("Error adding user:", error);
-    sendResponse(res, { message: "Failed to add user" }, 500);
-  }
-};
+// Add a new addCandidate
 
 // Get all users with pagination
 exports.getAllUsers = async (req, res) => {

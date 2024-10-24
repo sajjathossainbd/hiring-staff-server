@@ -1,0 +1,2601 @@
+[
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Fresher React JS Developer",
+    "category": "Front End",
+    "description": "We are seeking enthusiastic freshers interested in React JS development. Passion for coding, problem-solving, and a strong dedication to front-end development is key. Formal education is a plus but not mandatory.",
+    "responsibilities": [
+      "Write clean, functional code on the front-end.",
+      "Debug software for optimal performance.",
+      "Collaborate with team members to improve the product.",
+      "Learn under senior developers' guidance."
+    ],
+    "requirements": [
+      "Understanding of React JS principles.",
+      "Problem-solving skills with attention to detail.",
+      "Experience with Git or other version control systems.",
+      "Knowledge of HTML5, CSS3, and RESTful services is a plus."
+    ],
+    "benefits": [
+      "Festival Bonuses",
+      "Annual Salary Increments",
+      "Gym facilities and Sports Zone",
+      "Free Shuttle service"
+    ],
+    "job_type": "Full-time",
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 25000,
+    "min_salary": 30000,
+    "postedDate": "2024-08-04",
+    "lastDateToApply": "2024-10-05",
+    "education": "Bachelor’s Degree in CSE",
+    "tags": ["Front End Developer", "Web Development"],
+    "appliers": [],
+    "featured": true,
+    "experience": 2
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Mobile App Developer (Flutter)",
+    "category": "Mobile Development",
+    "description": "Programming Hero is looking for a passionate mobile app developer skilled in Flutter to build responsive and scalable mobile applications for Android and iOS.",
+    "responsibilities": [
+      "Develop mobile applications using Flutter.",
+      "Collaborate with cross-functional teams for app design.",
+      "Ensure high-performance code and responsiveness.",
+      "Maintain and optimize code for existing apps."
+    ],
+    "requirements": [
+      "Proficiency in Flutter and Dart.",
+      "Experience with APIs and third-party libraries.",
+      "Knowledge of mobile architecture patterns (MVC/MVVM).",
+      "Good problem-solving and communication skills."
+    ],
+    "benefits": [
+      "Festival Bonuses and Annual Salary Increments.",
+      "Gym and recreational activities.",
+      "Free Lunch and Coffee.",
+      "Company-sponsored annual tour."
+    ],
+    "job_type": "Part-time",
+    "job_location": "On-site",
+    "workdays": "Monday to Friday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-09-15",
+    "lastDateToApply": "2024-11-01",
+    "education": "Bachelor’s Degree in Computer Science",
+    "tags": ["Mobile Development", "Flutter", "Dart"],
+    "appliers": [],
+    "experience": 6
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a9",
+    "jobTitle": "ERP Developer",
+    "category": "ERP Development",
+    "description": "We are hiring an ERP Developer to build and maintain enterprise-level solutions using .NET and C#. Join us to work on cutting-edge projects in Bangladesh's first CMMI Level 5 company.",
+    "responsibilities": [
+      "Design and develop ERP modules using .NET and C#.",
+      "Collaborate with cross-functional teams to understand business requirements.",
+      "Troubleshoot and optimize existing ERP systems.",
+      "Integrate third-party APIs and ensure data security."
+    ],
+    "requirements": [
+      "Strong knowledge of .NET framework and C#.",
+      "Experience with SQL databases.",
+      "Good problem-solving skills and attention to detail.",
+      "Familiarity with ERP architecture and design patterns."
+    ],
+    "benefits": [
+      "Performance-based bonuses.",
+      "Free lunch and annual tours.",
+      "Professional training opportunities.",
+      "Health insurance and gym access."
+    ],
+    "job_type": "Contractual",
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 80000,
+    "postedDate": "2024-09-20",
+    "lastDateToApply": "2024-11-01",
+    "education": "Bachelor’s in Computer Science or equivalent.",
+    "tags": [".NET", "C#", "ERP"],
+    "appliers": [],
+    "experience": 2
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5aa",
+    "jobTitle": "Laravel Developer",
+    "category": "Back-End Development",
+    "description": "We are looking for a skilled Laravel Developer to join our team and build high-performance backend services for enterprise applications.",
+    "responsibilities": [
+      "Develop backend applications using Laravel and MySQL.",
+      "Integrate APIs for seamless data exchange.",
+      "Collaborate with front-end developers on new features.",
+      "Optimize applications for maximum speed and scalability."
+    ],
+    "requirements": [
+      "Proficiency in Laravel and PHP.",
+      "Experience with MySQL and Redis.",
+      "Knowledge of RESTful services and API development.",
+      "Good problem-solving skills."
+    ],
+    "benefits": [
+      "Performance-based bonuses.",
+      "Annual salary increments.",
+      "Health insurance.",
+      "Lunch and snacks provided."
+    ],
+    "job_type": "Intern",
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 55000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-11-10",
+    "education": "Bachelor’s in Computer Science.",
+    "tags": ["Laravel", "PHP", "Backend"],
+    "appliers": [],
+    "experience": 4
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ab",
+    "jobTitle": "Java Developer",
+    "category": "Back-End Development",
+    "description": "We are looking for an experienced Java Developer to join our backend team and build high-performance software solutions.",
+    "responsibilities": [
+      "Design, implement, and maintain Java-based applications.",
+      "Collaborate with cross-functional teams to define software requirements.",
+      "Troubleshoot and debug production issues.",
+      "Ensure code quality and best practices."
+    ],
+    "requirements": [
+      "Proficiency in Java and Spring Framework.",
+      "Experience with RESTful APIs.",
+      "Knowledge of Agile development practices.",
+      "Excellent problem-solving skills."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Health insurance.",
+      "Performance-based bonuses."
+    ],
+    "job_type": "Freelance",
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 75000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Java", "Spring", "Backend"],
+    "appliers": [],
+    "featured": true,
+    "experience": 3
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "Software Developer (Java)",
+    "category": "Back-End Development",
+    "description": "We are looking for a Java Developer to join our team and contribute to building robust software solutions for our clients.",
+    "responsibilities": [
+      "Design, develop, and maintain Java applications.",
+      "Collaborate with cross-functional teams to analyze requirements.",
+      "Conduct code reviews and ensure best practices.",
+      "Troubleshoot and optimize existing code."
+    ],
+    "requirements": [
+      "Proficient in Java and Spring Framework.",
+      "Experience with RESTful APIs and microservices.",
+      "Familiarity with Agile methodologies.",
+      "Strong analytical and problem-solving skills."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 55000,
+    "min_salary": 80000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Java", "Software Development", "Backend"],
+    "appliers": [],
+    "experience": 6
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ad",
+    "jobTitle": "E-commerce Developer",
+    "category": "Web Development",
+    "description": "Join our team as an E-commerce Developer to create and maintain online shopping platforms that enhance customer experiences.",
+    "responsibilities": [
+      "Develop and implement e-commerce websites.",
+      "Integrate payment gateways and shopping carts.",
+      "Collaborate with designers to create user-friendly interfaces.",
+      "Ensure security and compliance of e-commerce platforms."
+    ],
+    "requirements": [
+      "Experience in e-commerce platforms like Shopify, WooCommerce, or Magento.",
+      "Strong knowledge of HTML, CSS, and JavaScript.",
+      "Familiarity with back-end technologies (PHP, Node.js).",
+      "Problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance.",
+      "Performance bonuses."
+    ],
+    "job_type": "Part-time",
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-20",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["E-commerce", "Web Development"],
+    "appliers": [],
+    "experience": 1
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ae",
+    "jobTitle": "Senior Software Engineer",
+    "category": "Software Development",
+    "description": "Join Daffodil Software Ltd. as a Senior Software Engineer, where you'll lead development projects and enhance our custom software solutions.",
+    "responsibilities": [
+      "Design and implement software solutions using Java or .NET.",
+      "Collaborate with cross-functional teams to gather requirements.",
+      "Mentor junior developers and ensure code quality.",
+      "Participate in architectural discussions and decisions."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Computer Science or related field.",
+      "5+ years of experience in software development.",
+      "Proficient in Java or .NET frameworks.",
+      "Strong problem-solving skills and ability to work in teams."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Health and wellness programs.",
+      "Opportunities for professional growth."
+    ],
+    "job_type": "Contractual",
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 80000,
+    "min_salary": 120000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Software Development", "Java", ".NET"],
+    "appliers": [],
+    "experience": 6
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5af",
+    "jobTitle": "Software Developer",
+    "category": "Software Development",
+    "description": "Therap (BD) Ltd. is looking for a Software Developer to contribute to our innovative SaaS solutions. You'll work closely with a dynamic team to enhance our software for healthcare organizations.",
+    "responsibilities": [
+      "Develop and maintain web applications and SaaS products.",
+      "Collaborate with cross-functional teams to gather requirements.",
+      "Ensure the scalability and performance of applications.",
+      "Participate in code reviews and maintain coding standards."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Computer Science or related field.",
+      "2+ years of experience in software development.",
+      "Proficiency in JavaScript, HTML, CSS, and backend technologies.",
+      "Experience with SaaS applications is a plus."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Health and wellness benefits.",
+      "Opportunities for professional development."
+    ],
+    "job_type": "Intern",
+    "experience": 1,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-12-01",
+    "tags": ["Software Development", "SaaS", "Web Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b0",
+    "jobTitle": "Full-Stack Developer",
+    "category": "Software Development",
+    "description": "Nascenia is seeking an experienced Full-Stack Developer to join our talented team. If you're passionate about building scalable web applications and working with modern frameworks, we’d love to hear from you.",
+    "responsibilities": [
+      "Develop and maintain web applications using Node.js, Angular, and JavaScript.",
+      "Collaborate with designers to enhance UX/UI.",
+      "Optimize applications for maximum speed and scalability.",
+      "Work in an Agile environment with cross-functional teams."
+    ],
+    "requirements": [
+      "3+ years of experience in full-stack development.",
+      "Proficiency with Node.js, Angular, and JavaScript.",
+      "Knowledge of cloud services and deployment strategies.",
+      "Familiarity with Git and CI/CD pipelines."
+    ],
+    "benefits": [
+      "Hybrid work options.",
+      "Competitive salary and bonuses.",
+      "Health insurance and wellness benefits."
+    ],
+    "job_type": "Freelance",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "10:00 AM - 6:00 PM",
+    "max_salary": 80000,
+    "min_salary": 120000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-15",
+    "tags": ["Full-Stack Development", "Node.js", "Angular"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b1",
+    "jobTitle": "Software Developer",
+    "category": "Software Development",
+    "description": "Vivasoft Ltd. is looking for a talented Software Developer to join our dynamic team. You will work on innovative projects that impact various sectors, including finance and healthcare.",
+    "responsibilities": [
+      "Develop and maintain software applications using Java, .NET, and PHP.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Troubleshoot and debug applications to optimize performance.",
+      "Participate in code reviews and contribute to the team's best practices."
+    ],
+    "requirements": [
+      "2+ years of experience in software development.",
+      "Proficiency in Java, C#, and Python.",
+      "Familiarity with Agile methodologies.",
+      "Strong problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Competitive salary and performance bonuses.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 5,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 70000,
+    "min_salary": 130000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-10",
+    "tags": ["Software Development", "Java", "Remote Work"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b2",
+    "jobTitle": "Software Engineer",
+    "category": "Software Development",
+    "description": "Bdtask Ltd. is seeking a passionate Software Engineer to join our team. You will work on innovative software solutions, contributing to the entire software development lifecycle.",
+    "responsibilities": [
+      "Design, develop, and maintain custom software applications.",
+      "Collaborate with cross-functional teams to gather requirements.",
+      "Participate in code reviews and maintain high-quality coding standards.",
+      "Troubleshoot and debug applications as necessary."
+    ],
+    "requirements": [
+      "2+ years of experience in software development.",
+      "Proficiency in Java, .NET, or PHP.",
+      "Familiarity with Agile methodologies.",
+      "Strong problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Flexible working hours and remote work options.",
+      "Competitive salary with performance bonuses.",
+      "Access to training and professional development resources."
+    ],
+    "job_type": "Part-time",
+    "experience": 2,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-10",
+    "tags": ["Software Development", "Remote Work", "Java", ".NET"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b3",
+    "jobTitle": "Course Instructor – Programming",
+    "category": "Education",
+    "description": "Phitron is seeking experienced Course Instructors to develop and deliver engaging programming courses. You will help nurture the next generation of software engineers.",
+    "responsibilities": [
+      "Create course content and materials for various programming languages.",
+      "Deliver live sessions and manage online discussions.",
+      "Assess student performance and provide constructive feedback.",
+      "Stay updated with the latest trends in technology and education."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Proven experience in teaching or mentoring.",
+      "Proficiency in languages such as Python, JavaScript, or C++.",
+      "Strong communication and presentation skills."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Competitive salary and performance bonuses.",
+      "Access to professional development resources."
+    ],
+    "job_type": "Part-time",
+    "experience": 5,
+    "job_location": "Hybrid",
+    "workdays": "Flexible",
+    "work_hours": "Flexible",
+    "max_salary": 30000,
+    "min_salary": 50000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Education", "Programming", "Remote Work"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b4",
+    "jobTitle": "Software Engineer – VoIP Solutions",
+    "category": "Software Development",
+    "description": "REVE Systems is looking for a talented Software Engineer to join our team and contribute to the development of cutting-edge VoIP software solutions.",
+    "responsibilities": [
+      "Design, develop, and maintain VoIP applications.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Troubleshoot and resolve issues in the existing applications.",
+      "Ensure the performance, quality, and responsiveness of applications."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Experience with VoIP technologies and protocols.",
+      "Proficiency in programming languages like Node.js, JavaScript, and C/C++.",
+      "Strong problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary and performance bonuses.",
+      "Health insurance and wellness programs.",
+      "Opportunity for career growth and development."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 90000,
+    "min_salary": 110000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Software Development", "VoIP", "Node.js"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b6",
+    "jobTitle": "Software Developer – Biometric Solutions",
+    "category": "Software Development",
+    "description": "TigerIT Bangladesh is seeking a skilled Software Developer to design and implement biometric solutions for secure identity management.",
+    "responsibilities": [
+      "Develop and maintain biometric software applications.",
+      "Collaborate with cross-functional teams to gather and analyze requirements.",
+      "Ensure software quality through testing and debugging.",
+      "Stay updated on industry trends and advancements in biometric technology."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Experience with biometric technologies and secure identity management.",
+      "Proficiency in programming languages such as C#, Java, and .NET.",
+      "Strong analytical and problem-solving skills."
+    ],
+    "benefits": [
+      "Competitive salary and performance bonuses.",
+      "Health insurance and wellness programs.",
+      "Opportunities for career growth and development."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Software Development", "Biometric Solutions", "C#"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b7",
+    "jobTitle": "Software Engineer",
+    "category": "Software Development",
+    "description": "BJIT Ltd. is seeking a talented Software Engineer to join our team and contribute to innovative software solutions for our clients.",
+    "responsibilities": [
+      "Design, develop, and maintain software applications.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Troubleshoot and resolve software issues.",
+      "Participate in code reviews and maintain best practices."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Proficient in programming languages such as Java, Node.js, and Ruby.",
+      "Experience with software development lifecycle and Agile methodologies.",
+      "Strong problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary and bonuses.",
+      "Health insurance and retirement plans.",
+      "Opportunities for training and career advancement."
+    ],
+    "job_type": "Contractual",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 70000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Software Development", "Java", "Node.js"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b8",
+    "jobTitle": "Frontend Developer",
+    "category": "Web Development",
+    "description": "Selise Digital Platforms is looking for a skilled Frontend Developer to create user-friendly interfaces and enhance user experience.",
+    "responsibilities": [
+      "Develop and maintain responsive web applications.",
+      "Collaborate with designers and backend developers to implement new features.",
+      "Optimize applications for maximum speed and scalability.",
+      "Ensure high-quality graphics standards and brand consistency."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Proficiency in HTML, CSS, and JavaScript frameworks like Angular.",
+      "Experience with responsive design and mobile-first development.",
+      "Strong problem-solving skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary and bonuses.",
+      "Health insurance and retirement benefits.",
+      "Opportunities for professional development and training."
+    ],
+    "job_type": "Full-time",
+    "experience": 6,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 50000,
+    "min_salary": 80000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Frontend Development", "Angular", "JavaScript"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b9",
+    "jobTitle": "Web Development Instructor",
+    "category": "Education",
+    "description": "Learn with Sumit is seeking an experienced Web Development Instructor to teach courses in JavaScript, React, and Node.js.",
+    "responsibilities": [
+      "Develop and deliver engaging online courses.",
+      "Provide hands-on support to students in coding exercises.",
+      "Update course materials and ensure they are current.",
+      "Evaluate student progress and provide constructive feedback."
+    ],
+    "requirements": [
+      "Proven experience as a web developer and instructor.",
+      "Strong knowledge of JavaScript, React, and Node.js.",
+      "Excellent communication and teaching skills.",
+      "Passion for education and helping others learn."
+    ],
+    "benefits": [
+      "Competitive salary based on experience.",
+      "Flexible working hours.",
+      "Opportunity for professional development and training."
+    ],
+    "job_type": "Part-time",
+    "experience": 7,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Varied",
+    "max_salary": 40000,
+    "min_salary": 60000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Web Development", "Teaching", "JavaScript"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ba",
+    "jobTitle": "Software Engineer",
+    "category": "IT & Software",
+    "description": "Leads Corporation Ltd. is seeking a skilled Software Engineer to develop and maintain banking software applications.",
+    "responsibilities": [
+      "Design, develop, and implement software solutions for the banking sector.",
+      "Collaborate with cross-functional teams to define and analyze requirements.",
+      "Perform testing, debugging, and troubleshooting of applications.",
+      "Stay updated with emerging technologies and best practices."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Proficiency in .NET, Java, and PHP.",
+      "Strong problem-solving skills and attention to detail.",
+      "Experience with banking software development is a plus."
+    ],
+    "benefits": [
+      "Competitive salary and performance bonuses.",
+      "Health insurance and retirement plans.",
+      "Opportunities for career advancement."
+    ],
+    "job_type": "Intern",
+    "experience": 1,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 80000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Software Development", "Banking", ".NET", "Java"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Fresher React JS Developer",
+    "category": "Front End",
+    "description": "We are seeking enthusiastic freshers interested in React JS development. Passion for coding, problem-solving, and a strong dedication to front-end development is key. Formal education is a plus but not mandatory.",
+    "responsibilities": [
+      "Write clean, functional code on the front-end.",
+      "Debug software for optimal performance.",
+      "Collaborate with team members to improve the product.",
+      "Learn under senior developers' guidance."
+    ],
+    "requirements": [
+      "Understanding of React JS principles.",
+      "Problem-solving skills with attention to detail.",
+      "Experience with Git or other version control systems.",
+      "Knowledge of HTML5, CSS3, and RESTful services is a plus."
+    ],
+    "benefits": [
+      "Festival Bonuses",
+      "Annual Salary Increments",
+      "Gym facilities and Sports Zone",
+      "Free Shuttle service"
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 22000,
+    "min_salary": 30000,
+    "postedDate": "2024-08-04",
+    "lastDateToApply": "2024-10-05",
+    "education": "Bachelor’s Degree in CSE",
+    "tags": ["Front End Developer", "Web Development"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Senior Backend Developer",
+    "category": "Backend Development",
+    "description": "Looking for an experienced backend developer proficient in Node.js to design and implement server-side architecture for enterprise applications.",
+    "responsibilities": [
+      "Develop APIs and manage server-side logic.",
+      "Ensure scalability and performance optimization.",
+      "Collaborate with front-end developers and product managers.",
+      "Maintain security standards across services."
+    ],
+    "requirements": [
+      "Proficiency in Node.js and Express.",
+      "Experience with databases like MongoDB and MySQL.",
+      "Strong understanding of RESTful APIs.",
+      "Familiarity with Docker and CI/CD pipelines."
+    ],
+    "benefits": [
+      "Competitive salary packages.",
+      "Performance bonuses.",
+      "Annual company tours and sports activities.",
+      "Health insurance coverage."
+    ],
+    "job_type": "Freelance",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 5:30 PM",
+    "max_salary": 80000,
+    "min_salary": 100000,
+    "postedDate": "2024-09-15",
+    "lastDateToApply": "2024-10-30",
+    "education": "Bachelor’s Degree in Computer Science",
+    "tags": ["Backend Developer", "API Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Course Content Writer",
+    "category": "Content Writing",
+    "description": "We are looking for a freelance content writer to develop educational material for our web and mobile development courses.",
+    "responsibilities": [
+      "Create comprehensive course materials on programming topics.",
+      "Ensure content is accurate and engaging.",
+      "Collaborate with course instructors for feedback and revisions."
+    ],
+    "requirements": [
+      "Proficiency in programming concepts (JavaScript, Python).",
+      "Prior experience in educational content creation.",
+      "Fluency in English writing and communication."
+    ],
+    "benefits": [
+      "Flexible work hours.",
+      "Competitive payment per project.",
+      "Access to premium courses on Programming Hero."
+    ],
+    "job_type": "Freelance",
+    "experience": 4,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-20",
+    "lastDateToApply": "2024-11-15",
+    "education": "Bachelor’s degree preferred",
+    "tags": ["Freelance", "Content Writing", "Programming Education"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a9",
+    "jobTitle": "IoT Solutions Architect",
+    "category": "IoT",
+    "description": "We are seeking an experienced IoT Solutions Architect to design and oversee smart IoT systems for various industries. The role involves conceptualizing innovative solutions and working with development teams to implement them.",
+    "responsibilities": [
+      "Design IoT architectures and protocols.",
+      "Collaborate with teams to deploy IoT platforms.",
+      "Ensure scalability, security, and reliability of solutions.",
+      "Monitor and troubleshoot IoT implementations."
+    ],
+    "requirements": [
+      "Strong understanding of IoT technologies and protocols.",
+      "Experience with cloud platforms like AWS or Azure.",
+      "Knowledge of networking and embedded systems.",
+      "Excellent leadership and project management skills."
+    ],
+    "benefits": [
+      "Hybrid work environment.",
+      "Performance bonuses and incentives.",
+      "Annual training and certification programs."
+    ],
+    "job_type": "Intern",
+    "experience": 2,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 120000,
+    "min_salary": 150000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor's in Electrical Engineering or related field.",
+    "tags": ["IoT", "Solutions Architect", "AWS"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5aa",
+    "jobTitle": "Mobile App Developer",
+    "category": "Mobile Development",
+    "description": "We are hiring Mobile App Developers proficient in Swift and Kotlin to build scalable mobile applications for iOS and Android.",
+    "responsibilities": [
+      "Design and build mobile applications in Swift/Kotlin.",
+      "Collaborate with backend teams to integrate APIs.",
+      "Test and debug applications for performance issues.",
+      "Stay updated with mobile development trends."
+    ],
+    "requirements": [
+      "Experience in Swift for iOS and Kotlin for Android.",
+      "Good knowledge of mobile UI/UX design.",
+      "Familiarity with RESTful APIs.",
+      "Ability to work in a team."
+    ],
+    "benefits": [
+      "Hybrid working model.",
+      "Annual bonuses and performance incentives.",
+      "Professional development programs."
+    ],
+    "job_type": "Contractual",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 70000,
+    "postedDate": "2024-09-25",
+    "lastDateToApply": "2024-11-20",
+    "education": "Bachelor’s in Software Engineering.",
+    "tags": ["Swift", "Kotlin", "Mobile Development"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ab",
+    "jobTitle": "Mobile App Developer",
+    "category": "Mobile Development",
+    "description": "We are hiring a skilled React Native Developer to build cross-platform mobile applications.",
+    "responsibilities": [
+      "Develop mobile applications using React Native.",
+      "Collaborate with backend teams to integrate APIs.",
+      "Ensure the performance and responsiveness of apps.",
+      "Stay up-to-date with mobile development trends."
+    ],
+    "requirements": [
+      "Proficiency in React Native.",
+      "Experience with RESTful APIs.",
+      "Knowledge of Android and iOS development lifecycles.",
+      "Excellent teamwork and communication skills."
+    ],
+    "benefits": [
+      "Remote working opportunity.",
+      "Flexible working hours.",
+      "Competitive salary and performance bonuses."
+    ],
+    "job_type": "Freelance",
+    "experience": 4,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 80000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-12-05",
+    "education": "Bachelor’s in Software Engineering or related field.",
+    "tags": ["React Native", "Mobile Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "PHP Developer",
+    "category": "Web Development",
+    "description": "We are seeking a talented PHP Developer to create dynamic and user-friendly web applications.",
+    "responsibilities": [
+      "Develop and maintain web applications using PHP.",
+      "Integrate with front-end technologies and databases.",
+      "Optimize applications for maximum speed and scalability.",
+      "Collaborate with designers and project managers."
+    ],
+    "requirements": [
+      "Proficient in PHP and frameworks like Laravel or CodeIgniter.",
+      "Experience with MySQL or PostgreSQL.",
+      "Familiarity with JavaScript, HTML, and CSS.",
+      "Strong problem-solving skills."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Remote working options.",
+      "Annual bonuses."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-20",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["PHP", "Web Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ad",
+    "jobTitle": "Mobile App Developer",
+    "category": "Mobile Development",
+    "description": "We are looking for a Mobile App Developer to design and develop innovative mobile applications for iOS and Android.",
+    "responsibilities": [
+      "Develop mobile applications for iOS and Android platforms.",
+      "Collaborate with designers to create engaging user experiences.",
+      "Optimize applications for performance and scalability.",
+      "Stay updated on mobile development trends and technologies."
+    ],
+    "requirements": [
+      "Proficiency in Swift for iOS and Kotlin for Android.",
+      "Experience with Flutter or React Native is a plus.",
+      "Understanding of RESTful APIs and integration.",
+      "Good problem-solving and communication skills."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Remote work options.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 80000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-25",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Mobile Development", "iOS", "Android"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ae",
+    "jobTitle": "UI/UX Designer",
+    "category": "Design",
+    "description": "Daffodil Software Ltd. is looking for a UI/UX Designer to create user-friendly interfaces for our software solutions.",
+    "responsibilities": [
+      "Conduct user research and usability testing.",
+      "Design wireframes, prototypes, and high-fidelity mockups.",
+      "Collaborate with developers to ensure design feasibility.",
+      "Stay updated on design trends and best practices."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Design, HCI, or related field.",
+      "3+ years of experience in UI/UX design.",
+      "Proficient in design tools (Adobe XD, Figma, Sketch).",
+      "Strong portfolio showcasing design projects."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Remote work options.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Intern",
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-12-01",
+    "tags": ["UI/UX Design", "Design"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5af",
+    "jobTitle": "Quality Assurance Engineer",
+    "category": "Quality Assurance",
+    "description": "Join our team at Therap (BD) Ltd. as a Quality Assurance Engineer. You will play a crucial role in ensuring the quality and reliability of our software solutions for healthcare organizations.",
+    "responsibilities": [
+      "Develop and execute test plans and test cases.",
+      "Identify, report, and track defects.",
+      "Collaborate with developers to ensure quality standards.",
+      "Conduct regression testing and document results."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Computer Science or a related field.",
+      "1+ years of experience in software quality assurance.",
+      "Familiarity with automated testing tools is a plus.",
+      "Strong analytical and problem-solving skills."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance.",
+      "Performance bonuses."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-20",
+    "lastDateToApply": "2024-12-15",
+    "tags": ["Quality Assurance", "Software Testing"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b0",
+    "jobTitle": "UX/UI Designer",
+    "category": "Design",
+    "description": "We are looking for a creative UX/UI Designer to design user-centered digital experiences for our clients. If you love turning complex ideas into intuitive interfaces, join Nascenia.",
+    "responsibilities": [
+      "Design wireframes, prototypes, and mockups.",
+      "Collaborate with developers to ensure seamless user experience.",
+      "Conduct user research and testing to validate designs.",
+      "Stay up-to-date with the latest design trends and tools."
+    ],
+    "requirements": [
+      "2+ years of experience in UX/UI design.",
+      "Proficiency in design tools like Figma, Adobe XD, or Sketch.",
+      "Strong portfolio demonstrating UX/UI design skills.",
+      "Knowledge of responsive and accessible design principles."
+    ],
+    "benefits": [
+      "On-site work environment with a collaborative team.",
+      "Opportunities for career growth.",
+      "Lunch and snacks provided at the office."
+    ],
+    "job_type": "Contractual",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:30 AM - 5:30 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-10",
+    "tags": ["UX/UI Design", "Prototyping", "User Research"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b1",
+    "jobTitle": "Business Analyst",
+    "category": "Consulting",
+    "description": "Join Vivasoft Ltd. as a Business Analyst to help shape our software solutions by analyzing client needs and translating them into technical requirements.",
+    "responsibilities": [
+      "Gather and document business requirements from clients.",
+      "Analyze and define project scope and objectives.",
+      "Work closely with developers to ensure alignment on project deliverables.",
+      "Prepare reports and presentations for stakeholders."
+    ],
+    "requirements": [
+      "3+ years of experience in business analysis or related fields.",
+      "Strong analytical and problem-solving skills.",
+      "Familiarity with project management tools.",
+      "Excellent communication skills."
+    ],
+    "benefits": [
+      "Health insurance and wellness programs.",
+      "Career growth opportunities within a people-centric culture.",
+      "Team-building activities and social events."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:30 AM - 5:30 PM",
+    "max_salary": 80000,
+    "min_salary": 110000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-15",
+    "tags": ["Business Analysis", "Consulting", "On-site"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b2",
+    "jobTitle": "Mobile App Developer",
+    "category": "Mobile Development",
+    "description": "Join Bdtask Ltd. as a Mobile App Developer and contribute to building innovative mobile applications that enhance user experience.",
+    "responsibilities": [
+      "Design and develop mobile applications for Android and iOS platforms.",
+      "Collaborate with designers to create intuitive user interfaces.",
+      "Test and debug applications to ensure optimal performance.",
+      "Stay updated with the latest trends in mobile development."
+    ],
+    "requirements": [
+      "1+ years of experience in mobile app development.",
+      "Strong knowledge of Java or Swift.",
+      "Familiarity with RESTful APIs and third-party libraries.",
+      "Excellent problem-solving and communication skills."
+    ],
+    "benefits": [
+      "Health and wellness benefits.",
+      "Opportunities for career growth and development.",
+      "Dynamic work environment with team-building activities."
+    ],
+    "job_type": "Full-time",
+    "experience": 6,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 80000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Mobile Development", "Android", "iOS"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b3",
+    "jobTitle": "Full Stack Developer",
+    "category": "Web Development",
+    "description": "Join Phitron as a Full Stack Developer to enhance our online learning platform. You will be responsible for developing new features and improving existing ones.",
+    "responsibilities": [
+      "Develop and maintain web applications using JavaScript, React, and Node.js.",
+      "Collaborate with instructional designers to implement interactive features.",
+      "Optimize application for maximum speed and scalability.",
+      "Troubleshoot and debug issues as they arise."
+    ],
+    "requirements": [
+      "3+ years of experience in full stack development.",
+      "Strong knowledge of JavaScript, React, and Node.js.",
+      "Experience with RESTful APIs and database management.",
+      "Excellent problem-solving skills."
+    ],
+    "benefits": [
+      "Opportunity to work in an innovative educational environment.",
+      "Health insurance and wellness benefits.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Contractual",
+    "experience": 7,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 80000,
+    "min_salary": 100000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Web Development", "Full Stack", "JavaScript"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b5",
+    "jobTitle": "Business Analyst – Banking Solutions",
+    "category": "Business Analysis",
+    "description": "Southtech Group is seeking a skilled Business Analyst to drive the development of banking software and fintech solutions.",
+    "responsibilities": [
+      "Gather and analyze business requirements from stakeholders.",
+      "Develop and maintain documentation of business processes.",
+      "Collaborate with development teams to translate requirements into technical specifications.",
+      "Conduct market research to identify trends and opportunities."
+    ],
+    "requirements": [
+      "Bachelor's degree in Business Administration or related field.",
+      "Experience in business analysis within the banking or fintech sector.",
+      "Strong analytical and problem-solving skills.",
+      "Excellent communication and interpersonal skills."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Health and wellness benefits.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 7,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Business Analysis", "Banking Software", "Fintech"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b6",
+    "jobTitle": "Product Manager – Identity Management",
+    "category": "Product Management",
+    "description": "We are looking for an experienced Product Manager to lead the development of our secure identity management solutions at TigerIT Bangladesh.",
+    "responsibilities": [
+      "Define product vision and strategy for identity management solutions.",
+      "Collaborate with engineering, marketing, and sales teams to deliver high-quality products.",
+      "Conduct market research to identify customer needs and trends.",
+      "Manage product lifecycle from concept to launch."
+    ],
+    "requirements": [
+      "Bachelor's degree in Business Administration or related field.",
+      "Proven experience in product management in the technology sector.",
+      "Strong understanding of biometric technologies and identity management.",
+      "Excellent communication and leadership skills."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Comprehensive health and wellness benefits.",
+      "Professional development and training opportunities."
+    ],
+    "job_type": "Part-time",
+    "experience": 7,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 90000,
+    "min_salary": 130000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": [
+      "Product Management",
+      "Identity Management",
+      "Biometric Technology"
+    ],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b7",
+    "jobTitle": "Senior Software Developer",
+    "category": "Software Development",
+    "description": "We are looking for a Senior Software Developer to lead development projects and mentor junior developers.",
+    "responsibilities": [
+      "Lead the development of software applications from concept to implementation.",
+      "Provide technical guidance and mentorship to team members.",
+      "Review code and ensure best practices are followed.",
+      "Communicate effectively with stakeholders and clients."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "5+ years of experience in software development.",
+      "Strong expertise in Java, Ruby, and JavaScript.",
+      "Excellent leadership and communication skills."
+    ],
+    "benefits": [
+      "Attractive salary and performance bonuses.",
+      "Comprehensive health benefits.",
+      "Professional development and training opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 8,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 100000,
+    "min_salary": 130000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Senior Developer", "Leadership", "Java"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b8",
+    "jobTitle": "Backend Developer",
+    "category": "Software Development",
+    "description": "We are seeking a Backend Developer to design and maintain the server-side of our applications.",
+    "responsibilities": [
+      "Develop and manage server-side components.",
+      "Ensure high performance and responsiveness to requests from the frontend.",
+      "Integrate user-facing elements with server-side logic.",
+      "Participate in code reviews and maintain code quality."
+    ],
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field.",
+      "Experience with Node.js, PHP, and database management systems.",
+      "Strong understanding of RESTful APIs and web services.",
+      "Good problem-solving skills and ability to work in a team."
+    ],
+    "benefits": [
+      "Attractive salary and performance incentives.",
+      "Health insurance and wellness programs.",
+      "Training and development opportunities."
+    ],
+    "job_type": "Part-time",
+    "experience": 8,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 80000,
+    "min_salary": 100000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Backend Development", "Node.js", "PHP"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b9",
+    "jobTitle": "Course Content Developer",
+    "category": "Content Creation",
+    "description": "We are looking for a Course Content Developer to create and update engaging content for our web development courses.",
+    "responsibilities": [
+      "Research and create course materials in JavaScript, React, and Node.js.",
+      "Develop interactive coding exercises and projects.",
+      "Collaborate with instructors to ensure content quality.",
+      "Regularly update courses to reflect industry trends."
+    ],
+    "requirements": [
+      "Strong background in web development.",
+      "Excellent writing and editing skills.",
+      "Experience in creating educational content.",
+      "Familiarity with online learning platforms."
+    ],
+    "benefits": [
+      "Competitive salary based on experience.",
+      "Flexible working conditions.",
+      "Opportunities for career advancement."
+    ],
+    "job_type": "Full-time",
+    "experience": 6,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Content Development", "Web Development", "JavaScript"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ba",
+    "jobTitle": "Business Analyst",
+    "category": "Business & Finance",
+    "description": "We are looking for a Business Analyst to gather requirements and provide solutions for our banking software projects.",
+    "responsibilities": [
+      "Analyze business needs and translate them into technical requirements.",
+      "Collaborate with stakeholders to identify and document project scope.",
+      "Conduct market research and competitor analysis.",
+      "Assist in project management and ensure timely delivery of solutions."
+    ],
+    "requirements": [
+      "Bachelor's degree in Business Administration or related field.",
+      "Experience in business analysis, preferably in the banking sector.",
+      "Strong analytical and communication skills.",
+      "Familiarity with software development lifecycle (SDLC)."
+    ],
+    "benefits": [
+      "Attractive salary and performance bonuses.",
+      "Comprehensive health benefits.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Part-time",
+    "experience": 2,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 50000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Business Analysis", "Banking", "Project Management"],
+    "appliers": []
+  },
+
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Digital Marketing Intern",
+    "category": "Marketing",
+    "description": "We are looking for a creative and self-motivated digital marketing intern to assist with online campaigns and social media strategies.",
+    "responsibilities": [
+      "Assist in creating and managing social media content.",
+      "Analyze campaign performance and prepare reports.",
+      "Collaborate with the marketing team for ad strategies."
+    ],
+    "requirements": [
+      "Basic knowledge of social media platforms.",
+      "Analytical mindset and a passion for digital trends.",
+      "Strong communication skills.",
+      "Prior internship experience is a plus."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Opportunity for full-time employment.",
+      "Access to online learning platforms."
+    ],
+    "job_type": "Intern",
+    "experience": 1,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "10-15 hours per week",
+    "max_salary": 6000,
+    "min_salary": 10000,
+    "postedDate": "2024-09-01",
+    "lastDateToApply": "2024-11-01",
+    "education": "Bachelor’s degree (ongoing or completed)",
+    "tags": ["Marketing", "Internship", "Social Media"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Digital Marketing Intern",
+    "category": "Marketing",
+    "description": "We are looking for a creative and self-motivated digital marketing intern to assist with online campaigns and social media strategies.",
+    "responsibilities": [
+      "Assist in creating and managing social media content.",
+      "Analyze campaign performance and prepare reports.",
+      "Collaborate with the marketing team for ad strategies."
+    ],
+    "requirements": [
+      "Basic knowledge of social media platforms.",
+      "Analytical mindset and a passion for digital trends.",
+      "Strong communication skills.",
+      "Prior internship experience is a plus."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Opportunity for full-time employment.",
+      "Access to online learning platforms."
+    ],
+    "job_type": "Intern",
+    "experience": 1,
+    "job_location": "On-site",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 5000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-01",
+    "lastDateToApply": "2024-11-01",
+    "education": "Bachelor’s degree (ongoing or completed)",
+    "tags": ["Marketing", "Internship", "Social Media"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Front-end Developer Intern",
+    "category": "Front End",
+    "description": "An exciting opportunity for passionate interns to work with React and JavaScript, building engaging user interfaces for real-world projects.",
+    "responsibilities": [
+      "Assist in developing front-end applications using React.",
+      "Collaborate with senior developers and designers.",
+      "Ensure components are reusable and optimized."
+    ],
+    "requirements": [
+      "Basic knowledge of JavaScript and React.",
+      "Eagerness to learn and grow.",
+      "Good communication and teamwork skills."
+    ],
+    "benefits": [
+      "Stipend and performance bonuses.",
+      "Certificate upon completion.",
+      "Opportunity to transition into a full-time role."
+    ],
+    "job_type": "Freelance",
+    "experience": 2,
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 12000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-10-31",
+    "education": "Bachelor’s degree in progress",
+    "tags": ["Front End", "React", "Internship"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a9",
+    "jobTitle": "Full Stack Developer",
+    "category": "Full Stack Development",
+    "description": "We are looking for a Full Stack Developer proficient in Java and PHP to build and enhance our enterprise applications.",
+    "responsibilities": [
+      "Develop scalable backend services using Java.",
+      "Build interactive front-end interfaces using PHP and JavaScript.",
+      "Optimize systems for speed and scalability.",
+      "Collaborate with DevOps for smooth deployment."
+    ],
+    "requirements": [
+      "Proficiency in Java and PHP.",
+      "Experience with front-end technologies (HTML, CSS, JavaScript).",
+      "Knowledge of RESTful services and APIs.",
+      "Good communication and teamwork skills."
+    ],
+    "benefits": [
+      "Remote work flexibility.",
+      "Competitive salary with bonuses.",
+      "Access to premium tools and resources."
+    ],
+    "job_type": "Remote",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Flexible",
+    "max_salary": 70000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-15",
+    "lastDateToApply": "2024-11-15",
+    "education": "Bachelor’s degree in Computer Science.",
+    "tags": ["Full Stack", "Java", "PHP", "Remote"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ab",
+    "jobTitle": "Quality Assurance Engineer",
+    "category": "Quality Assurance",
+    "description": "We are looking for a meticulous Quality Assurance Engineer to ensure the quality and reliability of our software products.",
+    "responsibilities": [
+      "Develop and execute test cases.",
+      "Identify and report bugs in software.",
+      "Collaborate with development teams to resolve issues.",
+      "Ensure software meets quality standards."
+    ],
+    "requirements": [
+      "Experience in software testing and QA processes.",
+      "Knowledge of manual and automated testing tools.",
+      "Attention to detail and problem-solving skills.",
+      "Familiarity with Agile methodologies."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance and benefits.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 5,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Quality Assurance", "Testing", "Agile"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "Front-End Developer",
+    "category": "Web Development",
+    "description": "Join our team as a Front-End Developer to create responsive and engaging user interfaces using React.",
+    "responsibilities": [
+      "Develop new user-facing features using React.",
+      "Ensure the technical feasibility of UI/UX designs.",
+      "Optimize applications for maximum speed and scalability.",
+      "Collaborate with back-end developers to integrate APIs."
+    ],
+    "requirements": [
+      "Proficiency in React.js and JavaScript.",
+      "Familiarity with HTML5 and CSS3.",
+      "Understanding of responsive design principles.",
+      "Experience with version control systems like Git."
+    ],
+    "benefits": [
+      "Work from home options.",
+      "Flexible schedule.",
+      "Health and wellness programs."
+    ],
+    "job_type": "Part-time",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Flexible",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-25",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["React", "Frontend Development", "Web Design"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ad",
+    "jobTitle": "Game Developer",
+    "category": "Game Development",
+    "description": "Join our creative team as a Game Developer to design and develop exciting games for various platforms.",
+    "responsibilities": [
+      "Design and implement game mechanics and features.",
+      "Collaborate with artists and designers to create engaging content.",
+      "Optimize game performance and troubleshoot issues.",
+      "Stay updated on gaming trends and technologies."
+    ],
+    "requirements": [
+      "Proficiency in game development tools (Unity, Unreal Engine).",
+      "Strong knowledge of C# or C++ programming languages.",
+      "Experience with 2D and 3D game development.",
+      "Creativity and passion for gaming."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Gaming perks and bonuses.",
+      "Health insurance."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 70000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Game Development", "Unity", "C#"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ae",
+    "jobTitle": "QA Engineer",
+    "category": "Quality Assurance",
+    "description": "We are seeking a QA Engineer to join our team and ensure the quality of our software products through rigorous testing.",
+    "responsibilities": [
+      "Develop and execute test plans and test cases.",
+      "Identify and report bugs, ensuring proper documentation.",
+      "Work closely with development teams to resolve issues.",
+      "Conduct regression testing and ensure application performance."
+    ],
+    "requirements": [
+      "Bachelor’s degree in Computer Science or related field.",
+      "2+ years of experience in software testing.",
+      "Familiarity with testing tools (Selenium, JIRA).",
+      "Strong analytical skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance.",
+      "Annual performance bonuses."
+    ],
+    "job_type": "Contractual",
+    "experience": 4,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 80000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-20",
+    "lastDateToApply": "2024-12-15",
+    "tags": ["Quality Assurance", "Software Testing"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b0",
+    "jobTitle": "Data Consultant",
+    "category": "Consulting",
+    "description": "Nascenia is hiring a Data Consultant to support big data projects and provide strategic insights to our clients. This is a remote opportunity for professionals who excel in data analysis and consulting.",
+    "responsibilities": [
+      "Analyze large datasets to derive actionable insights.",
+      "Provide consulting services to improve data-driven decisions.",
+      "Work with development teams to integrate data solutions.",
+      "Create reports and dashboards for clients."
+    ],
+    "requirements": [
+      "3+ years of experience in data analysis or consulting.",
+      "Strong knowledge of data tools like SQL, Python, or R.",
+      "Experience with big data platforms is a plus.",
+      "Excellent communication and presentation skills."
+    ],
+    "benefits": [
+      "Fully remote work opportunity.",
+      "Competitive consulting fees.",
+      "Chance to work on exciting data projects."
+    ],
+    "job_type": "Contract",
+    "experience": 8,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 100000,
+    "min_salary": 150000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-20",
+    "tags": ["Data Consulting", "Big Data", "Remote Work"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b1",
+    "jobTitle": "Frontend Developer",
+    "category": "Software Development",
+    "description": "Vivasoft Ltd. is seeking a creative Frontend Developer to create visually appealing and responsive user interfaces for our applications.",
+    "responsibilities": [
+      "Develop user-friendly interfaces using JavaScript, React, and HTML/CSS.",
+      "Collaborate with UX/UI designers to enhance application usability.",
+      "Optimize applications for maximum speed and scalability.",
+      "Ensure cross-browser compatibility and fix bugs."
+    ],
+    "requirements": [
+      "2+ years of experience in frontend development.",
+      "Strong knowledge of JavaScript and frontend frameworks.",
+      "Experience with responsive design and development.",
+      "Ability to work collaboratively in a team environment."
+    ],
+    "benefits": [
+      "Flexible working environment (hybrid work model).",
+      "Competitive salary and performance bonuses.",
+      "Access to training and development programs."
+    ],
+    "job_type": "Full-time",
+    "experience": 5,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "10:00 AM - 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["Frontend Development", "JavaScript", "Hybrid Work"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b3",
+    "jobTitle": "Content Writer – Educational Material",
+    "category": "Content Development",
+    "description": "Phitron is looking for a creative Content Writer to produce high-quality educational materials for our programming courses.",
+    "responsibilities": [
+      "Research and write engaging course content.",
+      "Collaborate with instructors to ensure content accuracy.",
+      "Edit and proofread materials for clarity and quality.",
+      "Stay current with industry trends to produce relevant content."
+    ],
+    "requirements": [
+      "Bachelor's degree in English, Education, or related field.",
+      "Experience in writing educational content.",
+      "Strong understanding of programming concepts.",
+      "Excellent written and verbal communication skills."
+    ],
+    "benefits": [
+      "Flexible work schedule.",
+      "Competitive salary and bonuses.",
+      "Opportunities for skill development and training."
+    ],
+    "job_type": "Freelance",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Variable",
+    "max_salary": 25000,
+    "min_salary": 45000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-20",
+    "tags": ["Content Development", "Writing", "Remote Work"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b8",
+    "jobTitle": "UI/UX Designer",
+    "category": "Design",
+    "description": "Selise Digital Platforms is looking for a creative UI/UX Designer to create engaging and intuitive user experiences.",
+    "responsibilities": [
+      "Conduct user research and gather feedback.",
+      "Design wireframes, prototypes, and user interfaces.",
+      "Collaborate with developers to implement designs.",
+      "Ensure a consistent and user-friendly experience across all platforms."
+    ],
+    "requirements": [
+      "Bachelor's degree in Design, Human-Computer Interaction, or related field.",
+      "Experience in UI/UX design and a strong portfolio.",
+      "Proficiency in design tools such as Adobe XD, Sketch, or Figma.",
+      "Excellent communication skills and attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary and benefits package.",
+      "Health insurance and wellness programs.",
+      "Professional growth and advancement opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 6,
+    "job_location": "Remote",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["UI/UX Design", "Adobe XD", "Prototyping"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b9",
+    "jobTitle": "Marketing Specialist",
+    "category": "Marketing",
+    "description": "Learn with Sumit is looking for a Marketing Specialist to enhance our online presence and promote our courses.",
+    "responsibilities": [
+      "Develop and implement marketing strategies.",
+      "Manage social media accounts and engage with followers.",
+      "Analyze marketing performance and optimize campaigns.",
+      "Collaborate with the content team to promote new courses."
+    ],
+    "requirements": [
+      "Bachelor's degree in Marketing or related field.",
+      "Experience in digital marketing and social media management.",
+      "Strong analytical and communication skills.",
+      "Passion for education and technology."
+    ],
+    "benefits": [
+      "Attractive salary and performance bonuses.",
+      "Health insurance and wellness programs.",
+      "Opportunities for growth and learning."
+    ],
+    "job_type": "Part-time",
+    "experience": 7,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Marketing", "Social Media", "Digital Marketing"],
+    "appliers": []
+  },
+
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Graphic Designer",
+    "category": "Design",
+    "description": "We are seeking a part-time graphic designer with experience in branding and digital design for social media campaigns.",
+    "responsibilities": [
+      "Design promotional content for social media.",
+      "Develop brand visuals and marketing materials.",
+      "Work with the content and marketing team for campaigns."
+    ],
+    "requirements": [
+      "Proficiency in Adobe Photoshop, Illustrator, and Canva.",
+      "Creative thinking with attention to detail.",
+      "Portfolio showcasing past work.",
+      "Good communication skills."
+    ],
+    "benefits": [
+      "Work from home.",
+      "Performance-based bonuses.",
+      "Flexible work schedule."
+    ],
+    "job_type": "Part-time",
+    "experience": 8,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 15000,
+    "min_salary": 20000,
+    "postedDate": "2024-09-20",
+    "lastDateToApply": "2024-10-31",
+    "education": "Diploma or equivalent in Graphic Design",
+    "tags": ["Graphic Design", "Remote", "Branding"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Video Content Creator",
+    "category": "Content Creation",
+    "description": "Programming Hero is seeking a part-time video content creator to produce engaging tutorials for our programming courses.",
+    "responsibilities": [
+      "Record high-quality video tutorials on web development topics.",
+      "Edit videos to ensure clarity and engagement.",
+      "Collaborate with the content team for creative ideas."
+    ],
+    "requirements": [
+      "Experience in video editing tools (Adobe Premiere, Camtasia).",
+      "Proficiency in programming topics (HTML, CSS, JavaScript).",
+      "Excellent communication skills and on-screen presence."
+    ],
+    "benefits": [
+      "Flexible work hours.",
+      "Access to exclusive content and tools.",
+      "Competitive pay per video."
+    ],
+    "job_type": "Full-time",
+    "experience": 8,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-30",
+    "education": "N/A",
+    "tags": ["Video Production", "Remote", "Programming Tutorials"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5aa",
+    "jobTitle": "ERP Implementation Specialist",
+    "category": "ERP",
+    "description": "We are hiring an ERP Implementation Specialist to oversee deployment and ensure the smooth operation of our ERP products.",
+    "responsibilities": [
+      "Configure and implement ERP solutions.",
+      "Train clients on ERP usage.",
+      "Troubleshoot and resolve ERP-related issues.",
+      "Collaborate with the development team for customizations."
+    ],
+    "requirements": [
+      "Experience in ERP systems deployment.",
+      "Knowledge of business processes and workflows.",
+      "Good communication and client handling skills.",
+      "Analytical and problem-solving abilities."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Lunch and transportation facilities.",
+      "Health and life insurance."
+    ],
+    "job_type": "Full-time",
+    "experience": 8,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 76000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-20",
+    "lastDateToApply": "2024-11-15",
+    "education": "Bachelor’s in Business or IT.",
+    "tags": ["ERP", "Implementation", "Consulting"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "Python Developer",
+    "category": "Back-End Development",
+    "description": "We are looking for a skilled Python Developer to join our software development team and create scalable applications.",
+    "responsibilities": [
+      "Write reusable, testable, and efficient Python code.",
+      "Develop back-end components and web services.",
+      "Collaborate with front-end developers to integrate user-facing elements.",
+      "Participate in code reviews and ensure adherence to coding standards."
+    ],
+    "requirements": [
+      "Proficiency in Python and frameworks like Django or Flask.",
+      "Experience with relational databases (e.g., MySQL, PostgreSQL).",
+      "Understanding of RESTful APIs.",
+      "Strong debugging and problem-solving skills."
+    ],
+    "benefits": [
+      "Competitive salary.",
+      "Health insurance.",
+      "Professional growth opportunities."
+    ],
+    "job_type": "Freelance",
+    "experience": 8,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-15",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Python", "Backend Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b1",
+    "jobTitle": "Quality Assurance Engineer",
+    "category": "Quality Assurance",
+    "description": "We are looking for a meticulous Quality Assurance Engineer to ensure the quality and performance of our software applications.",
+    "responsibilities": [
+      "Design and execute test plans and test cases.",
+      "Identify, document, and track software defects.",
+      "Collaborate with the development team to understand application functionality.",
+      "Ensure the final product meets the company's quality standards."
+    ],
+    "requirements": [
+      "2+ years of experience in software testing and quality assurance.",
+      "Familiarity with testing tools and methodologies.",
+      "Strong analytical and troubleshooting skills.",
+      "Excellent attention to detail."
+    ],
+    "benefits": [
+      "Competitive salary and health benefits.",
+      "Collaborative work environment with a focus on quality.",
+      "Opportunities for career advancement."
+    ],
+    "job_type": "Full-time",
+    "experience": 5,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 65000,
+    "min_salary": 95000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-01",
+    "tags": ["Quality Assurance", "Testing", "On-site"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b8",
+    "jobTitle": "Digital Marketing Specialist",
+    "category": "Marketing",
+    "description": "We are looking for a Digital Marketing Specialist to develop and implement marketing strategies for our digital platforms.",
+    "responsibilities": [
+      "Create and manage digital marketing campaigns.",
+      "Analyze market trends and adjust strategies accordingly.",
+      "Manage social media accounts and engage with the audience.",
+      "Monitor and report on the performance of marketing campaigns."
+    ],
+    "requirements": [
+      "Bachelor's degree in Marketing or related field.",
+      "Experience in digital marketing and SEO.",
+      "Strong analytical skills and proficiency in marketing tools.",
+      "Excellent written and verbal communication skills."
+    ],
+    "benefits": [
+      "Competitive salary and bonuses.",
+      "Health insurance and retirement benefits.",
+      "Opportunities for professional development."
+    ],
+    "job_type": "Intern",
+    "job_location": "Remote",
+    "experience": 2,
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 870000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Digital Marketing", "SEO", "Social Media"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Video Content Creator",
+    "category": "Content Creation",
+    "description": "Programming Hero is seeking a part-time video content creator to produce engaging tutorials for our programming courses.",
+    "responsibilities": [
+      "Record high-quality video tutorials on web development topics.",
+      "Edit videos to ensure clarity and engagement.",
+      "Collaborate with the content team for creative ideas."
+    ],
+    "requirements": [
+      "Experience in video editing tools (Adobe Premiere, Camtasia).",
+      "Proficiency in programming topics (HTML, CSS, JavaScript).",
+      "Excellent communication skills and on-screen presence."
+    ],
+    "benefits": [
+      "Flexible work hours.",
+      "Access to exclusive content and tools.",
+      "Competitive pay per video."
+    ],
+    "job_type": "Part-time",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-30",
+    "education": "N/A",
+    "tags": ["Video Production", "Remote", "Programming Tutorials"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "DevOps Engineer (Contractual)",
+    "category": "DevOps",
+    "description": "Seeking a DevOps Engineer to support continuous deployment and automation for a cloud-based product on a 6-month contract.",
+    "responsibilities": [
+      "Implement CI/CD pipelines.",
+      "Monitor cloud infrastructure for performance.",
+      "Automate deployment and configuration management.",
+      "Collaborate with software engineers on releases."
+    ],
+    "requirements": [
+      "Experience with AWS, Azure, or GCP.",
+      "Proficiency in Docker, Kubernetes, and Jenkins.",
+      "Strong problem-solving abilities.",
+      "Excellent collaboration skills."
+    ],
+    "benefits": [
+      "Project-based bonuses.",
+      "Access to internal training resources.",
+      "Option to extend the contract based on performance."
+    ],
+    "job_type": "Contractual",
+    "experience": 2,
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-08-15",
+    "lastDateToApply": "2024-10-20",
+    "education": "Bachelor’s Degree in IT",
+    "tags": ["DevOps", "AWS", "CI/CD"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Backend Developer (Contractual)",
+    "category": "Backend Development",
+    "description": "We are hiring a backend developer on a 6-month contract to manage our server-side architecture and APIs.",
+    "responsibilities": [
+      "Develop backend services using Node.js.",
+      "Integrate third-party services and APIs.",
+      "Collaborate with front-end and mobile app teams."
+    ],
+    "requirements": [
+      "Proficiency in Node.js and Express.",
+      "Experience with databases (MongoDB, MySQL).",
+      "Ability to solve complex problems efficiently."
+    ],
+    "benefits": [
+      "Option to extend the contract.",
+      "Performance bonuses.",
+      "Access to internal tools and premium courses."
+    ],
+    "job_type": "Contractual",
+    "experience": 2,
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 85000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-25",
+    "lastDateToApply": "2024-11-10",
+    "education": "Bachelor’s in Computer Science",
+    "tags": ["Backend", "Node.js", "APIs"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5aa",
+    "jobTitle": "Node.js Developer",
+    "category": "Back-End Development",
+    "description": "We are seeking a Node.js Developer to develop and maintain backend services for our software solutions.",
+    "responsibilities": [
+      "Develop APIs using Node.js.",
+      "Collaborate with front-end teams for integration.",
+      "Optimize applications for speed and scalability.",
+      "Implement security best practices."
+    ],
+    "requirements": [
+      "Proficiency in Node.js and JavaScript.",
+      "Experience with MySQL and Redis.",
+      "Knowledge of RESTful APIs.",
+      "Good teamwork and communication skills."
+    ],
+    "benefits": [
+      "On-site work environment.",
+      "Performance-based bonuses.",
+      "Health insurance and benefits."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science.",
+    "tags": ["Node.js", "Backend", "API"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "Ruby on Rails Developer",
+    "category": "Web Development",
+    "description": "We are seeking a Ruby on Rails Developer to build and maintain our web applications and APIs.",
+    "responsibilities": [
+      "Develop high-quality web applications using Ruby on Rails.",
+      "Ensure responsiveness and efficiency of applications.",
+      "Collaborate with cross-functional teams to gather requirements.",
+      "Conduct regular code reviews and testing."
+    ],
+    "requirements": [
+      "Proficiency in Ruby on Rails.",
+      "Experience with RESTful APIs and front-end technologies.",
+      "Knowledge of database systems like PostgreSQL.",
+      "Strong problem-solving and communication skills."
+    ],
+    "benefits": [
+      "Flexible work environment.",
+      "Annual performance bonuses.",
+      "Health insurance."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 75000,
+    "min_salary": 90000,
+    "postedDate": "2024-09-25",
+    "lastDateToApply": "2024-11-15",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Ruby on Rails", "Web Development"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b3",
+    "jobTitle": "UI/UX Designer",
+    "category": "Design",
+    "description": "Join Phitron as a UI/UX Designer to create intuitive and engaging user experiences for our online learning platform.",
+    "responsibilities": [
+      "Conduct user research and usability testing.",
+      "Design wireframes, prototypes, and high-fidelity mockups.",
+      "Collaborate with developers to implement design solutions.",
+      "Stay updated with the latest design trends and tools."
+    ],
+    "requirements": [
+      "Bachelor's degree in Design, HCI, or related field.",
+      "Proven experience as a UI/UX Designer.",
+      "Proficiency in design tools like Figma, Sketch, or Adobe XD.",
+      "Strong portfolio showcasing design work."
+    ],
+    "benefits": [
+      "Work in a creative and innovative environment.",
+      "Competitive salary with bonuses.",
+      "Access to professional development resources."
+    ],
+    "job_type": "Full-time",
+    "experience": 6,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "max_salary": 60000,
+    "min_salary": 70000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-05",
+    "tags": ["UI/UX Design", "Web Development", "Creative"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b7",
+    "jobTitle": "Business Analyst",
+    "category": "Business Analysis",
+    "description": "BJIT Ltd. is hiring a Business Analyst to analyze business needs and develop software solutions for our clients.",
+    "responsibilities": [
+      "Gather and analyze business requirements from stakeholders.",
+      "Develop and document functional specifications.",
+      "Collaborate with development teams to ensure solutions meet business needs.",
+      "Conduct market research to identify trends and opportunities."
+    ],
+    "requirements": [
+      "Bachelor's degree in Business Administration or related field.",
+      "Experience in business analysis and software development.",
+      "Strong analytical and problem-solving skills.",
+      "Excellent communication and interpersonal skills."
+    ],
+    "benefits": [
+      "Attractive salary and benefits package.",
+      "Health insurance and retirement plans.",
+      "Opportunities for training and professional development."
+    ],
+    "job_type": "Part-time",
+    "experience": 4,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-11-30",
+    "tags": ["Business Analysis", "Software Development", "Communication"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5b3",
+    "jobTitle": "Data Analyst",
+    "category": "Data Analysis",
+    "description": "Phitron is looking for a Data Analyst to analyze data and provide insights to improve our online courses and user experience.",
+    "responsibilities": [
+      "Collect and analyze data from various sources.",
+      "Prepare reports and presentations based on data findings.",
+      "Collaborate with teams to implement data-driven strategies.",
+      "Monitor key performance indicators for online courses."
+    ],
+    "requirements": [
+      "Bachelor's degree in Data Science, Statistics, or related field.",
+      "Experience with data analysis tools and software (e.g., Excel, SQL, Python).",
+      "Strong analytical and problem-solving skills.",
+      "Excellent communication and presentation skills."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Competitive salary and bonuses.",
+      "Opportunities for growth and development."
+    ],
+    "job_type": "Full-time",
+    "experience": 9,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM - 5:00 PM",
+    "max_salary": 70000,
+    "min_salary": 90000,
+    "postedDate": "2024-10-21",
+    "lastDateToApply": "2024-12-10",
+    "tags": ["Data Analysis", "EdTech", "Statistics"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Freelance Content Writer",
+    "category": "Content Writing",
+    "description": "Brain Station 23 is looking for creative freelance content writers to produce engaging content for blogs, websites, and social media platforms.",
+    "responsibilities": [
+      "Create high-quality content tailored to audience needs.",
+      "Conduct research to produce fact-based writing.",
+      "Collaborate with SEO experts to optimize content."
+    ],
+    "requirements": [
+      "Fluent English writing skills.",
+      "Experience with content management tools.",
+      "Ability to meet deadlines.",
+      "Previous freelance experience is a plus."
+    ],
+    "benefits": [
+      "Flexible work hours.",
+      "Remote working opportunities.",
+      "Per article-based payments."
+    ],
+    "job_type": "Freelance",
+    "experience": 2,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 18000,
+    "min_salary": 22000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-11-15",
+    "education": "N/A",
+    "tags": ["Content Writing", "Freelance", "SEO"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a8",
+    "jobTitle": "Career Advisor",
+    "category": "Education & Career Guidance",
+    "description": "We are looking for a dynamic individual to join our team as a Career Advisor, guiding students through their learning paths and career goals.",
+    "responsibilities": [
+      "Provide career counseling to students.",
+      "Assist students in creating resumes and preparing for interviews.",
+      "Organize workshops and career-related events."
+    ],
+    "requirements": [
+      "Experience in career counseling or education.",
+      "Strong communication and interpersonal skills.",
+      "Passion for guiding and mentoring students."
+    ],
+    "benefits": [
+      "Competitive salary and bonuses.",
+      "Access to free courses.",
+      "Annual tours and recreational activities."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "On-site",
+    "workdays": "Monday to Friday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 50000,
+    "min_salary": 55000,
+    "postedDate": "2024-09-30",
+    "lastDateToApply": "2024-11-15",
+    "education": "Bachelor’s in Education or Psychology",
+    "tags": ["Career Advisor", "Education", "On-site"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a9",
+    "jobTitle": "Software Development Intern",
+    "category": "Software Development",
+    "description": "Join us as a software development intern and get hands-on experience working with ERP and IoT solutions.",
+    "responsibilities": [
+      "Assist in software development projects.",
+      "Collaborate with senior developers.",
+      "Participate in code reviews and debugging sessions."
+    ],
+    "requirements": [
+      "Basic knowledge of Java, C#, or .NET.",
+      "Eagerness to learn and grow.",
+      "Good problem-solving skills."
+    ],
+    "benefits": [
+      "Stipend provided.",
+      "Certificate upon completion.",
+      "Opportunity to transition to a full-time role."
+    ],
+    "job_type": "Intern",
+    "experience": 1,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 5:00 PM",
+    "max_salary": 9000,
+    "min_salary": 14000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-10-31",
+    "education": "Bachelor’s degree in progress.",
+    "tags": ["Internship", "ERP", "Software Development"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5aa",
+    "jobTitle": "IT Support Engineer",
+    "category": "IT Support",
+    "description": "We are hiring an IT Support Engineer to provide technical support and maintain our internal IT systems.",
+    "responsibilities": [
+      "Provide technical support to employees.",
+      "Maintain and troubleshoot IT infrastructure.",
+      "Manage software and hardware installations.",
+      "Ensure network security and performance."
+    ],
+    "requirements": [
+      "Experience in IT support or helpdesk roles.",
+      "Knowledge of network and system administration.",
+      "Good problem-solving skills.",
+      "Ability to work under pressure."
+    ],
+    "benefits": [
+      "Lunch and transportation facilities.",
+      "Health and life insurance.",
+      "Training opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 2,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 40000,
+    "min_salary": 55000,
+    "postedDate": "2024-10-10",
+    "lastDateToApply": "2024-11-25",
+    "education": "Bachelor’s in IT or related field.",
+    "tags": ["IT Support", "Network", "Helpdesk"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ab",
+    "jobTitle": "IT Project Manager",
+    "category": "Project Management",
+    "description": "We are hiring an IT Project Manager to oversee software development projects from inception to completion.",
+    "responsibilities": [
+      "Manage project timelines and budgets.",
+      "Coordinate between clients and development teams.",
+      "Ensure projects are delivered on time and within scope.",
+      "Identify and mitigate project risks."
+    ],
+    "requirements": [
+      "Proven experience in IT project management.",
+      "Knowledge of Agile practices.",
+      "Excellent communication and leadership skills.",
+      "Strong problem-solving abilities."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Health insurance.",
+      "Professional development opportunities."
+    ],
+    "job_type": "Full-time",
+    "experience": 10,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 110000,
+    "min_salary": 150000,
+    "postedDate": "2024-10-05",
+    "lastDateToApply": "2024-11-25",
+    "education": "Bachelor’s in IT or Business Management.",
+    "tags": ["Project Management", "Agile", "IT"],
+    "appliers": []
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ac",
+    "jobTitle": "IT Consultant",
+    "category": "IT Consultancy",
+    "description": "We are looking for an IT Consultant to provide expert advice on software solutions and IT strategies to our clients.",
+    "responsibilities": [
+      "Assess clients' IT needs and recommend solutions.",
+      "Provide guidance on software development and project management.",
+      "Conduct training sessions for clients.",
+      "Stay updated on industry trends and best practices."
+    ],
+    "requirements": [
+      "Proven experience in IT consultancy.",
+      "Strong knowledge of software development processes.",
+      "Excellent communication and interpersonal skills.",
+      "Ability to work collaboratively with clients."
+    ],
+    "benefits": [
+      "Attractive salary package.",
+      "Health insurance.",
+      "Professional development and training."
+    ],
+    "job_type": "Part-time",
+    "experience": 9,
+    "job_location": "On-site",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "9:00 AM to 6:00 PM",
+    "max_salary": 90000,
+    "min_salary": 110000,
+    "postedDate": "2024-10-20",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in IT or related field.",
+    "tags": ["IT Consultancy", "Software Solutions"],
+    "appliers": []
+  },
+
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "DevOps Engineer (Contractual)",
+    "category": "DevOps",
+    "description": "Seeking a DevOps Engineer to support continuous deployment and automation for a cloud-based product on a 6-month contract.",
+    "responsibilities": [
+      "Implement CI/CD pipelines.",
+      "Monitor cloud infrastructure for performance.",
+      "Automate deployment and configuration management.",
+      "Collaborate with software engineers on releases."
+    ],
+    "requirements": [
+      "Experience with AWS, Azure, or GCP.",
+      "Proficiency in Docker, Kubernetes, and Jenkins.",
+      "Strong problem-solving abilities.",
+      "Excellent collaboration skills."
+    ],
+    "benefits": [
+      "Project-based bonuses.",
+      "Access to internal training resources.",
+      "Option to extend the contract based on performance."
+    ],
+    "job_type": "Contractual",
+    "experience": 7,
+    "job_location": "Hybrid",
+    "workdays": "Monday to Friday",
+    "work_hours": "10:00 AM to 6:00 PM",
+    "max_salary": 60000,
+    "min_salary": 90000,
+    "postedDate": "2024-08-15",
+    "lastDateToApply": "2024-10-20",
+    "education": "Bachelor’s Degree in IT",
+    "tags": ["DevOps", "AWS", "CI/CD"],
+    "appliers": [],
+    "featured": true
+  },
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5ad",
+    "jobTitle": "Software Tester",
+    "category": "Quality Assurance",
+    "description": "We are looking for a Software Tester to ensure the quality and functionality of our software products.",
+    "responsibilities": [
+      "Design and execute test plans and cases.",
+      "Identify, document, and track defects.",
+      "Collaborate with developers to resolve issues.",
+      "Conduct regression testing and ensure application quality."
+    ],
+    "requirements": [
+      "Experience with manual and automated testing.",
+      "Familiarity with testing tools (Selenium, JIRA).",
+      "Strong analytical and problem-solving skills.",
+      "Attention to detail and commitment to quality."
+    ],
+    "benefits": [
+      "Flexible working hours.",
+      "Remote work options.",
+      "Annual performance bonuses."
+    ],
+    "job_type": "Full-time",
+    "experience": 3,
+    "job_location": "Hybrid",
+    "workdays": "Sunday to Thursday",
+    "work_hours": "Flexible",
+    "max_salary": 40000,
+    "min_salary": 60000,
+    "postedDate": "2024-10-12",
+    "lastDateToApply": "2024-11-30",
+    "education": "Bachelor’s in Computer Science or related field.",
+    "tags": ["Quality Assurance"]
+  },
+
+  {
+    "recruiter_id": "6715e352ea459a97c2cdb5a7",
+    "jobTitle": "Freelance Content Writer",
+    "category": "Content Writing",
+    "description": "Brain Station 23 is looking for creative freelance content writers to produce engaging content for blogs, websites, and social media platforms.",
+    "responsibilities": [
+      "Create high-quality content tailored to audience needs.",
+      "Conduct research to produce fact-based writing.",
+      "Collaborate with SEO experts to optimize content."
+    ],
+    "requirements": [
+      "Fluent English writing skills.",
+      "Experience with content management tools.",
+      "Ability to meet deadlines.",
+      "Previous freelance experience is a plus."
+    ],
+    "benefits": [
+      "Flexible work hours.",
+      "Remote working opportunities.",
+      "Per article-based payments."
+    ],
+    "job_type": "Freelance",
+    "experience": 3,
+    "job_location": "Remote",
+    "workdays": "Flexible",
+    "work_hours": "Project-based",
+    "max_salary": 45000,
+    "min_salary": 60000,
+    "postedDate": "2024-10-01",
+    "lastDateToApply": "2024-11-15",
+    "education": "N/A",
+    "tags": ["Content Writing", "Freelance", "SEO"],
+    "appliers": [],
+    "featured": true
+  }
+]

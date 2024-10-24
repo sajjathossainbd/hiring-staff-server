@@ -11,7 +11,7 @@ const router = express.Router();
 // POST /recruiters
 router.post("/", addRecruiter);
 
-// GET current recruiter by email
+// GET current recruiter by emailnodemon 
 router.get("/currentRecruiter/:email", getCurrentRecruiter);
 
 // GET all recruiters

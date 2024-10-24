@@ -1,6 +1,4 @@
-const stripe = require("stripe")(
-  "sk_test_51PL8uBP0ShXafyXSoEPKPfk5IMX7cHHwMsYEVR0KobBjlqsm5i23S0LuGoAZywsxB2wvpSlFUvp4Ww4wbXo0H7z500KP36GHiV"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 exports.postPayment = async (req, res) => {
   try {

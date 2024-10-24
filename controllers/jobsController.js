@@ -15,8 +15,8 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const { jobTitle, company_email, company_id, candidateEmails } = jobData;
-
+    const { jobTitle, company_email,  candidateEmails,company_name } = jobData;
+ 
     const query = { jobTitle: jobData.jobTitle };
     const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
@@ -34,7 +34,7 @@ exports.postJob = async (req, res) => {
       <h2 style="color: #4CAF50;">New Job Opportunity!</h2>
       <p style="font-size: 16px;">
         A new job titled <strong style="color: #333;">${jobTitle}</strong> has been posted by 
-        <strong style="color: #0073e6;">${company_id}</strong>.
+        <strong style="color: #0073e6;">${company_name}</strong>.
       </p>
       <p style="font-size: 16px; margin-top: 20px;">
         <em>Check it out now on Hiring Staff!</em>
@@ -60,7 +60,7 @@ exports.postJob = async (req, res) => {
 
     for (const candidateEmail of candidateEmails) {
       await sendEmail({
-        recruiterName: company_id,
+        recruiterName: company_name,
         recruiterEmail: company_email,
         email: candidateEmail,
         subject: `New Job Opportunity: ${jobTitle}`,

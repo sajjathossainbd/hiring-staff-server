@@ -6,32 +6,7 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
-// Add a new user
-exports.addUser = async (req, res) => {
-  try {
-    const user = req.body;
-    const query = { email: user.email };
-    const existingUser = await usersCollection.findOne(query);
-
-    if (existingUser) {
-      return sendResponse(
-        res,
-        { message: "User Already Exists", insertId: null },
-        409
-      );
-    }
-
-    const result = await usersCollection.insertOne(user);
-    sendResponse(
-      res,
-      { message: "User added successfully", insertId: result.insertedId },
-      201
-    );
-  } catch (error) {
-    console.error("Error adding user:", error);
-    sendResponse(res, { message: "Failed to add user" }, 500);
-  }
-};
+// Add a new addCandidate
 
 // Get all users with pagination
 exports.getAllUsers = async (req, res) => {
@@ -59,63 +34,6 @@ exports.getAllUsers = async (req, res) => {
     sendResponse(res, { error: "Failed to retrieve user list" }, 500);
   }
 };
-
-
-// Get all Candidates with pagination
-exports.getAllCandidates = async (req, res) => {
-  try {
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 10;
-    const skip = (page - 1) * limit;
-
-    const candidates = await usersCollection
-      .find({ role: "candidate" })
-      .skip(skip)
-      .limit(limit)
-      .toArray();
-
-    const totalDocuments = await usersCollection.countDocuments({ role: "candidate" });
-    const totalPages = Math.ceil(totalDocuments / limit);
-
-    sendResponse(res, {
-      candidates,
-      currentPage: page,
-      totalPages,
-      totalDocuments,
-    });
-  } catch (error) {
-    console.error("Error fetching candidates:", error);
-    sendResponse(res, { error: "Failed to retrieve candidate list" }, 500);
-  }
-};
-
-exports.getAllRecruiters = async (req, res) => {
-  try {
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 10;
-    const skip = (page - 1) * limit;
-
-    const recruiters = await usersCollection
-      .find({ role: "recruiter" })
-      .skip(skip)
-      .limit(limit)
-      .toArray();
-
-    const totalDocuments = await usersCollection.countDocuments({ role: "recruiter" });
-    const totalPages = Math.ceil(totalDocuments / limit);
-
-    sendResponse(res, {
-      recruiters,
-      currentPage: page,
-      totalPages,
-      totalDocuments,
-    });
-  } catch (error) {
-    console.error("Error fetching recruiters:", error);
-    sendResponse(res, { error: "Failed to retrieve recruiters list" }, 500);
-  }
-};
-
 
 // Get current user by email
 exports.getCurrentUser = async (req, res) => {

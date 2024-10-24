@@ -111,6 +111,24 @@ exports.getAllCandidates = async (req, res) => {
   }
 };
 
+// Get current candidate by email
+exports.getCurrentCandidate = async (req, res) => {
+  const email = req.params.email;
+
+  try {
+    const result = await candidatesCollection.findOne({ email });
+
+    if (!result) {
+      return sendResponse(res, { message: "candidate not found." }, 404);
+    }
+
+    sendResponse(res, result);
+  } catch (error) {
+    console.error("Error fetching candidate:", error);
+    sendResponse(res, { message: "Failed to fetch candidate" }, 500);
+  }
+};
+
 // Get unique data
 exports.getCandidatesData = async (req, res) => {
   try {

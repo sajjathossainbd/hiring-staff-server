@@ -2,11 +2,10 @@ const express = require("express");
 const {
   getAllCandidates,
   getCandidateById,
-   getUniqueProfessions,
-   getUniqueProfessionsAndCities,
-   getCandidatesData,
-   addCandidate,
-   deleteCandidate,
+  getCandidatesData,
+  addCandidate,
+  deleteCandidate,
+  getCurrentCandidate,
 } = require("../controllers/candidateController");
 
 const router = express.Router();
@@ -17,8 +16,11 @@ router.post("/candidates", addCandidate);
 // GET /candidates
 router.get("/", getAllCandidates);
 
+// GET current candidate by email
+router.get("/currentCandidate/:email", getCurrentCandidate);
+
 // Route to get unique data
-router.get('/unique',getCandidatesData);
+router.get('/unique', getCandidatesData);
 
 // GET/candidate by id
 router.get("/:id", getCandidateById);

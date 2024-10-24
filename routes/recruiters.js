@@ -12,16 +12,20 @@ const router = express.Router();
 // POST /recruiters
 router.post("/", addRecruiter);
 
+// GET all recruiters
+router.get("/", getAllRecruiters);
+
 // GET current recruiter by email
 router.get("/currentRecruiter/:email", getCurrentRecruiter);
 
-// GET all recruiters
-router.get("/", getAllRecruiters);
+// GET recruiter by id
+router.get("/:id", getRecruiterById);
 
 // GET unique data
 router.get("/unique",  getRecruitersData);
 
-// GET recruiter by id
-router.get("/:id", getRecruiterById);
+// DELETE recruiter by id
+router.delete("/deleteRecruiter/:id", deleteRecruiters);
+
 
 module.exports = router;

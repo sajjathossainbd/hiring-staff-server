@@ -2,26 +2,26 @@
 
 const express = require("express");
 const {
-  addUser,
-  getAllUsers,
+  // addUser,
+  // getAllUsers,
   getCurrentUser,
   updateUserProfile,
   deleteUser,
   updateUserRole,
   candidatesEmail,
-  getAllCandidates,
-  getAllRecruiters,
 } = require("../controllers/userController");
+const { getAllCandidates, addCandidate } = require("../controllers/candidateController");
+const { getAllRecruiters, deleteRecruiters } = require("../controllers/recruitersController");
 
 const router = express.Router();
 
-router.post("/", addUser);
-router.get("/", getAllUsers);
+router.post("/candidates", addCandidate);
+// router.get("/", getAllUsers);
 router.get("/candidates", getAllCandidates);
 router.get("/recruiters", getAllRecruiters);
 router.get("/current/:email", getCurrentUser);
 router.patch("/profile/:email", updateUserProfile);
-router.delete("/:id", deleteUser);
+router.delete("/recruiter/:id", deleteRecruiters);
 router.patch("/profile/role/:id", updateUserRole);
 
 // get emails for email

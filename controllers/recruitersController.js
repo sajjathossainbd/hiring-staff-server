@@ -198,28 +198,6 @@ exports.getRecruitersData = async (req, res) => {
   }
 };
 
-exports.addRecruiter = async (req, res) => {
-  try {
-    const recruiter = req.body;
-    const query = { _id: recruiter._id };
-    const existingRecruiter = await recruitersCollection.findOne(query);
 
-    if (existingRecruiter) {
-      return sendResponse(
-        res,
-        { message: "Recruiter Already Exists", insertId: null },
-        409
-      );
-    }
+// delete recruiters data
 
-    const result = await recruitersCollection.insertOne(recruiter);
-    sendResponse(
-      res,
-      { message: "Recruiter added successfully", insertId: result.insertedId },
-      201
-    );
-  } catch (error) {
-    console.error("Error adding Recruiter:", error);
-    sendResponse(res, { message: "Failed to add Recruiter" }, 500);
-  }
-};

@@ -353,7 +353,6 @@ exports.appliedJobApplication = async (req, res) => {
       coverLetter,
       resume,
       availability,
-      status: "pending",
       shortlist: "pending",
       reject: false,
       selected: false,

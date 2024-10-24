@@ -8,6 +8,32 @@ const sendResponse = (res, data, statusCode = 200) => {
   res.status(statusCode).json(data);
 };
 
+exports.addCandidate = async (req, res) => {
+  try {
+    const user = req.body;
+    const query = { email: user.email };
+    const existingUser = await candidatesCollection.findOne(query);
+
+    if (existingUser) {
+      return sendResponse(
+        res,
+        { message: "Candidate Already Exists", insertId: null },
+        409
+      );
+    }
+
+    const result = await candidatesCollection.insertOne(user);
+    sendResponse(
+      res,
+      { message: "Candidate added successfully", insertId: result.insertedId },
+      201
+    );
+  } catch (error) {
+    console.error("Error adding Candidate:", error);
+    sendResponse(res, { message: "Failed to add Candidate" }, 500);
+  }
+};
+
 // Get all candidates
 exports.getAllCandidates = async (req, res) => {
   try {
@@ -19,7 +45,7 @@ exports.getAllCandidates = async (req, res) => {
     const jobType = req.query.jobType || "";
 
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 9;
+    const limit = parseInt(req.query.limit) || 6;
     const skip = (page - 1) * limit;
 
     const query = {};

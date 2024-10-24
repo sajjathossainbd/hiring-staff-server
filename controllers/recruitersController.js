@@ -128,7 +128,7 @@ exports.getAllRecruiters = async (req, res) => {
   }
 };
 
-// uniqe data
+// unique data
 exports.getRecruitersData = async (req, res) => {
   try {
     const [industries, cities, teamSizes] = await Promise.all([

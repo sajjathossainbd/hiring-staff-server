@@ -248,3 +248,29 @@ exports.getCandidateById = async (req, res) => {
     sendResponse(res, { message: "Failed to fetch candidate" }, 500);
   }
 };
+
+// delete candidates data
+exports.deleteCandidate = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Candidate ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await candidatesCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Candidate not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Candidate deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting Candidate:", error);
+    sendResponse(res, { message: "Failed to delete user" }, 500);
+  }
+};

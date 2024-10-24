@@ -5,6 +5,7 @@ const {
   addRecruiter,
   getRecruitersData,
   getCurrentRecruiter,
+  deleteRecruiters,
 } = require("../controllers/recruitersController");
 const router = express.Router();
 

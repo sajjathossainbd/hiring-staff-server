@@ -2,6 +2,7 @@ const { client, ObjectId } = require("../config/db");
 const recruitersCollection = client
   .db("hiringStaffDB")
   .collection("recruiters");
+const jobsCollection = client.db("hiringStaffDB").collection("jobs");
 
 // function for sending responses
 const sendResponse = (res, data, statusCode = 200) => {
@@ -221,5 +222,35 @@ exports.addRecruiter = async (req, res) => {
   } catch (error) {
     console.error("Error adding Recruiter:", error);
     sendResponse(res, { message: "Failed to add Recruiter" }, 500);
+  }
+};
+
+exports.getRecruiterOpenJobsById = async (req, res) => {
+  try {
+    const jobId = req.params.id || "";
+
+    if (!ObjectId.isValid(jobId)) {
+      return res.status(400).json({ message: "Invalid Job ID" });
+    }
+
+    const jobs = await jobsCollection
+      .find({
+        recruiter_id: jobId,
+      })
+      .toArray();
+
+    if (jobs.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No jobs found for this recruiter" });
+    }
+
+    res.json(jobs);
+  } catch (error) {
+    console.error("Error retrieving Recruiter Open Jobs:", error);
+
+    return res.status(500).json({
+      message: "Failed to retrieve open jobs for this recruiter",
+    });
   }
 };

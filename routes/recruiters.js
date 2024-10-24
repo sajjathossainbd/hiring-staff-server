@@ -5,6 +5,7 @@ const {
   addRecruiter,
   getRecruitersData,
   getCurrentRecruiter,
+  getRecruiterOpenJobsById,
 } = require("../controllers/recruitersController");
 const router = express.Router();
 
@@ -18,9 +19,12 @@ router.get("/currentRecruiter/:email", getCurrentRecruiter);
 router.get("/", getAllRecruiters);
 
 // GET unique data
-router.get("/unique",  getRecruitersData);
+router.get("/unique", getRecruitersData);
 
 // GET recruiter by id
 router.get("/:id", getRecruiterById);
+
+// GET recruiter Open Jobs by id
+router.get("/Openjobs/:id", getRecruiterOpenJobsById);
 
 module.exports = router;

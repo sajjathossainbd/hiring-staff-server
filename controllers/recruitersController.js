@@ -129,7 +129,7 @@ exports.getAllRecruiters = async (req, res) => {
   }
 };
 
-// uniqe data
+// unique data
 exports.getRecruitersData = async (req, res) => {
   try {
     const [industries, cities, teamSizes] = await Promise.all([
@@ -199,29 +199,30 @@ exports.getRecruitersData = async (req, res) => {
   }
 };
 
-exports.addRecruiter = async (req, res) => {
-  try {
-    const recruiter = req.body;
-    const query = { _id: recruiter._id };
-    const existingRecruiter = await recruitersCollection.findOne(query);
 
-    if (existingRecruiter) {
-      return sendResponse(
-        res,
-        { message: "Recruiter Already Exists", insertId: null },
-        409
-      );
+// delete recruiters data
+exports.deleteRecruiters = async (req, res) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Recruiters ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await recruitersCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Recruiters not found" }, 404);
     }
 
-    const result = await recruitersCollection.insertOne(recruiter);
-    sendResponse(
-      res,
-      { message: "Recruiter added successfully", insertId: result.insertedId },
-      201
-    );
+    sendResponse(res, {
+      message: "Recruiters deleted successfully",
+      deletedCount: result.deletedCount,
+    });
   } catch (error) {
-    console.error("Error adding Recruiter:", error);
-    sendResponse(res, { message: "Failed to add Recruiter" }, 500);
+    console.error("Error deleting Recruiters:", error);
+    sendResponse(res, { message: "Failed to delete user" }, 500);
   }
 };
 

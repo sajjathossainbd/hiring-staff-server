@@ -200,4 +200,27 @@ exports.getRecruitersData = async (req, res) => {
 
 
 // delete recruiters data
+exports.deleteRecruiters = async (req, res) => {
+  const id = req.params.id;
 
+  if (!ObjectId.isValid(id)) {
+    return sendResponse(res, { message: "Invalid Recruiters ID" }, 400);
+  }
+
+  try {
+    const query = { _id: new ObjectId(id) };
+    const result = await recruitersCollection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      return sendResponse(res, { message: "Recruiters not found" }, 404);
+    }
+
+    sendResponse(res, {
+      message: "Recruiters deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Error deleting Recruiters:", error);
+    sendResponse(res, { message: "Failed to delete user" }, 500);
+  }
+};

@@ -119,7 +119,7 @@ exports.getCurrentCandidate = async (req, res) => {
     const result = await candidatesCollection.findOne({ email });
 
     if (!result) {
-      return sendResponse(res, { message: "candidate not found." }, 404);
+      return sendResponse(res, { message: "Candidate not found." }, 404);
     }
 
     sendResponse(res, result);
@@ -128,6 +128,7 @@ exports.getCurrentCandidate = async (req, res) => {
     sendResponse(res, { message: "Failed to fetch candidate" }, 500);
   }
 };
+
 
 // Get unique data
 exports.getCandidatesData = async (req, res) => {

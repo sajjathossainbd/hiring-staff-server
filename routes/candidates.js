@@ -11,7 +11,7 @@ const {
 const router = express.Router();
 
 // Add Candidate
-router.post("/candidates", addCandidate);
+router.post("/", addCandidate);
 
 // GET /candidates
 router.get("/", getAllCandidates);

@@ -11,16 +11,16 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.addCandidate = async (req, res) => {
   try {
     const user = req.body;
-    const query = { email: user.email };
-    const existingUser = await candidatesCollection.findOne(query);
+    // const query = { email: user.email };
+    // const existingUser = await candidatesCollection.findOne(query);
 
-    if (existingUser) {
-      return sendResponse(
-        res,
-        { message: "Candidate Already Exists", insertId: null },
-        409
-      );
-    }
+    // if (existingUser) {
+    //   return sendResponse(
+    //     res,
+    //     { message: "Candidate Already Exists", insertId: null },
+    //     409
+    //   );
+    // }
 
     const result = await candidatesCollection.insertOne(user);
     sendResponse(

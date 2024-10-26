@@ -8,6 +8,7 @@ const {
   deleteRecruiters,
   getRecruiterOpenJobsById,
 } = require("../controllers/recruitersController");
+
 const router = express.Router();
 
 // POST /recruiters

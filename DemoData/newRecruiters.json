@@ -1,0 +1,435 @@
+[
+    {
+        "name": "AI Innovators",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-14.svg",
+        "industry": "Artificial Intelligence",
+        "website": "https://aiinnovators.com",
+        "phone": "+1-800-123-9876",
+        "email": "info@aiinnovators.com",
+        "map": "https://maps.app.goo.gl/example1",
+        "location": {
+            "address": "200 AI Blvd",
+            "zip": "94107",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Dr. Alan Turing",
+        "businessType": "Private",
+        "annualRevenue": "$75 million",
+        "foundedYear": "2015",
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 400,
+        "certifications": ["ISO 27001", "AI Excellence Award 2022"],
+        "awards": ["Best AI Solutions 2023", "AI Startup of the Year 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/ai-innovators",
+            "twitter": "https://twitter.com/aiinnovators"
+        },
+        "openJobs": 15,
+        "ratings": 4.3
+    },
+    {
+        "name": "DeepMind Technologies",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-11.svg",
+        "industry": "Artificial Intelligence",
+        "website": "https://deepmind.com",
+        "phone": "+44-20-1234-5678",
+        "email": "contact@deepmind.com",
+        "map": "https://maps.app.goo.gl/example2",
+        "location": {
+            "address": "76 Buckingham Palace Rd",
+            "zip": "SW1W 9TQ",
+            "city": "London",
+            "state": "England",
+            "country": "UK"
+        },
+        "ceo": "Demis Hassabis",
+        "businessType": "Private",
+        "annualRevenue": "$150 million",
+        "foundedYear": 2010,
+        "companySizeCategory": "Large",
+        "numberOfEmployees": 1000,
+        "certifications": ["ISO 27001", "AI Research Leadership Award 2021"],
+        "awards": ["Top AI Company 2022", "AI Breakthrough Award 2021"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/deepmind",
+            "twitter": "https://twitter.com/deepmind"
+        },
+        "openJobs": 25,
+        "ratings": 4.7
+    },
+    {
+        "name": "BlockTech Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-13.svg",
+        "industry": "Blockchain",
+        "website": "https://blocktech.com",
+        "phone": "+1-800-555-1234",
+        "email": "info@blocktech.com",
+        "map": "https://maps.app.goo.gl/example3",
+        "location": {
+            "address": "400 Blockchain Ave",
+            "zip": "94111",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Satoshi Nakamoto",
+        "businessType": "Private",
+        "annualRevenue": "$100 million",
+        "foundedYear": "2014",
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 300,
+        "certifications": ["Blockchain Security Certification", "ISO 27001"],
+        "awards": [
+            "Best Blockchain Provider 2022",
+            "Top 10 Blockchain Innovators 2023"
+        ],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/blocktech",
+            "twitter": "https://twitter.com/blocktech"
+        },
+        "openJobs": 10,
+        "ratings": 4.1
+    },
+    {
+        "name": "CloudFirst Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-12.svg",
+        "industry": "Cloud Computing",
+        "website": "https://cloudfirst.com",
+        "phone": "+1-888-123-4567",
+        "email": "info@cloudfirst.com",
+        "map": "https://maps.app.goo.gl/example5",
+        "location": {
+            "address": "700 Cloud Way",
+            "zip": "94109",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Alice Johnson",
+        "businessType": "Private",
+        "annualRevenue": "$200 million",
+        "foundedYear": "2012",
+        "companySizeCategory": "Large",
+        "numberOfEmployees": 800,
+        "certifications": ["AWS Certified Partner", "ISO 27001"],
+        "awards": [
+            "Top Cloud Solutions Provider 2023",
+            "Cloud Innovation Award 2022"
+        ],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/cloudfirst",
+            "twitter": "https://twitter.com/cloudfirst"
+        },
+        "openJobs": 30,
+        "ratings": 4.6
+    },
+    {
+        "name": "SkyHigh Technologies",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-10.svg",
+        "industry": "Cloud Computing",
+        "website": "https://skyhightech.com",
+        "phone": "+1-800-789-1234",
+        "email": "contact@skyhightech.com",
+        "map": "https://maps.app.goo.gl/example6",
+        "location": {
+            "address": "900 Sky Blvd",
+            "zip": "94110",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Bob Davis",
+        "businessType": "Private",
+        "annualRevenue": "$180 million",
+        "foundedYear": "2010",
+        "companySizeCategory": "Large",
+        "numberOfEmployees": 900,
+        "certifications": ["Microsoft Azure Certified Partner", "ISO 27001"],
+        "awards": [
+            "Best Cloud Platform Provider 2023",
+            "Top 100 Cloud Innovators 2022"
+        ],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/skyhightech",
+            "twitter": "https://twitter.com/skyhightech"
+        },
+        "openJobs": 20,
+        "ratings": 4.4
+    },
+    {
+        "name": "CyberSecure Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-9.svg",
+        "industry": "Cybersecurity",
+        "website": "https://cybersecuresolutions.com",
+        "phone": "+1-800-555-0987",
+        "email": "contact@cybersecuresolutions.com",
+        "map": "https://maps.app.goo.gl/example7",
+        "location": {
+            "address": "1200 Secure Blvd",
+            "zip": "94115",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Eve Williams",
+        "businessType": "Private",
+        "annualRevenue": "$120 million",
+        "foundedYear": "2013",
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 500,
+        "certifications": ["CISSP", "ISO 27001"],
+        "awards": [
+            "Best Cybersecurity Provider 2022",
+            "Cybersecurity Innovation Award 2023"
+        ],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/cybersecure",
+            "twitter": "https://twitter.com/cybersecure"
+        },
+        "openJobs": 18,
+        "ratings": 4.2
+    },
+    {
+        "name": "CloudX Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-8.svg",
+        "industry": "SaaS",
+        "website": "https://cloudxsolutions.com",
+        "phone": "+1-800-987-6543",
+        "email": "info@cloudxsolutions.com",
+        "map": "https://maps.app.goo.gl/xyzabc",
+        "location": {
+            "address": "456 Park Ave",
+            "zip": "10022",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA"
+        },
+        "ceo": "Emily White",
+        "businessType": "Private",
+        "annualRevenue": "$75 million",
+        "foundedYear": 2012,
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 300,
+        "certifications": ["ISO 27001", "SOC 2 Type II"],
+        "awards": ["Best SaaS Startup 2023", "Top SaaS Provider 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/cloudxsolutions",
+            "twitter": "https://twitter.com/cloudxsolutions"
+        },
+        "openJobs": 5,
+        "ratings": 4.5
+    },
+    {
+        "name": "InnoTech Industries",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-7.svg",
+        "industry": "Technology",
+        "website": "https://innotech.com",
+        "phone": "+1-800-123-4567",
+        "email": "info@innotech.com",
+        "map": "https://maps.app.goo.gl/example8",
+        "location": {
+            "address": "100 Tech St",
+            "zip": "94108",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "John Doe",
+        "businessType": "Private",
+        "annualRevenue": "$90 million",
+        "foundedYear": 2008,
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 400,
+        "certifications": ["ISO 9001", "ISO 27001"],
+        "awards": ["Tech Innovation Award 2022", "Best Tech Company 2023"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/innotech",
+            "twitter": "https://twitter.com/innotech"
+        },
+        "openJobs": 12,
+        "ratings": 4.3
+    },
+    {
+        "name": "TechSys Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-6.svg",
+        "industry": "Software Development",
+        "website": "https://techsys.com",
+        "phone": "+1-800-654-3210",
+        "email": "info@techsys.com",
+        "map": "https://maps.app.goo.gl/example9",
+        "location": {
+            "address": "250 Software Blvd",
+            "zip": "94111",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Anna Smith",
+        "businessType": "Private",
+        "annualRevenue": "$150 million",
+        "foundedYear": 2005,
+        "companySizeCategory": "Large",
+        "numberOfEmployees": 1000,
+        "certifications": ["CMMI Level 3", "ISO 27001"],
+        "awards": ["Top Software Company 2022", "Best Workplace Award 2023"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/techsys",
+            "twitter": "https://twitter.com/techsys"
+        },
+        "openJobs": 20,
+        "ratings": 4.6
+    },
+    {
+        "name": "GreenTech Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-5.svg",
+        "industry": "Renewable Energy",
+        "website": "https://greentech.com",
+        "phone": "+1-800-567-8901",
+        "email": "info@greentech.com",
+        "map": "https://maps.app.goo.gl/example10",
+        "location": {
+            "address": "123 Greenway",
+            "zip": "94114",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Tom Green",
+        "businessType": "Private",
+        "annualRevenue": "$50 million",
+        "foundedYear": 2018,
+        "companySizeCategory": "Small",
+        "numberOfEmployees": 150,
+        "certifications": ["ISO 14001", "Green Certification"],
+        "awards": ["Best Renewable Energy Startup 2023", "Green Innovation Award 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/greentech",
+            "twitter": "https://twitter.com/greentech"
+        },
+        "openJobs": 8,
+        "ratings": 4.0
+    },
+    {
+        "name": "HealthCare Innovations",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-4.svg",
+        "industry": "Healthcare",
+        "website": "https://healthcareinnovations.com",
+        "phone": "+1-800-678-1234",
+        "email": "info@healthcareinnovations.com",
+        "map": "https://maps.app.goo.gl/example11",
+        "location": {
+            "address": "456 Health St",
+            "zip": "94113",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Sarah Connor",
+        "businessType": "Private",
+        "annualRevenue": "$120 million",
+        "foundedYear": 2015,
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 500,
+        "certifications": ["ISO 9001", "HealthCare Compliance Certification"],
+        "awards": ["Best Healthcare Provider 2023", "Innovation in Healthcare Award 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/healthcareinnovations",
+            "twitter": "https://twitter.com/healthcareinnovations"
+        },
+        "openJobs": 10,
+        "ratings": 4.5
+    },
+    {
+        "name": "FinTech Leaders",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-3.svg",
+        "industry": "Finance",
+        "website": "https://fintechleaders.com",
+        "phone": "+1-800-123-4567",
+        "email": "info@fintechleaders.com",
+        "map": "https://maps.app.goo.gl/example12",
+        "location": {
+            "address": "789 Finance Ave",
+            "zip": "94112",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Mark Zuckerberg",
+        "businessType": "Private",
+        "annualRevenue": "$200 million",
+        "foundedYear": 2016,
+        "companySizeCategory": "Large",
+        "numberOfEmployees": 800,
+        "certifications": ["ISO 27001", "FINRA Certified"],
+        "awards": ["Best FinTech Company 2023", "Top Innovator in Finance 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/fintechleaders",
+            "twitter": "https://twitter.com/fintechleaders"
+        },
+        "openJobs": 15,
+        "ratings": 4.8
+    },
+    {
+        "name": "LogiTech Innovations",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-2.svg",
+        "industry": "Logistics",
+        "website": "https://logitechinnovations.com",
+        "phone": "+1-800-321-0987",
+        "email": "info@logitechinnovations.com",
+        "map": "https://maps.app.goo.gl/example13",
+        "location": {
+            "address": "234 Logistics Rd",
+            "zip": "94111",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "Natalie Portman",
+        "businessType": "Private",
+        "annualRevenue": "$90 million",
+        "foundedYear": 2014,
+        "companySizeCategory": "Medium",
+        "numberOfEmployees": 450,
+        "certifications": ["ISO 9001", "Supply Chain Management Certification"],
+        "awards": ["Top Logistics Company 2022", "Logistics Excellence Award 2023"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/logitechinnovations",
+            "twitter": "https://twitter.com/logitechinnovations"
+        },
+        "openJobs": 20,
+        "ratings": 4.3
+    },
+    {
+        "name": "EduTech Solutions",
+        "logo": "https://jthemes.com/themes/wp/jobbox/wp-content/uploads/2022/09/recruiter-1.svg",
+        "industry": "Education Technology",
+        "website": "https://edutechsolutions.com",
+        "phone": "+1-800-456-7890",
+        "email": "info@edutechsolutions.com",
+        "map": "https://maps.app.goo.gl/example14",
+        "location": {
+            "address": "567 Edu St",
+            "zip": "94112",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA"
+        },
+        "ceo": "John Smith",
+        "businessType": "Private",
+        "annualRevenue": "$60 million",
+        "foundedYear": 2019,
+        "companySizeCategory": "Small",
+        "numberOfEmployees": 200,
+        "certifications": ["ISO 9001", "EdTech Accreditation"],
+        "awards": ["Best EdTech Startup 2023", "Innovation in Education Award 2022"],
+        "socialProfiles": {
+            "linkedin": "https://www.linkedin.com/company/edutechsolutions",
+            "twitter": "https://twitter.com/edutechsolutions"
+        },
+        "openJobs": 7,
+        "ratings": 4.4
+    }
+]  
+

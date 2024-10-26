@@ -82,7 +82,7 @@ exports.getRecruiterById = async (req, res) => {
 exports.getAllRecruiters = async (req, res) => {
   try {
     const industry = req.query.industry || "";
-    const location = req.query.city || "";
+    const location = req.query.location || ""; 
     const numberOfEmployees = req.query.numberOfEmployees || "";
 
     const page = parseInt(req.query.page) || 1;
@@ -96,11 +96,11 @@ exports.getAllRecruiters = async (req, res) => {
     }
 
     if (location) {
-      query["location.city"] = { $regex: location, $options: "i" };
+      query.location = { $regex: location, $options: "i" }; 
     }
 
     if (numberOfEmployees) {
-      query.numberOfEmployees = { $lte: parseInt(numberOfEmployees) };
+      query.numberOfEmployees = { $regex: numberOfEmployees, $options: "i" }; 
     }
 
     const recruiters = await recruitersCollection
@@ -129,9 +129,10 @@ exports.getAllRecruiters = async (req, res) => {
   }
 };
 
+
 exports.getRecruitersData = async (req, res) => {
   try {
-    const [industries, cities, teamSizes] = await Promise.all([
+    const [industries, locations, numberOfEmployees] = await Promise.all([
       recruitersCollection
         .aggregate([
           {
@@ -146,7 +147,7 @@ exports.getRecruitersData = async (req, res) => {
             },
           },
           {
-            $sort: { industry: 1 }, 
+            $sort: { industry: 1 },
           },
         ])
         .toArray(),
@@ -155,14 +156,17 @@ exports.getRecruitersData = async (req, res) => {
         .aggregate([
           {
             $group: {
-              _id: { $ifNull: ["$location.city", "Unknown City"] },
+              _id: { $ifNull: ["$location", "Unknown Location"] },
             },
           },
           {
             $project: {
               _id: 0,
-              city: "$_id",
+              location: "$_id",
             },
+          },
+          {
+            $sort: { location: 1 },
           },
         ])
         .toArray(),
@@ -171,49 +175,38 @@ exports.getRecruitersData = async (req, res) => {
         .aggregate([
           {
             $group: {
-              _id: "$numberOfEmployees",
+              _id: { $ifNull: ["$numberOfEmployees", "Unknown Team Size"] },  
             },
           },
           {
             $project: {
               _id: 0,
-              teamSize: "$_id",
-            },
-          },
-        ])
-        .toArray(),
-
-        recruitersCollection
-        .aggregate([
-          {
-            $group: {
-              _id: { $ifNull: ["$numberOfEmployees", "Unknown Team Size"] }, // Handle null values
+              numberOfEmployees: "$_id", 
             },
           },
           {
-            $project: {
-              _id: 0,
-              teamSize: "$_id", // Set teamSize to _id
-            },
+            $sort: { numberOfEmployees: 1 },
           },
         ])
         .toArray(),
     ]);
-   
+
+    
     const flatIndustries = industries.map((i) => i.industry);
-    const flatCities = cities.map((c) => c.city);
-    const flatTeamSizes = teamSizes.map((ts) => ts.teamSize);
+    const flatLocations = locations.map((l) => l.location);
+    const flatNumberOfEmployees = numberOfEmployees.map((ts) => ts.numberOfEmployees); 
 
     res.json({
       industries: flatIndustries,
-      cities: flatCities,
-      teamSizes: flatTeamSizes,
+      locations: flatLocations,
+      numberOfEmployees: flatNumberOfEmployees, 
     });
   } catch (error) {
     console.error("Error fetching recruiters data:", error);
     res.status(500).json({ message: "Error fetching data", error: error.message });
   }
 };
+
 
 
 // delete recruiters data

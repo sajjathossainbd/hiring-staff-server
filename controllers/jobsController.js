@@ -314,7 +314,7 @@ exports.appliedJobApplication = async (req, res) => {
     jobId,
     jobTitle,
     company_email,
-    company_id,
+    company_name,
     applicantId,
     applicantName,
     applicantEmail,
@@ -346,7 +346,7 @@ exports.appliedJobApplication = async (req, res) => {
       jobId: new ObjectId(jobId),
       jobTitle,
       company_email,
-      company_id,
+      company_name,
       applicantId: new ObjectId(applicantId),
       applicantName,
       applicantEmail,
@@ -592,13 +592,20 @@ exports.updateJobSelectedStatus = async (req, res) => {
     const applicantEmail = appliedJob.applicantEmail;
 
     if (appliedJob) {
-      const { jobTitle, company_id } = appliedJob;
+      const { jobTitle, company_name } = appliedJob;
       const message = `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
           <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
           <p style="font-size: 16px;">
-            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_name}</strong>.
           </p>
+             <div style="margin-top: 30px;">
+        <a 
+          href="https://hiring-staff.vercel.app/job-details/id" 
+          style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+          View Job Details
+        </a>
+      </div>
           <p style="font-size: 16px; margin-top: 20px;">
             We will contact you shortly with further details.
           </p>
@@ -610,7 +617,7 @@ exports.updateJobSelectedStatus = async (req, res) => {
       `;
 
       await sendEmail({
-        recruiterName: company_id,
+        recruiterName: company_name,
         email: applicantEmail,
         subject: `You Have Been Selected for ${jobTitle}!`,
         message,

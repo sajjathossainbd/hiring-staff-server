@@ -15,8 +15,8 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const { jobTitle, company_email,  candidateEmails,company_name } = jobData;
- 
+    const { jobTitle, company_email, candidateEmails, company_name } = jobData;
+
     const query = { jobTitle: jobData.jobTitle };
     const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
@@ -314,7 +314,7 @@ exports.appliedJobApplication = async (req, res) => {
     jobId,
     jobTitle,
     company_email,
-    company_id,
+    company_name,
     applicantId,
     applicantName,
     applicantEmail,
@@ -346,7 +346,7 @@ exports.appliedJobApplication = async (req, res) => {
       jobId: new ObjectId(jobId),
       jobTitle,
       company_email,
-      company_id,
+      company_name,
       applicantId: new ObjectId(applicantId),
       applicantName,
       applicantEmail,
@@ -435,7 +435,6 @@ exports.getAppliedJobsById = async (req, res) => {
   }
 };
 
-
 // Delete controller for applied jobs
 
 exports.deleteAppliedJob = async (req, res) => {
@@ -467,7 +466,9 @@ exports.deleteAppliedJob = async (req, res) => {
 
 exports.getAppliedJobByShortlist = async (req, res) => {
   try {
-    const appliedJobs = await appliedJobsCollection.find({ shortlist: "approved" }).toArray();
+    const appliedJobs = await appliedJobsCollection
+      .find({ shortlist: "approved" })
+      .toArray();
 
     if (!appliedJobs.length) {
       return res.status(404).json({ message: "No jobs found in shortlist" });
@@ -479,7 +480,6 @@ exports.getAppliedJobByShortlist = async (req, res) => {
     return res.status(500).json({ message: "Error fetching jobs" });
   }
 };
-
 
 // Get applied jobs by email address
 
@@ -592,13 +592,20 @@ exports.updateJobSelectedStatus = async (req, res) => {
     const applicantEmail = appliedJob.applicantEmail;
 
     if (appliedJob) {
-      const { jobTitle, company_id } = appliedJob;
+      const { jobTitle, company_name } = appliedJob;
       const message = `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
           <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
           <p style="font-size: 16px;">
-            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_name}</strong>.
           </p>
+             <div style="margin-top: 30px;">
+        <a 
+          href="https://hiring-staff.vercel.app/job-details/id" 
+          style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+          View Job Details
+        </a>
+      </div>
           <p style="font-size: 16px; margin-top: 20px;">
             We will contact you shortly with further details.
           </p>
@@ -610,7 +617,7 @@ exports.updateJobSelectedStatus = async (req, res) => {
       `;
 
       await sendEmail({
-        recruiterName: company_id,
+        recruiterName: company_name,
         email: applicantEmail,
         subject: `You Have Been Selected for ${jobTitle}!`,
         message,
@@ -662,26 +669,25 @@ exports.getApprovedShortlistedJobs = async (req, res) => {
   }
 };
 
-
 // get selected jobs for candidates
 exports.getSelectedJobs = async (req, res) => {
   const { email } = req.params;
-  const { page = 1, limit = 12 } = req.query; // Get page and limit from query parameters
+  const { page = 1, limit = 12 } = req.query;
 
   try {
-    const skip = (page - 1) * limit; // Calculate how many documents to skip
+    const skip = (page - 1) * limit;
     const totalSelectedJobs = await appliedJobsCollection.countDocuments({
       applicantEmail: email,
-      shortlist: "selected",
+      shortlist: "approved",
     });
 
     const selectedJobs = await appliedJobsCollection
       .find({
         applicantEmail: email,
-        shortlist: "selected",
+        shortlist: "approved",
       })
-      .skip(skip) // Skip the documents based on page
-      .limit(parseInt(limit)) // Limit the number of documents returned
+      .skip(skip)
+      .limit(parseInt(limit))
       .toArray();
 
     if (selectedJobs.length === 0) {
@@ -690,10 +696,9 @@ exports.getSelectedJobs = async (req, res) => {
       });
     }
 
-    // Return both selected jobs and total count for pagination
     res.status(200).json({
       currentPage: parseInt(page),
-      totalPages: Math.ceil(totalSelectedJobs / limit), // Calculate total pages
+      totalPages: Math.ceil(totalSelectedJobs / limit),
       selectedJobs,
     });
   } catch (error) {
@@ -701,4 +706,3 @@ exports.getSelectedJobs = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-

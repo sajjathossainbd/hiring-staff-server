@@ -293,3 +293,25 @@ exports.deleteCandidate = async (req, res) => {
     sendResponse(res, { message: "Failed to delete user" }, 500);
   }
 };
+
+// Update candidate profile
+exports.updateCandidateProfile = async (req, res) => {
+  const email = req.params.email;
+  const updatedData = req.body;
+
+  try {
+    const result = await candidatesCollection.updateOne(
+      { email },
+      { $set: updatedData }
+    );
+
+    if (result.modifiedCount === 0) {
+      return sendResponse(res, { message: "No changes made" }, 204);
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount });
+  } catch (error) {
+    console.error("Error updating Candidate profile:", error);
+    sendResponse(res, { message: "Failed to update Candidate profile" }, 500);
+  }
+};

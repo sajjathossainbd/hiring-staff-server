@@ -20,6 +20,7 @@ const {
   getApprovedShortlistedJobs,
   getSelectedJobs,
   getAppliedJobByShortlist,
+  getApplicationsByJobId,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -38,6 +39,9 @@ router.get("/categories", getUniqueCategories);
 
 // get jobs by email
 router.get("/email/:email", getJobsByEmail);
+
+// get applied jobs for recruiter dashboard
+router.get("/applied/applications/:jobId", getApplicationsByJobId);
 
 // delete jobs
 router.delete("/delete/:id", deleteJob);

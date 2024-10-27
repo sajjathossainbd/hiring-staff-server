@@ -303,6 +303,29 @@ exports.getJobsByEmail = async (req, res) => {
   }
 };
 
+// get jobs by id for recruter dashboard
+exports.getApplicationsByJobId = async (req, res) => {
+  try {
+    const jobId = req.params.jobId;
+
+    const objectId = new ObjectId(jobId);
+    const applications = await appliedJobsCollection
+      .find({ jobId: objectId })
+      .toArray();
+
+    if (applications.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No applications found for this job" });
+    }
+
+    res.status(200).json(applications);
+  } catch (error) {
+    console.error("Error fetching applications by job ID:", error);
+    res.status(500).json({ message: "Error fetching applications" });
+  }
+};
+
 // Delete job
 exports.deleteJob = async (req, res) => {
   const id = req.params.id;

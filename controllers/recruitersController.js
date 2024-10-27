@@ -82,7 +82,7 @@ exports.getRecruiterById = async (req, res) => {
 exports.getAllRecruiters = async (req, res) => {
   try {
     const industry = req.query.industry || "";
-    const location = req.query.location || ""; 
+    const location = req.query.location || "";
     const numberOfEmployees = req.query.numberOfEmployees || "";
 
     const page = parseInt(req.query.page) || 1;
@@ -96,11 +96,11 @@ exports.getAllRecruiters = async (req, res) => {
     }
 
     if (location) {
-      query.location = { $regex: location, $options: "i" }; 
+      query.location = { $regex: location, $options: "i" };
     }
 
     if (numberOfEmployees) {
-      query.numberOfEmployees = { $regex: numberOfEmployees, $options: "i" }; 
+      query.numberOfEmployees = { $regex: numberOfEmployees, $options: "i" };
     }
 
     const recruiters = await recruitersCollection
@@ -114,7 +114,7 @@ exports.getAllRecruiters = async (req, res) => {
     }
 
     const totalRecruiters = await recruitersCollection.countDocuments(query);
-    
+
     res.json({
       totalPages: Math.ceil(totalRecruiters / limit),
       currentPage: page,
@@ -175,13 +175,13 @@ exports.getRecruitersData = async (req, res) => {
         .aggregate([
           {
             $group: {
-              _id: { $ifNull: ["$numberOfEmployees", "Unknown Team Size"] },  
+              _id: { $ifNull: ["$numberOfEmployees", "Unknown Team Size"] },
             },
           },
           {
             $project: {
               _id: 0,
-              numberOfEmployees: "$_id", 
+              numberOfEmployees: "$_id",
             },
           },
           {
@@ -191,15 +191,15 @@ exports.getRecruitersData = async (req, res) => {
         .toArray(),
     ]);
 
-    
+
     const flatIndustries = industries.map((i) => i.industry);
     const flatLocations = locations.map((l) => l.location);
-    const flatNumberOfEmployees = numberOfEmployees.map((ts) => ts.numberOfEmployees); 
+    const flatNumberOfEmployees = numberOfEmployees.map((ts) => ts.numberOfEmployees);
 
     res.json({
       industries: flatIndustries,
       locations: flatLocations,
-      numberOfEmployees: flatNumberOfEmployees, 
+      numberOfEmployees: flatNumberOfEmployees,
     });
   } catch (error) {
     console.error("Error fetching recruiters data:", error);

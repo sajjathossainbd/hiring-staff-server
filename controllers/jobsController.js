@@ -263,13 +263,34 @@ exports.getJob = async (req, res) => {
   }
 };
 
-// Get job by recruiter email
+// Get jobs by recruiter email for recruiter dashboard
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
 
-    const query = { company_email: email };
-    const result = await jobsCollection.find(query).toArray();
+    const result = await jobsCollection
+      .aggregate([
+        { $match: { company_email: email } },
+        {
+          $lookup: {
+            from: "appliedjobs",
+            localField: "_id",
+            foreignField: "jobId",
+            as: "applications",
+          },
+        },
+        {
+          $project: {
+            jobTitle: 1,
+            company_email: 1,
+            postedDate: 1,
+            lastDateToApply: 1,
+            applications: 1,
+            applicationsCount: { $size: "$applications" },
+          },
+        },
+      ])
+      .toArray();
 
     if (result.length === 0) {
       return res.status(404).json({ message: "No jobs found for this email" });
@@ -279,6 +300,29 @@ exports.getJobsByEmail = async (req, res) => {
   } catch (error) {
     console.error("Error fetching jobs by email:", error);
     res.status(500).json({ message: "Error fetching jobs" });
+  }
+};
+
+// get jobs by id for recruter dashboard
+exports.getApplicationsByJobId = async (req, res) => {
+  try {
+    const jobId = req.params.jobId;
+
+    const objectId = new ObjectId(jobId);
+    const applications = await appliedJobsCollection
+      .find({ jobId: objectId })
+      .toArray();
+
+    if (applications.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No applications found for this job" });
+    }
+
+    res.status(200).json(applications);
+  } catch (error) {
+    console.error("Error fetching applications by job ID:", error);
+    res.status(500).json({ message: "Error fetching applications" });
   }
 };
 
@@ -308,7 +352,7 @@ exports.deleteJob = async (req, res) => {
   }
 };
 
-// applied job
+// apply job
 exports.appliedJobApplication = async (req, res) => {
   const {
     jobId,
@@ -509,7 +553,7 @@ exports.getAppliedJobsByEmail = async (req, res) => {
 
 exports.updateAppliedJobStatus = async (req, res) => {
   const { id } = req.params;
-  const { shortlist, reject } = req.body; // Accept both shortlist and reject values from the request
+  const { shortlist, reject } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return sendResponse(res, { message: "Invalid Job ID" }, 400);
@@ -518,12 +562,11 @@ exports.updateAppliedJobStatus = async (req, res) => {
   try {
     const query = { _id: new ObjectId(id) };
 
-    // Dynamically build the update object based on the provided fields
     const update = {
       $set: {},
     };
-    if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
-    if (typeof reject === "boolean") update.$set.reject = reject; // e.g., true or false
+    if (shortlist) update.$set.shortlist = shortlist;
+    if (typeof reject === "boolean") update.$set.reject = reject;
 
     const result = await appliedJobsCollection.updateOne(query, update);
 

@@ -553,7 +553,7 @@ exports.getAppliedJobsByEmail = async (req, res) => {
 
 exports.updateAppliedJobStatus = async (req, res) => {
   const { id } = req.params;
-  const { shortlist, reject } = req.body; // Accept both shortlist and reject values from the request
+  const { shortlist, reject } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return sendResponse(res, { message: "Invalid Job ID" }, 400);
@@ -562,12 +562,11 @@ exports.updateAppliedJobStatus = async (req, res) => {
   try {
     const query = { _id: new ObjectId(id) };
 
-    // Dynamically build the update object based on the provided fields
     const update = {
       $set: {},
     };
-    if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
-    if (typeof reject === "boolean") update.$set.reject = reject; // e.g., true or false
+    if (shortlist) update.$set.shortlist = shortlist;
+    if (typeof reject === "boolean") update.$set.reject = reject;
 
     const result = await appliedJobsCollection.updateOne(query, update);
 

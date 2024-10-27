@@ -263,13 +263,34 @@ exports.getJob = async (req, res) => {
   }
 };
 
-// Get job by recruiter email
+// Get jobs by recruiter email for recruiter dashboard
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
 
-    const query = { company_email: email };
-    const result = await jobsCollection.find(query).toArray();
+    const result = await jobsCollection
+      .aggregate([
+        { $match: { company_email: email } },
+        {
+          $lookup: {
+            from: "appliedjobs",
+            localField: "_id",
+            foreignField: "jobId",
+            as: "applications",
+          },
+        },
+        {
+          $project: {
+            jobTitle: 1,
+            company_email: 1,
+            postedDate: 1,
+            lastDateToApply: 1,
+            applications: 1,
+            applicationsCount: { $size: "$applications" },
+          },
+        },
+      ])
+      .toArray();
 
     if (result.length === 0) {
       return res.status(404).json({ message: "No jobs found for this email" });
@@ -308,7 +329,7 @@ exports.deleteJob = async (req, res) => {
   }
 };
 
-// applied job
+// apply job
 exports.appliedJobApplication = async (req, res) => {
   const {
     jobId,

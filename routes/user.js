@@ -5,12 +5,12 @@ const {
   getCurrentUser,
   updateUserProfile,
   candidatesEmail,
+  getCurrentAdminByEmail,
 } = require("../controllers/userController");
 
 const router = express.Router();
 
-
-router.get("/current/:email", getCurrentUser);
+router.get("/admin/:email", getCurrentAdminByEmail);
 
 // get emails for sending email
 router.get("/candidate-emails", candidatesEmail);

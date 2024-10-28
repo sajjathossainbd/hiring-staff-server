@@ -7,19 +7,22 @@ require("dotenv").config();
 const userRoutes = require("./routes/user");
 const jobsRoutes = require("./routes/jobs");
 const candidateRoutes = require("./routes/candidates");
-const recruiterRoutes = require("./routes/recruiters"); const paymentRoutes = require("./routes/payment");
+const recruiterRoutes = require("./routes/recruiters");
+const paymentRoutes = require("./routes/payment");
 const blogsRoutes = require("./routes/blogs");
 const paymentHistory = require("./routes/paymentHistory");
 const reviewsRoute = require("./routes/reviews");
+
+// const jwtRoute = require("./utils/jwtUtils");
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.json());
 const corsOptions = {
   origin: ["https://hiring-staff.vercel.app", "http://localhost:5173"],
   methods: "GET,POST,PUT,DELETE,PATCH",
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
 
@@ -27,6 +30,15 @@ app.use(cors(corsOptions));
 connectDB();
 
 // Define routes
+
+app.post("/jwt", async (req, res) => {
+  const user = req.body;
+  const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "6hr" })
+  res.send({ token: token });
+})
+
+// User
+// app.use("/jwt", jwtRoute);
 
 // User
 app.use("/users", userRoutes);

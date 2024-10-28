@@ -2,8 +2,6 @@
 
 const express = require("express");
 const {
-  getCurrentUser,
-  updateUserProfile,
   candidatesEmail,
   getCurrentAdminByEmail,
 } = require("../controllers/userController");

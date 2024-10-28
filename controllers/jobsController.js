@@ -632,13 +632,13 @@ exports.updateJobSelectedStatus = async (req, res) => {
     });
 
     const appliedJob = await appliedJobsCollection.findOne(query);
-    const applicantEmail = appliedJob.applicantEmail;
+    const applicantEmail = appliedJob?.applicantEmail;
 
     if (appliedJob) {
       const { jobTitle, company_name } = appliedJob;
       const message = `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
+          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob?.applicantName}!</h2>
           <p style="font-size: 16px;">
             You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_name}</strong>.
           </p>

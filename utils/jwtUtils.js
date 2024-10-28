@@ -21,4 +21,4 @@ const postJwt = async (req, res) => {
     }
 };
 
-module.exports = { postJwt };
+module.exports = postJwt;

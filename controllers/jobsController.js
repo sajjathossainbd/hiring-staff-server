@@ -270,7 +270,7 @@ exports.getJobsByEmail = async (req, res) => {
 
     const result = await jobsCollection
       .aggregate([
-        { $match: { company_email: email } },
+        { $match: { email: email } },
         {
           $lookup: {
             from: "appliedjobs",

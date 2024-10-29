@@ -13,8 +13,6 @@ const blogsRoutes = require("./routes/blogs");
 const paymentHistory = require("./routes/paymentHistory");
 const reviewsRoute = require("./routes/reviews");
 
-// const jwtRoute = require("./utils/jwtUtils");
-
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -25,20 +23,11 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
-
+app.use(express.json());
 // Connect to MongoDB
 connectDB();
 
 // Define routes
-
-app.post("/jwt", async (req, res) => {
-  const user = req.body;
-  const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "6hr" })
-  res.send({ token: token });
-})
-
-// User
-// app.use("/jwt", jwtRoute);
 
 // User
 app.use("/users", userRoutes);

@@ -303,7 +303,7 @@ exports.getJobsByEmail = async (req, res) => {
   }
 };
 
-// get jobs by id for recruter dashboard
+// get jobs by id for recruiter dashboard
 exports.getApplicationsByJobId = async (req, res) => {
   try {
     const jobId = req.params.jobId;
@@ -400,6 +400,7 @@ exports.appliedJobApplication = async (req, res) => {
       shortlist: "pending",
       reject: false,
       selected: false,
+      interview: false,
       appliedDate: new Date(),
     };
 
@@ -672,7 +673,7 @@ exports.updateJobSelectedStatus = async (req, res) => {
   }
 };
 
-// get aproved shortlist data for candidates
+// get approved shortlist data for candidates
 exports.getApprovedShortlistedJobs = async (req, res) => {
   const { email } = req.params;
   const { page = 1, limit = 12 } = req.query; // Get pagination parameters from query

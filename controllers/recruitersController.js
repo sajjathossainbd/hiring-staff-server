@@ -102,7 +102,7 @@ exports.getAllRecruiters = async (req, res) => {
     if (numberOfEmployees) {
       query.numberOfEmployees = { $regex: numberOfEmployees, $options: "i" };
     }
-
+   
     const recruiters = await recruitersCollection
       .find(query)
       .skip(skip)

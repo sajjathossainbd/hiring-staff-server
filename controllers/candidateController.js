@@ -11,16 +11,16 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.addCandidate = async (req, res) => {
   try {
     const user = req.body;
-    // const query = { email: user.email };
-    // const existingUser = await candidatesCollection.findOne(query);
+    const query = { email: user.email };
+    const existingUser = await candidatesCollection.findOne(query);
 
-    // if (existingUser) {
-    //   return sendResponse(
-    //     res,
-    //     { message: "Candidate Already Exists", insertId: null },
-    //     409
-    //   );
-    // }
+    if (existingUser) {
+      return sendResponse(
+        res,
+        { message: "Candidate Already Exists", insertId: null },
+        409
+      );
+    }
 
     const result = await candidatesCollection.insertOne(user);
     sendResponse(
@@ -291,5 +291,27 @@ exports.deleteCandidate = async (req, res) => {
   } catch (error) {
     console.error("Error deleting Candidate:", error);
     sendResponse(res, { message: "Failed to delete user" }, 500);
+  }
+};
+
+// Update candidate profile
+exports.updateCandidateProfile = async (req, res) => {
+  const email = req.params.email;
+  const updatedData = req.body;
+
+  try {
+    const result = await candidatesCollection.updateOne(
+      { email },
+      { $set: updatedData }
+    );
+
+    if (result.modifiedCount === 0) {
+      return sendResponse(res, { message: "No changes made" }, 204);
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount });
+  } catch (error) {
+    console.error("Error updating Candidate profile:", error);
+    sendResponse(res, { message: "Failed to update Candidate profile" }, 500);
   }
 };

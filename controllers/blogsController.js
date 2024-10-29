@@ -111,3 +111,32 @@ exports.deleteBlog = async (req, res) => {
     sendResponse(res, { message: "Failed to delete blog" }, 500);
   }
 };
+
+// Create a new blog
+exports.createBlog = async (req, res) => {
+  const { title, short_description, author, date_published, content, tags, category, url } = req.body;
+
+  // Validation (optional)
+  if (!title || !author || !date_published || !content || !category) {
+    return sendResponse(res, { message: "Please provide all required fields" }, 400);
+  }
+
+  const newBlog = {
+    title,
+    short_description,
+    author,
+    date_published,
+    content,
+    tags,
+    category,
+    url,
+  };
+
+  try {
+    const result = await blogsCollection.insertOne(newBlog);
+    sendResponse(res, { message: "Blog created successfully", blogId: result.insertedId }, 201);
+  } catch (error) {
+    console.error("Error creating blog:", error);
+    sendResponse(res, { message: "Failed to create blog" }, 500);
+  }
+};

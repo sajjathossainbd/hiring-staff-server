@@ -15,8 +15,8 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const { jobTitle, company_email,  candidateEmails,company_name } = jobData;
- 
+    const { jobTitle, company_email, candidateEmails, company_name } = jobData;
+
     const query = { jobTitle: jobData.jobTitle };
     const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
@@ -263,13 +263,34 @@ exports.getJob = async (req, res) => {
   }
 };
 
-// Get job by recruiter email
+// Get jobs by recruiter email for recruiter dashboard
 exports.getJobsByEmail = async (req, res) => {
   try {
     const email = req.params.email;
 
-    const query = { company_email: email };
-    const result = await jobsCollection.find(query).toArray();
+    const result = await jobsCollection
+      .aggregate([
+        { $match: { company_email: email } },
+        {
+          $lookup: {
+            from: "appliedjobs",
+            localField: "_id",
+            foreignField: "jobId",
+            as: "applications",
+          },
+        },
+        {
+          $project: {
+            jobTitle: 1,
+            company_email: 1,
+            postedDate: 1,
+            lastDateToApply: 1,
+            applications: 1,
+            applicationsCount: { $size: "$applications" },
+          },
+        },
+      ])
+      .toArray();
 
     if (result.length === 0) {
       return res.status(404).json({ message: "No jobs found for this email" });
@@ -279,6 +300,29 @@ exports.getJobsByEmail = async (req, res) => {
   } catch (error) {
     console.error("Error fetching jobs by email:", error);
     res.status(500).json({ message: "Error fetching jobs" });
+  }
+};
+
+// get jobs by id for recruter dashboard
+exports.getApplicationsByJobId = async (req, res) => {
+  try {
+    const jobId = req.params.jobId;
+
+    const objectId = new ObjectId(jobId);
+    const applications = await appliedJobsCollection
+      .find({ jobId: objectId })
+      .toArray();
+
+    if (applications.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No applications found for this job" });
+    }
+
+    res.status(200).json(applications);
+  } catch (error) {
+    console.error("Error fetching applications by job ID:", error);
+    res.status(500).json({ message: "Error fetching applications" });
   }
 };
 
@@ -308,13 +352,13 @@ exports.deleteJob = async (req, res) => {
   }
 };
 
-// applied job
+// apply job
 exports.appliedJobApplication = async (req, res) => {
   const {
     jobId,
     jobTitle,
     company_email,
-    company_id,
+    company_name,
     applicantId,
     applicantName,
     applicantEmail,
@@ -346,7 +390,7 @@ exports.appliedJobApplication = async (req, res) => {
       jobId: new ObjectId(jobId),
       jobTitle,
       company_email,
-      company_id,
+      company_name,
       applicantId: new ObjectId(applicantId),
       applicantName,
       applicantEmail,
@@ -435,7 +479,6 @@ exports.getAppliedJobsById = async (req, res) => {
   }
 };
 
-
 // Delete controller for applied jobs
 
 exports.deleteAppliedJob = async (req, res) => {
@@ -467,7 +510,9 @@ exports.deleteAppliedJob = async (req, res) => {
 
 exports.getAppliedJobByShortlist = async (req, res) => {
   try {
-    const appliedJobs = await appliedJobsCollection.find({ shortlist: "approved" }).toArray();
+    const appliedJobs = await appliedJobsCollection
+      .find({ shortlist: "approved" })
+      .toArray();
 
     if (!appliedJobs.length) {
       return res.status(404).json({ message: "No jobs found in shortlist" });
@@ -479,7 +524,6 @@ exports.getAppliedJobByShortlist = async (req, res) => {
     return res.status(500).json({ message: "Error fetching jobs" });
   }
 };
-
 
 // Get applied jobs by email address
 
@@ -509,7 +553,7 @@ exports.getAppliedJobsByEmail = async (req, res) => {
 
 exports.updateAppliedJobStatus = async (req, res) => {
   const { id } = req.params;
-  const { shortlist, reject } = req.body; // Accept both shortlist and reject values from the request
+  const { shortlist, reject } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return sendResponse(res, { message: "Invalid Job ID" }, 400);
@@ -518,12 +562,11 @@ exports.updateAppliedJobStatus = async (req, res) => {
   try {
     const query = { _id: new ObjectId(id) };
 
-    // Dynamically build the update object based on the provided fields
     const update = {
       $set: {},
     };
-    if (shortlist) update.$set.shortlist = shortlist; // e.g., 'approved', 'pending'
-    if (typeof reject === "boolean") update.$set.reject = reject; // e.g., true or false
+    if (shortlist) update.$set.shortlist = shortlist;
+    if (typeof reject === "boolean") update.$set.reject = reject;
 
     const result = await appliedJobsCollection.updateOne(query, update);
 
@@ -589,16 +632,23 @@ exports.updateJobSelectedStatus = async (req, res) => {
     });
 
     const appliedJob = await appliedJobsCollection.findOne(query);
-    const applicantEmail = appliedJob.applicantEmail;
+    const applicantEmail = appliedJob?.applicantEmail;
 
     if (appliedJob) {
-      const { jobTitle, company_id } = appliedJob;
+      const { jobTitle, company_name } = appliedJob;
       const message = `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob.applicantName}!</h2>
+          <h2 style="color: #4CAF50;">Congratulations, ${appliedJob?.applicantName}!</h2>
           <p style="font-size: 16px;">
-            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_id}</strong>.
+            You have been selected for the position of <strong>${jobTitle}</strong> at <strong>${company_name}</strong>.
           </p>
+             <div style="margin-top: 30px;">
+        <a 
+          href="https://hiring-staff.vercel.app/job-details/id" 
+          style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+          View Job Details
+        </a>
+      </div>
           <p style="font-size: 16px; margin-top: 20px;">
             We will contact you shortly with further details.
           </p>
@@ -610,7 +660,7 @@ exports.updateJobSelectedStatus = async (req, res) => {
       `;
 
       await sendEmail({
-        recruiterName: company_id,
+        recruiterName: company_name,
         email: applicantEmail,
         subject: `You Have Been Selected for ${jobTitle}!`,
         message,
@@ -662,26 +712,25 @@ exports.getApprovedShortlistedJobs = async (req, res) => {
   }
 };
 
-
 // get selected jobs for candidates
 exports.getSelectedJobs = async (req, res) => {
   const { email } = req.params;
-  const { page = 1, limit = 12 } = req.query; // Get page and limit from query parameters
+  const { page = 1, limit = 12 } = req.query;
 
   try {
-    const skip = (page - 1) * limit; // Calculate how many documents to skip
+    const skip = (page - 1) * limit;
     const totalSelectedJobs = await appliedJobsCollection.countDocuments({
       applicantEmail: email,
-      shortlist: "selected",
+      shortlist: "approved",
     });
 
     const selectedJobs = await appliedJobsCollection
       .find({
         applicantEmail: email,
-        shortlist: "selected",
+        shortlist: "approved",
       })
-      .skip(skip) // Skip the documents based on page
-      .limit(parseInt(limit)) // Limit the number of documents returned
+      .skip(skip)
+      .limit(parseInt(limit))
       .toArray();
 
     if (selectedJobs.length === 0) {
@@ -690,10 +739,9 @@ exports.getSelectedJobs = async (req, res) => {
       });
     }
 
-    // Return both selected jobs and total count for pagination
     res.status(200).json({
       currentPage: parseInt(page),
-      totalPages: Math.ceil(totalSelectedJobs / limit), // Calculate total pages
+      totalPages: Math.ceil(totalSelectedJobs / limit),
       selectedJobs,
     });
   } catch (error) {
@@ -701,4 +749,3 @@ exports.getSelectedJobs = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-

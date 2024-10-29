@@ -6,6 +6,7 @@ const {
   addCandidate,
   deleteCandidate,
   getCurrentCandidate,
+  updateCandidateProfile,
 } = require("../controllers/candidateController");
 
 const router = express.Router();
@@ -27,5 +28,8 @@ router.get("/:id", getCandidateById);
 
 // delete candidate
 router.delete("/delete/:id", deleteCandidate);
+
+// update current candidate
+router.patch("/profile/:email", updateCandidateProfile);
 
 module.exports = router;

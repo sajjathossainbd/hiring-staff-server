@@ -1,7 +1,10 @@
 const express = require("express");
-const { getBlogById, searchAndFilterBlogs, getAllBlogs, deleteBlog } = require("../controllers/blogsController");
+const { getBlogById, searchAndFilterBlogs, getAllBlogs, deleteBlog ,createBlog,} = require("../controllers/blogsController");
 
 const router = express.Router();
+
+// POST a new blog
+router.post("/", createBlog); // Route to create a new blog
 
 // GET/candidate by id
 router.get("/:id", getBlogById);

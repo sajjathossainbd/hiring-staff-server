@@ -21,6 +21,7 @@ const {
   getSelectedJobs,
   getAppliedJobByShortlist,
   getApplicationsByJobId,
+  assignAssessment,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -80,5 +81,8 @@ router.get("/applied-jobs/shortlist/approved", getAppliedJobByShortlist);
 
 // get selected jobs by email for candidate
 router.get("/applied-jobs/selected/:email", getSelectedJobs);
+
+// assign assesssment
+router.patch("/applied-jobs/assign-assessment/:id", assignAssessment);
 
 module.exports = router;

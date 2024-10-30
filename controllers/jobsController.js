@@ -750,3 +750,41 @@ exports.getSelectedJobs = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+// assign assessment
+exports.assignAssessment = async (req, res) => {
+  const { id } = req.params;
+  const { assessmentDetails, dueDate } = req.body;
+
+  try {
+    const existingJob = await appliedJobsCollection.findOne({
+      _id: new ObjectId(id),
+      assessments: { $exists: true, $not: { $size: 0 } },
+    });
+
+    if (existingJob) {
+      return res.status(400).json({
+        message: "Assessment has already been assigned for this job.",
+      });
+    }
+    const updatedJob = await appliedJobsCollection.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      {
+        $push: {
+          assessments: {
+            details: assessmentDetails,
+            dueDate: dueDate,
+          },
+        },
+      },
+      { new: true, returnDocument: "after" }
+    );
+    if (!updatedJob) {
+      return res.status(404).json({ message: "Applied job not found" });
+    }
+
+    return res.status(200).json(updatedJob);
+  } catch (error) {
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};

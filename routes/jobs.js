@@ -21,6 +21,7 @@ const {
   getSelectedJobs,
   getAppliedJobByShortlist,
   getApplicationsByJobId,
+  getAppliedJobsByIdWithoutPagination,
   assignAssessment,
   submitAssignment,
   toggleInterviewStatus,
@@ -57,6 +58,8 @@ router.get("/get/applied-jobs", getAllAppliedJobs);
 
 // get apliedJobs for singele candidate
 router.get("/applied-jobs/:id", getAppliedJobsById);
+
+router.get("/applied-jobs/validate/:id", getAppliedJobsByIdWithoutPagination);
 
 // get applied jobs by email
 router.get("/applied-jobs/email/:email", getAppliedJobsByEmail);

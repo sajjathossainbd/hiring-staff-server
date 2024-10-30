@@ -480,6 +480,30 @@ exports.getAppliedJobsById = async (req, res) => {
   }
 };
 
+exports.getAppliedJobsByIdWithoutPagination = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Applicant ID" });
+    }
+
+    const appliedJobs = await appliedJobsCollection
+      .find({ applicantId: new ObjectId(id) })
+      .toArray();
+
+    if (appliedJobs.length > 0) {
+      return res.status(200).json({ appliedJobs });
+    } else {
+      return res.status(404).json({ message: "No applied jobs found for this applicant." });
+    }
+  } catch (error) {
+    console.error("Error fetching applied jobs:", error);
+    return res.status(500).json({ message: "Error fetching applied jobs." });
+  }
+};
+
+
 // Delete controller for applied jobs
 
 exports.deleteAppliedJob = async (req, res) => {

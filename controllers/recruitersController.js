@@ -102,7 +102,7 @@ exports.getAllRecruiters = async (req, res) => {
     if (numberOfEmployees) {
       query.numberOfEmployees = { $regex: numberOfEmployees, $options: "i" };
     }
-   
+
     const recruiters = await recruitersCollection
       .find(query)
       .skip(skip)
@@ -260,5 +260,26 @@ exports.getRecruiterOpenJobsById = async (req, res) => {
     return res.status(500).json({
       message: "Failed to retrieve open jobs for this recruiter",
     });
+  }
+};
+
+// Update Recruiter profile
+exports.updateRecruiterProfile = async (req, res) => {
+  const email = req.params.email;
+  const updatedData = req.body;
+  try {
+    const result = await recruitersCollection.updateOne(
+      { email },
+      { $set: updatedData }
+    );
+
+    if (result.modifiedCount === 0) {
+      return sendResponse(res, { message: "No changes made" }, 204);
+    }
+
+    sendResponse(res, { modifiedCount: result.modifiedCount });
+  } catch (error) {
+    console.error("Error updating Recruiter profile:", error);
+    sendResponse(res, { message: "Failed to update Recruiter profile" }, 500);
   }
 };

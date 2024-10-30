@@ -22,6 +22,8 @@ const {
   getAppliedJobByShortlist,
   getApplicationsByJobId,
   assignAssessment,
+  submitAssignment,
+  toggleInterviewStatus,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -84,5 +86,11 @@ router.get("/applied-jobs/selected/:email", getSelectedJobs);
 
 // assign assesssment
 router.patch("/applied-jobs/assign-assessment/:id", assignAssessment);
+
+// submit assignment
+router.patch("/applied-jobs/submit-assessment/:id", submitAssignment);
+
+// Toggle Interview Status
+router.patch("/applied-jobs/interview/:id", toggleInterviewStatus);
 
 module.exports = router;

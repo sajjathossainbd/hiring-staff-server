@@ -21,6 +21,10 @@ const {
   getSelectedJobs,
   getAppliedJobByShortlist,
   getApplicationsByJobId,
+  getAppliedJobsByIdWithoutPagination,
+  assignAssessment,
+  submitAssignment,
+  toggleInterviewStatus,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -55,6 +59,8 @@ router.get("/get/applied-jobs", getAllAppliedJobs);
 // get apliedJobs for singele candidate
 router.get("/applied-jobs/:id", getAppliedJobsById);
 
+router.get("/applied-jobs/validate/:id", getAppliedJobsByIdWithoutPagination);
+
 // get applied jobs by email
 router.get("/applied-jobs/email/:email", getAppliedJobsByEmail);
 
@@ -80,5 +86,14 @@ router.get("/applied-jobs/shortlist/approved", getAppliedJobByShortlist);
 
 // get selected jobs by email for candidate
 router.get("/applied-jobs/selected/:email", getSelectedJobs);
+
+// assign assesssment
+router.patch("/applied-jobs/assign-assessment/:id", assignAssessment);
+
+// submit assignment
+router.patch("/applied-jobs/submit-assessment/:id", submitAssignment);
+
+// Toggle Interview Status
+router.patch("/applied-jobs/interview/:id", toggleInterviewStatus);
 
 module.exports = router;

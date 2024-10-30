@@ -294,15 +294,16 @@ exports.deleteCandidate = async (req, res) => {
   }
 };
 
-// Update candidate profile
 exports.updateCandidateProfile = async (req, res) => {
   const email = req.params.email;
   const updatedData = req.body;
 
+  const { _id, ...dataToUpdate } = updatedData;
+
   try {
     const result = await candidatesCollection.updateOne(
       { email },
-      { $set: updatedData }
+      { $set: dataToUpdate }
     );
 
     if (result.modifiedCount === 0) {
@@ -315,3 +316,4 @@ exports.updateCandidateProfile = async (req, res) => {
     sendResponse(res, { message: "Failed to update Candidate profile" }, 500);
   }
 };
+

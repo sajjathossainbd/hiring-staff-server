@@ -7,6 +7,7 @@ const {
   getCurrentRecruiter,
   deleteRecruiters,
   getRecruiterOpenJobsById,
+  updateRecruiterProfile,
 } = require("../controllers/recruitersController");
 
 const router = express.Router();
@@ -14,7 +15,7 @@ const router = express.Router();
 // POST /recruiters
 router.post("/", addRecruiter);
 
-// GET current recruiter by emailnodemon 
+// GET current recruiter by email nodemon 
 router.get("/currentRecruiter/:email", getCurrentRecruiter);
 
 // GET all recruiters
@@ -35,5 +36,9 @@ router.delete("/deleteRecruiter/:id", deleteRecruiters);
 
 // GET recruiter Open Jobs by id
 router.get("/Openjobs/:id", getRecruiterOpenJobsById);
+
+// update current recruiter
+router.patch("/recruiter/profile/:email", updateRecruiterProfile);
+
 
 module.exports = router;

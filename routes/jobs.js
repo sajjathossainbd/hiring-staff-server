@@ -25,6 +25,7 @@ const {
   assignAssessment,
   submitAssignment,
   toggleInterviewStatus,
+  assignInvitation,
 } = require("../controllers/jobsController");
 
 const router = express.Router();
@@ -95,5 +96,8 @@ router.patch("/applied-jobs/submit-assessment/:id", submitAssignment);
 
 // Toggle Interview Status
 router.patch("/applied-jobs/interview/:id", toggleInterviewStatus);
+
+// assign interview
+router.patch("/interview-schedule/assign/:id", assignInvitation);
 
 module.exports = router;

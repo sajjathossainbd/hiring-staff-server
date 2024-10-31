@@ -401,6 +401,7 @@ exports.appliedJobApplication = async (req, res) => {
       reject: false,
       selected: false,
       interview: false,
+      acceptInterview: false,
       appliedDate: new Date(),
     };
 
@@ -495,14 +496,15 @@ exports.getAppliedJobsByIdWithoutPagination = async (req, res) => {
     if (appliedJobs.length > 0) {
       return res.status(200).json({ appliedJobs });
     } else {
-      return res.status(404).json({ message: "No applied jobs found for this applicant." });
+      return res
+        .status(404)
+        .json({ message: "No applied jobs found for this applicant." });
     }
   } catch (error) {
     console.error("Error fetching applied jobs:", error);
     return res.status(500).json({ message: "Error fetching applied jobs." });
   }
 };
-
 
 // Delete controller for applied jobs
 
@@ -853,31 +855,78 @@ exports.submitAssignment = async (req, res) => {
   }
 };
 
-
 // Toggle Interview Status
 exports.toggleInterviewStatus = async (req, res) => {
   const { id } = req.params; // Get job ID from request parameters
 
   try {
     // Find the job by ID
-    const job = await appliedJobsCollection.findOne({ _id:new ObjectId(id) });
+    const job = await appliedJobsCollection.findOne({ _id: new ObjectId(id) });
 
     if (!job) {
-      return res.status(404).json({ message: 'Job not found' });
+      return res.status(404).json({ message: "Job not found" });
     }
 
     // Toggle the interview status
     const updatedInterviewStatus = !job.interview; // Set to true if false, and vice versa
 
     const updatedJob = await appliedJobsCollection.findOneAndUpdate(
-      { _id:new ObjectId(id) },
+      { _id: new ObjectId(id) },
       { $set: { interview: updatedInterviewStatus } }, // Update interview status
-      { returnDocument: 'after' } // Return the updated document
+      { returnDocument: "after" } // Return the updated document
     );
 
-    return res.status(200).json({ message: 'Interview status updated successfully!', job: updatedJob });
+    return res.status(200).json({
+      message: "Interview status updated successfully!",
+      job: updatedJob,
+    });
   } catch (error) {
     console.error("Error toggling interview status:", error);
-    return res.status(500).json({ message: 'Internal server error' });
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// assign interview invitation
+exports.assignInvitation = async (req, res) => {
+  const { id } = req.params;
+  const { interviewDate, interviewTime, message } = req.body;
+
+  try {
+    const job = await appliedJobsCollection.findOne({ _id: new ObjectId(id) });
+
+    if (!job) {
+      return res.status(404).json({ message: "Applied job not found" });
+    }
+
+    if (job.schedule && job.schedule.length > 0) {
+      return res.status(400).json({
+        message: "An interview has already been scheduled for this job.",
+      });
+    }
+
+    const newInterview = {
+      interviewDate,
+      interviewTime,
+      message,
+      scheduledAt: new Date(),
+    };
+
+    const updatedJob = await appliedJobsCollection.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      {
+        $push: {
+          schedule: newInterview,
+        },
+      },
+      { returnDocument: "after" }
+    );
+
+    return res.status(200).json({
+      message: "Interview scheduled successfully!",
+      job: updatedJob,
+    });
+  } catch (error) {
+    console.error("Error scheduling interview:", error);
+    return res.status(500).json({ message: "Internal server error" });
   }
 };

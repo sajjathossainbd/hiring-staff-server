@@ -15,8 +15,7 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const { jobTitle, company_email, candidateEmails, company_name } = jobData;
-
+    const { jobTitle, email, candidateEmails, name } = jobData;
     const query = { jobTitle: jobData.jobTitle };
     const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
@@ -34,14 +33,14 @@ exports.postJob = async (req, res) => {
       <h2 style="color: #4CAF50;">New Job Opportunity!</h2>
       <p style="font-size: 16px;">
         A new job titled <strong style="color: #333;">${jobTitle}</strong> has been posted by 
-        <strong style="color: #0073e6;">${company_name}</strong>.
+        <strong style="color: #0073e6;">${name}</strong>.
       </p>
       <p style="font-size: 16px; margin-top: 20px;">
         <em>Check it out now on Hiring Staff!</em>
       </p>
       <div style="margin-top: 30px;">
         <a 
-          href="http://localhost:5000/jobs/id" 
+          href="https://hiring-staff.vercel.app/job-details/${result.insertedId}" 
           style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
           View Job Details
         </a>
@@ -60,8 +59,8 @@ exports.postJob = async (req, res) => {
 
     for (const candidateEmail of candidateEmails) {
       await sendEmail({
-        recruiterName: company_name,
-        recruiterEmail: company_email,
+        recruiterName: name,
+        recruiterEmail: email,
         email: candidateEmail,
         subject: `New Job Opportunity: ${jobTitle}`,
         message,
@@ -360,6 +359,7 @@ exports.appliedJobApplication = async (req, res) => {
     email,
     company_name,
     applicantId,
+    applicantImage,
     applicantName,
     applicantEmail,
     coverLetter,
@@ -394,6 +394,7 @@ exports.appliedJobApplication = async (req, res) => {
       applicantId: new ObjectId(applicantId),
       applicantName,
       applicantEmail,
+      applicantImage,
       coverLetter,
       resume,
       availability,
@@ -581,6 +582,7 @@ exports.getAppliedJobsByEmail = async (req, res) => {
 exports.updateAppliedJobStatus = async (req, res) => {
   const { id } = req.params;
   const { shortlist, reject } = req.body;
+  const { email } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return sendResponse(res, { message: "Invalid Job ID" }, 400);
@@ -596,7 +598,6 @@ exports.updateAppliedJobStatus = async (req, res) => {
     if (typeof reject === "boolean") update.$set.reject = reject;
 
     const result = await appliedJobsCollection.updateOne(query, update);
-
     if (result.matchedCount === 0) {
       return sendResponse(res, { message: "Job not found" }, 404);
     }
@@ -608,6 +609,30 @@ exports.updateAppliedJobStatus = async (req, res) => {
   } catch (error) {
     console.error("Error updating applied job status:", error);
     sendResponse(res, { message: "Error updating job status" }, 500);
+  }
+  if (req.body.email) {
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">Congratulations!</h2>
+      <p style="font-size: 16px;">
+        You have been shortlisted for a job, please check your dashboard
+      </p>
+       
+      <p style="font-size: 16px; margin-top: 20px;">
+        We will contact you shortly with further details.
+      </p>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+    </div>
+  `;
+    await sendEmail({
+      recruiterName: "Hiring Staff",
+      email: email,
+      subject: `You Have Been Shortlisted!`,
+      message,
+    });
   }
 };
 
@@ -889,7 +914,8 @@ exports.toggleInterviewStatus = async (req, res) => {
 // assign interview invitation
 exports.assignInvitation = async (req, res) => {
   const { id } = req.params;
-  const { interviewDate, interviewTime, message } = req.body;
+  const { interviewDate, interviewTime, message, email } = req.body;
+  const interviewMessage = message;
 
   try {
     const job = await appliedJobsCollection.findOne({ _id: new ObjectId(id) });
@@ -907,7 +933,7 @@ exports.assignInvitation = async (req, res) => {
     const newInterview = {
       interviewDate,
       interviewTime,
-      message,
+      message: interviewMessage,
       scheduledAt: new Date(),
     };
 
@@ -920,6 +946,29 @@ exports.assignInvitation = async (req, res) => {
       },
       { returnDocument: "after" }
     );
+
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">Congratulations!</h2>
+      <p style="font-size: 16px;">
+        You have been selected for interview for a job, please check your dashboard
+      </p>
+       
+      <p style="font-size: 16px; margin-top: 20px;">
+        We will contact you shortly with further details.
+      </p>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+    </div>
+  `;
+    await sendEmail({
+      recruiterName: "Hiring Staff",
+      email: email,
+      subject: `You Have an Interview update!`,
+      message,
+    });
 
     return res.status(200).json({
       message: "Interview scheduled successfully!",

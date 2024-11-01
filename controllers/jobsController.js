@@ -582,6 +582,7 @@ exports.getAppliedJobsByEmail = async (req, res) => {
 exports.updateAppliedJobStatus = async (req, res) => {
   const { id } = req.params;
   const { shortlist, reject } = req.body;
+  const { email } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return sendResponse(res, { message: "Invalid Job ID" }, 400);
@@ -597,7 +598,6 @@ exports.updateAppliedJobStatus = async (req, res) => {
     if (typeof reject === "boolean") update.$set.reject = reject;
 
     const result = await appliedJobsCollection.updateOne(query, update);
-
     if (result.matchedCount === 0) {
       return sendResponse(res, { message: "Job not found" }, 404);
     }
@@ -609,6 +609,30 @@ exports.updateAppliedJobStatus = async (req, res) => {
   } catch (error) {
     console.error("Error updating applied job status:", error);
     sendResponse(res, { message: "Error updating job status" }, 500);
+  }
+  if (req.body.email) {
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">Congratulations!</h2>
+      <p style="font-size: 16px;">
+        You have been shortlisted for a job, please check your dashboard
+      </p>
+       
+      <p style="font-size: 16px; margin-top: 20px;">
+        We will contact you shortly with further details.
+      </p>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+    </div>
+  `;
+    await sendEmail({
+      recruiterName: "Hiring Staff",
+      email: email,
+      subject: `You Have Been Shortlisted!`,
+      message,
+    });
   }
 };
 

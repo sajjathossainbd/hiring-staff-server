@@ -15,8 +15,7 @@ const sendResponse = (res, data, statusCode = 200) => {
 exports.postJob = async (req, res) => {
   try {
     const jobData = req.body;
-    const { jobTitle, company_email, candidateEmails, company_name } = jobData;
-
+    const { jobTitle, email, candidateEmails, name } = jobData;
     const query = { jobTitle: jobData.jobTitle };
     const existingJob = await jobsCollection.findOne(query);
     if (existingJob) {
@@ -34,14 +33,14 @@ exports.postJob = async (req, res) => {
       <h2 style="color: #4CAF50;">New Job Opportunity!</h2>
       <p style="font-size: 16px;">
         A new job titled <strong style="color: #333;">${jobTitle}</strong> has been posted by 
-        <strong style="color: #0073e6;">${company_name}</strong>.
+        <strong style="color: #0073e6;">${name}</strong>.
       </p>
       <p style="font-size: 16px; margin-top: 20px;">
         <em>Check it out now on Hiring Staff!</em>
       </p>
       <div style="margin-top: 30px;">
         <a 
-          href="http://localhost:5000/jobs/id" 
+          href="https://hiring-staff.vercel.app/job-details/${result.insertedId}" 
           style="background-color: #0073e6; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
           View Job Details
         </a>
@@ -60,8 +59,8 @@ exports.postJob = async (req, res) => {
 
     for (const candidateEmail of candidateEmails) {
       await sendEmail({
-        recruiterName: company_name,
-        recruiterEmail: company_email,
+        recruiterName: name,
+        recruiterEmail: email,
         email: candidateEmail,
         subject: `New Job Opportunity: ${jobTitle}`,
         message,

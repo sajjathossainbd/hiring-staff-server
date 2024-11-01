@@ -914,7 +914,8 @@ exports.toggleInterviewStatus = async (req, res) => {
 // assign interview invitation
 exports.assignInvitation = async (req, res) => {
   const { id } = req.params;
-  const { interviewDate, interviewTime, message } = req.body;
+  const { interviewDate, interviewTime, message, email } = req.body;
+  const interviewMessage = message;
 
   try {
     const job = await appliedJobsCollection.findOne({ _id: new ObjectId(id) });
@@ -932,7 +933,7 @@ exports.assignInvitation = async (req, res) => {
     const newInterview = {
       interviewDate,
       interviewTime,
-      message,
+      message: interviewMessage,
       scheduledAt: new Date(),
     };
 
@@ -945,6 +946,29 @@ exports.assignInvitation = async (req, res) => {
       },
       { returnDocument: "after" }
     );
+
+    const message = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <h2 style="color: #4CAF50;">Congratulations!</h2>
+      <p style="font-size: 16px;">
+        You have been selected for interview for a job, please check your dashboard
+      </p>
+       
+      <p style="font-size: 16px; margin-top: 20px;">
+        We will contact you shortly with further details.
+      </p>
+      <p style="margin-top: 40px; font-size: 14px; color: #777;">
+        Best regards,<br />
+        <strong>Hiring Staff Team</strong>
+      </p>
+    </div>
+  `;
+    await sendEmail({
+      recruiterName: "Hiring Staff",
+      email: email,
+      subject: `You Have an Interview update!`,
+      message,
+    });
 
     return res.status(200).json({
       message: "Interview scheduled successfully!",
